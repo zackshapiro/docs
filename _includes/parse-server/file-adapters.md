@@ -121,7 +121,7 @@ To generate a private key in the Cloud Platform Console follow [these instructio
 Starting 2.2.6, GCS Adapter is not provided by default by parse-server. To install run:
 
 ```
-npm install --save parse-server-gcs-adapter
+npm install --save @parse/gcs-files-adapter
 ```
 
 ### Configuration options
@@ -134,7 +134,7 @@ You can use Google Cloud Storage to host your static files by setting the follow
 
 | Variable Name | Description | Notes |
 | ------------- | ----------- | ----- |
-| PARSE_SERVER_FILES_ADAPTER  | Set this variable to 'parse-server-gcs-adapter'. | Required. |
+| PARSE_SERVER_FILES_ADAPTER  | Set this variable to '@parse/gcs-files-adapter'. | Required. |
 | GCP_PROJECT_ID              | The project ID from the Google Developer's Console. | Required. |
 | GCP_KEYFILE_PATH            | Full path to the a .json, .pem, or .p12 key downloaded from the Google Developers Console. | Required. |
 | GCS_BUCKET                  | The name of your GCS bucket. | Required. |
@@ -147,7 +147,7 @@ If you're using Node.js/Express:
 
 ```javascript
 ...
-var GCSAdapter = require('parse-server-gcs-adapter');
+var GCSAdapter = require('@parse/gcs-files-adapter');
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
