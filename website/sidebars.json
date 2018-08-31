@@ -1,0 +1,50 @@
+{
+  "docs": {
+    "iOS Guide": [
+      "ios/getting-started",
+      "ios/objects",
+      "ios/queries",
+      "ios/users",
+      "common/sessions",
+      "ios/roles",
+      "ios/files",
+      "ios/geopoints",
+      "ios/local-datastore",
+      "ios/extensions",
+      "ios/push-notifications",
+      "ios/config",
+      "ios/analytics",
+      "ios/user-interface",
+      "ios/in-app-purchases",
+      "common/data",
+      "common/relations",
+      "ios/handling-errors",
+      "common/security",
+      "common/performance",
+      "common/errors"],
+    "REST API Guide": [
+      "common/server-customize",
+		  "rest/getting-started",
+			"rest/quick-reference",
+			"rest/objects",
+			"rest/queries",
+			"rest/users",
+			"rest/sessions",
+			"rest/roles",
+			"rest/files",
+			"rest/geopoints",
+			"common/data",
+			"rest/push-notifications",
+			"rest/config",
+			"rest/analytics",
+			"rest/cloud-code",
+			"rest/schemas",
+			"rest/hooks",
+			"common/security",
+			"common/errors"
+    ]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
