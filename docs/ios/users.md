@@ -1,4 +1,7 @@
-# Users
+---
+title: Users
+sidebar_label: Users
+---
 
 At the core of many apps, there is a notion of user accounts that lets users access their information in a secure manner. We provide a specialized user class called `PFUser` that automatically handles much of the functionality required for user account management.
 
@@ -22,6 +25,7 @@ We'll go through each of these in detail as we run through the various use cases
 The first thing your app will do is probably ask the user to sign up. The following code illustrates a typical sign up:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)myMethod {
     PFUser *user = [PFUser user];
@@ -39,6 +43,7 @@ The first thing your app will do is probably ask the user to sign up. The follow
     }];
 }
 ```
+
 ```swift
 func myMethod() {
   var user = PFUser()
@@ -76,6 +81,7 @@ You are free to use an email address as the username. Simply ask your users to e
 Of course, after you allow users to sign up, you need to let them log in to their account in the future. To do this, you can use the class method `logInWithUsernameInBackground:password:`.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFUser logInWithUsernameInBackground:@"myname" password:@"mypass"
   block:^(PFUser *user, NSError *error) {
@@ -86,6 +92,7 @@ Of course, after you allow users to sign up, you need to let them log in to thei
     }
 }];
 ```
+
 ```swift
 PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
   (user: PFUser?, error: NSError?) -> Void in
@@ -116,6 +123,7 @@ It would be bothersome if the user had to log in every time they open your app. 
 Whenever you use any signup or login methods, the user is cached on disk. You can treat this cache as a session, and automatically assume the user is logged in:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFUser *currentUser = [PFUser currentUser];
 if (currentUser) {
@@ -124,6 +132,7 @@ if (currentUser) {
     // show the signup or login screen
 }
 ```
+
 ```swift
 var currentUser = PFUser.currentUser()
 if currentUser != nil {
@@ -137,10 +146,12 @@ if currentUser != nil {
 You can clear the current user by logging them out:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFUser logOut];
 PFUser *currentUser = [PFUser currentUser]; // this will now be nil
 ```
+
 ```swift
 PFUser.logOut()
 var currentUser = PFUser.currentUser() // this will now be nil
@@ -156,6 +167,7 @@ An anonymous user is a user that can be created without a username and password 
 You can create an anonymous user using `PFAnonymousUtils`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFAnonymousUtils logInWithBlock:^(PFUser *user, NSError *error) {
     if (error) {
@@ -165,6 +177,7 @@ You can create an anonymous user using `PFAnonymousUtils`:
     }
 }];
 ```
+
 ```swift
 PFAnonymousUtils.logInWithBlock {
   (user: PFUser?, error: NSError?) -> Void in
@@ -180,6 +193,7 @@ PFAnonymousUtils.logInWithBlock {
 You can convert an anonymous user into a regular user by setting the username and password, then calling `signUp`, or by logging in or linking with a service like [Facebook](#facebook-users) or [Twitter](#twitter-users). The converted user will retain all of its data.  To determine whether the current user is an anonymous user, you can check `PFAnonymousUtils isLinkedWithUser`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
     [self enableSignUpButton];
@@ -187,6 +201,7 @@ if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
     [self enableLogOutButton];
 }
 ```
+
 ```swift
 if PFAnonymousUtils.isLinkedWithUser(PFUser.currentUser()) {
   self.enableSignUpButton()
@@ -199,11 +214,13 @@ if PFAnonymousUtils.isLinkedWithUser(PFUser.currentUser()) {
 Anonymous users can also be automatically created for you without requiring a network request, so that you can begin working with your user immediately when your application starts.  When you enable automatic anonymous user creation at application startup, `[PFUser currentUser]` will never be `nil`. The user will automatically be created in the cloud the first time the user or any object with a relation to the user is saved.  Until that point, the user's object ID will be `nil`.  Enabling automatic user creation makes associating data with your users painless.  For example, in your `application:didFinishLaunchingWithOptions:` function, you might write:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFUser enableAutomaticUser];
 [[PFUser currentUser] incrementKey:@"RunCount"];
 [[PFUser currentUser] saveInBackground];
 ```
+
 ```swift
 PFUser.enableAutomaticUser()
 PFUser.currentUser().incrementKey("RunCount")
@@ -216,6 +233,7 @@ PFUser.currentUser().saveInBackground()
 If you’ve created your own authentication routines, or otherwise logged in a user on the server side, you can now pass the session token to the client and use the `become` method. This method will ensure the session token is valid before setting the current user.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFUser becomeInBackground:@"session-token-here" block:^(PFUser *user, NSError *error) {
   if (error) {
@@ -225,6 +243,7 @@ If you’ve created your own authentication routines, or otherwise logged in a u
   }
 }];
 ```
+
 ```swift
 PFUser.becomeInBackground("session-token-here", {
   (user: PFUser?, error: NSError?) -> Void in
@@ -246,6 +265,7 @@ Specifically, you are not able to invoke any of the `save` or `delete` methods u
 The following illustrates this security policy:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFUser *user = [PFUser logInWithUsername:@"my_username" password:@"my_password"];
 user.username = "my_new_username"; // attempt to change username
@@ -260,6 +280,7 @@ userAgain.username = "another_username";
 // This will throw an exception, since the PFUser is not authenticated
 [userAgain save];
 ```
+
 ```swift
 var user = PFUser.logInWithUsername("my_username", password:"my_password")
 user.username = "my_new_username" // attempt to change username
@@ -287,12 +308,14 @@ The same security model that applies to the `PFUser` can be applied to other obj
 The simplest way to use a `PFACL` is to specify that an object may only be read or written by a single user. To create such an object, there must first be a logged in `PFUser`. Then, the `ACLWithUser` method generates a `PFACL` that limits access to that user. An object's ACL is updated when the object is saved, like any other property. Thus, to create a private note that can only be accessed by the current user:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *privateNote = [PFObject objectWithClassName:@"Note"];
 privateNote[@"content"] = @"This note is private!";
 privateNote.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
 [privateNote saveInBackground];
 ```
+
 ```swift
 var privateNote = PFObject(className:"Note")
 privateNote["content"] = "This note is private!"
@@ -306,6 +329,7 @@ This note will then only be accessible to the current user, although it will be 
 Permissions can also be granted on a per-user basis. You can add permissions individually to a `PFACL` using `setReadAccess:forUser:` and `setWriteAccess:forUser:`. For example, let's say you have a message that will be sent to a group of several users, where each of them have the rights to read and delete that message:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *groupMessage = [PFObject objectWithClassName:@"Message"];
 PFACL *groupACL = [PFACL ACL];
@@ -319,6 +343,7 @@ for (PFUser *user in userList) {
 groupMessage.ACL = groupACL;
 [groupMessage saveInBackground];
 ```
+
 ```swift
 var groupMessage = PFObject(className:"Message")
 var groupACL = PFACL.ACL()
@@ -337,6 +362,7 @@ groupMessage.saveInBackground()
 You can also grant permissions to all users at once using `setPublicReadAccess:` and `setPublicWriteAccess:`. This allows patterns like posting comments on a message board. For example, to create a post that can only be edited by its author, but can be read by anyone:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *publicPost = [PFObject objectWithClassName:@"Post"];
 PFACL *postACL = [PFACL ACLWithUser:[PFUser currentUser]];
@@ -344,6 +370,7 @@ PFACL *postACL = [PFACL ACLWithUser:[PFUser currentUser]];
 publicPost.ACL = postACL;
 [publicPost saveInBackground];
 ```
+
 ```swift
 var publicPost = PFObject(className:"Post")
 var postACL = PFACL.ACLWithUser(PFUser.currentUser())
@@ -356,9 +383,11 @@ publicPost.saveInBackground()
 To help ensure that your users' data is secure by default, you can set a default ACL to be applied to all newly-created `PFObjects`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 ```
+
 ```swift
 PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser:true)
 ```
@@ -369,11 +398,13 @@ In the code above, the second parameter to setDefaultACL tells Parse to ensure t
 Default ACLs make it easy to create apps that follow common access patterns. An application like Twitter, for example, where user content is generally visible to the world, might set a default ACL such as:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFACL *defaultACL = [PFACL ACL];
 [defaultACL setPublicReadAccess:YES];
 [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 ```
+
 ```swift
 var defaultACL = PFACL.ACL()
 defaultACL.setPublicReadAccess(true)
@@ -384,9 +415,11 @@ PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser:true)
 For an app like Dropbox, where a user's data is only accessible by the user itself unless explicit permission is given, you would provide a default ACL where only the current user is given access:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFACL setDefaultACL:[PFACL ACL] withAccessForCurrentUser:YES];
 ```
+
 ```swift
 PFACL.setDefaultACL(PFACL.ACL(), withAccessForCurrentUser:true)
 ```
@@ -395,9 +428,11 @@ PFACL.setDefaultACL(PFACL.ACL(), withAccessForCurrentUser:true)
 For an application that logs data to Parse but doesn't provide any user access to that data, you would deny access to the current user while providing a restrictive ACL:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFACL setDefaultACL:[PFACL ACL] withAccessForCurrentUser:NO];
 ```
+
 ```swift
 PFACL.setDefaultACL(PFACL.ACL(), withAccessForCurrentUser:false)
 ```
@@ -412,9 +447,11 @@ It's a fact that as soon as you introduce passwords into a system, users will fo
 To kick off the password reset flow, ask the user for their email address, and call:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
 ```
+
 ```swift
 PFUser.requestPasswordResetForEmailInBackground("email@example.com")
 ```
@@ -436,11 +473,13 @@ Note that the messaging in this flow will reference your app by the name that yo
 To query for users, you need to use the special user query:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFQuery *query = [PFUser query];
 [query whereKey:@"gender" equalTo:@"female"]; // find all the women
 NSArray *girls = [query findObjects];
 ```
+
 ```swift
 var query = PFUser.query()
 query.whereKey("gender", equalTo:"female")
@@ -455,6 +494,7 @@ In addition, you can use `getUserObjectWithId:objectId` to get a `PFUser` by id.
 Associations involving a `PFUser` work right out of the box. For example, let's say you're making a blogging app. To store a new post for a user and retrieve all their posts:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFUser *user = [PFUser currentUser];
 
@@ -470,6 +510,7 @@ PFQuery *query = [PFQuery queryWithClassName:@"Post"];
 [query whereKey:@"user" equalTo:user];
 NSArray *usersPosts = [query findObjects];
 ```
+
 ```swift
 var user = PFUser.currentUser()
 
@@ -503,6 +544,7 @@ To start using Facebook with Parse, you need to:
 There's also two code changes you'll need to make. First, add the following to your `application:didFinishLaunchingWithOptions:` method, after you've initialized the Parse SDK.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // AppDelegate.m
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -516,6 +558,7 @@ There's also two code changes you'll need to make. First, add the following to y
 }
 
 ```
+
 ```swift
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
@@ -531,6 +574,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 Next, add the following handlers in your app delegate.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
@@ -546,6 +590,7 @@ Next, add the following handlers in your app delegate.
   [FBSDKAppEvents activateApp];
 }
 ```
+
 ```swift
 func application(application: UIApplication,
                  openURL url: NSURL,
@@ -575,6 +620,7 @@ There are two main ways to use Facebook with your Parse users: (1) to log in (or
 `PFUser` provides a way to allow your users to log in or sign up through Facebook. This is done by using the `logInInBackgroundWithReadPermissions` method like so:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
   if (!user) {
@@ -586,6 +632,7 @@ There are two main ways to use Facebook with your Parse users: (1) to log in (or
   }
 }];
 ```
+
 ```swift
 PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
   (user: PFUser?, error: NSError?) -> Void in
@@ -615,6 +662,7 @@ The permissions argument is an array of strings that specifies what permissions 
 To acquire publishing permissions for a user so that your app can, for example, post status updates on their behalf, you must call `[PFFacebookUtils logInInBackgroundWithPublishPermissions:]`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFFacebookUtils logInInBackgroundWithPublishPermissions:@[ @"publish_actions" ] block:^(PFUser *user, NSError *error) {
   if (!user) {
@@ -624,6 +672,7 @@ To acquire publishing permissions for a user so that your app can, for example, 
   }
 }];
 ```
+
 ```swift
 PFFacebookUtils.logInInBackgroundWithPublishPermissions(["publish_actions"], {
   (user: PFUser?, error: NSError?) -> Void in
@@ -639,6 +688,7 @@ PFFacebookUtils.logInInBackgroundWithPublishPermissions(["publish_actions"], {
 If you want to associate an existing `PFUser` to a Facebook account, you can link it like so:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 if (![PFFacebookUtils isLinkedWithUser:user]) {
   [PFFacebookUtils linkUserInBackground:user withReadPermissions:nil block:^(BOOL succeeded, NSError *error) {
@@ -648,6 +698,7 @@ if (![PFFacebookUtils isLinkedWithUser:user]) {
   }];
 }
 ```
+
 ```swift
 if !PFFacebookUtils.isLinkedWithUser(user) {
   PFFacebookUtils.linkUserInBackground(user, withReadPermissions: nil, {
@@ -665,6 +716,7 @@ The steps that happen when linking are very similar to log in. The difference is
 If you want to unlink Facebook from a user, simply do this:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFFacebookUtils unlinkUserInBackground:user block:^(BOOL succeeded, NSError *error) {
   if (succeeded) {
@@ -672,6 +724,7 @@ If you want to unlink Facebook from a user, simply do this:
   }
 }];
 ```
+
 ```swift
 PFFacebookUtils.unlinkUserInBackground(user, {
   (succeeded: Bool?, error: NSError?) -> Void in
@@ -687,6 +740,7 @@ PFFacebookUtils.unlinkUserInBackground(user, {
 In the previous sections, you've seen how `PFFacebookUtils` can be used to log in with the Facebook SDK and create a `PFUser` or link with existing ones. If you have already integrated the Facebook SDK and have a `FBSDKAccessToken`, there is an option to directly log in or link the users like this:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 FBSDKAccessToken *accessToken = ...; // Use existing access token.
 
@@ -713,6 +767,7 @@ FBSDKAccessToken *accessToken = ...; // Use existing access token.
   }
 }];
 ```
+
 ```swift
 let accessToken: FBSDKAccessToken = ...; // Use existing access token.
 
@@ -745,6 +800,7 @@ PFFacebookUtils.linkUserInBackground(user, withAccessToken: accessToken, {
 Since Facebook SDK v4.0 - it is required to request **read** and **publish** permissions separately. With Parse SDK integration you can do that by logging in with read permissions first, and later, when the user wants to post to Facebook - linking a user with new set of publish permissions. This also works the other way around: logging in with publish permissions and linking with additional read permissions.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Log In with Read Permissions
 [PFFacebookUtils logInInBackgroundWithReadPermissions:permissions block:^(PFUser *user, NSError *error) {
@@ -766,6 +822,7 @@ Since Facebook SDK v4.0 - it is required to request **read** and **publish** per
   }
 }];
 ```
+
 ```swift
 // Log In with Read Permissions
 PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, {
@@ -811,10 +868,12 @@ To start using Twitter with Parse, you need to:
 4.  Add the `Accounts.framework` and `Social.framework` libraries to your Xcode project.
 5.  Add the following where you initialize the Parse SDK, such as in `application:didFinishLaunchingWithOptions:`.
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFTwitterUtils initializeWithConsumerKey:@"YOUR CONSUMER KEY"
                            consumerSecret:@"YOUR CONSUMER SECRET"];
 ```
+
 ```swift
 PFTwitterUtils.initializeWithConsumerKey("YOUR CONSUMER KEY",  consumerSecret:"YOUR CONSUMER SECRET")
 ```
@@ -829,6 +888,7 @@ There are two main ways to use Twitter with your Parse users: (1) logging in as 
 `PFTwitterUtils` provides a way to allow your `PFUser`s to log in or sign up through Twitter. This is accomplished using the `logInWithBlock` or `logInWithTarget` messages:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
     if (!user) {
@@ -841,6 +901,7 @@ There are two main ways to use Twitter with your Parse users: (1) logging in as 
     }
 }];
 ```
+
 ```swift
 PFTwitterUtils.logInWithBlock {
   (user: PFUser?, error: NSError?) -> Void in
@@ -869,6 +930,7 @@ When this code is run, the following happens:
 If you want to associate an existing `PFUser` with a Twitter account, you can link it like so:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 if (![PFTwitterUtils isLinkedWithUser:user]) {
     [PFTwitterUtils linkUser:user block:^(BOOL succeeded, NSError *error) {
@@ -878,6 +940,7 @@ if (![PFTwitterUtils isLinkedWithUser:user]) {
     }];
 }
 ```
+
 ```swift
 if !PFTwitterUtils.isLinkedWithUser(user) {
   PFTwitterUtils.linkUser(user, {
@@ -895,6 +958,7 @@ The steps that happen when linking are very similar to log in. The difference is
 If you want to unlink Twitter from a user, simply do this:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFTwitterUtils unlinkUserInBackground:user block:^(BOOL succeeded, NSError *error) {
     if (!error && succeeded) {
@@ -902,6 +966,7 @@ If you want to unlink Twitter from a user, simply do this:
     }
 }];
 ```
+
 ```swift
 PFTwitterUtils.unlinkUserInBackground(user, {
   (succeeded: Bool?, error: NSError?) -> Void in
@@ -917,6 +982,7 @@ PFTwitterUtils.unlinkUserInBackground(user, {
 Our SDK provides a straightforward way to sign your API HTTP requests to the [Twitter REST API](https://dev.twitter.com/rest/public) when your app has a Twitter-linked `PFUser`.  To make a request through our API, you can use the `PF_Twitter` singleton provided by `PFTwitterUtils`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSURL *verify = [NSURL URLWithString:@"https://api.twitter.com/1.1/account/verify_credentials.json"];
 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:verify];
@@ -928,6 +994,7 @@ NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:r
 }];
 [task resume];
 ```
+
 ```swift
 let verify = NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
 var request = NSMutableURLRequest(URL: verify!)

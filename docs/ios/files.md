@@ -1,4 +1,6 @@
-# Files
+---
+title: Files
+---
 
 ## The PFFile
 
@@ -7,10 +9,12 @@
 Getting started with `PFFile` is easy. First, you'll need to have the data in `NSData` form and then create a `PFFile` with it. In this example, we'll just use a string:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSData *data = [@"Working at Parse is great!" dataUsingEncoding:NSUTF8StringEncoding];
 PFFile *file = [PFFile fileWithName:@"resume.txt" data:data];
 ```
+
 ```swift
 let str = "Working at Parse is great!"
 let data = str.dataUsingEncoding(NSUTF8StringEncoding)
@@ -26,9 +30,11 @@ Notice in this example that we give the file a name of `resume.txt`. There's two
 Next you'll want to save the file up to the cloud. As with `PFObject`, there are many variants of the `save` method you can use depending on what sort of callback and error handling suits you.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [file saveInBackground];
 ```
+
 ```swift
 file.saveInBackground()
 ```
@@ -37,12 +43,14 @@ file.saveInBackground()
 Finally, after the save completes, you can associate a `PFFile` onto a `PFObject` just like any other piece of data:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *jobApplication = [PFObject objectWithClassName:@"JobApplication"]
 jobApplication[@"applicantName"] = @"Joe Smith";
 jobApplication[@"applicantResumeFile"] = file;
 [jobApplication saveInBackground];
 ```
+
 ```swift
 var jobApplication = PFObject(className:"JobApplication")
 jobApplication["applicantName"] = "Joe Smith"
@@ -54,10 +62,12 @@ jobApplication.saveInBackground()
 Retrieving it back involves calling one of the `getData` variants on the `PFFile`. Here we retrieve the resume file off another JobApplication object:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFFile *applicantResume = anotherApplication[@"applicantResumeFile"];
 NSData *resumeData = [applicantResume getData];
 ```
+
 ```swift
 let applicantResume = annotherApplication["applicationResumeFile"] as PFFile
 let resumeData = applicantResume.getData()
@@ -71,6 +81,7 @@ Just like on `PFObject`, you will most likely want to use the background version
 You can easily store images by converting them to `NSData` and then using `PFFile`. Suppose you have a `UIImage` named `image` that you want to save as a `PFFile`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSData *imageData = UIImagePNGRepresentation(image);
 PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
@@ -80,6 +91,7 @@ userPhoto[@"imageName"] = @"My trip to Hawaii!";
 userPhoto[@"imageFile"] = imageFile;
 [userPhoto saveInBackground];
 ```
+
 ```swift
 let imageData = UIImagePNGRepresentation(image)
 let imageFile = PFFile(name:"image.png", data:imageData)
@@ -96,6 +108,7 @@ Your `PFFile` will be uploaded as part of the save operation on the `userPhoto` 
 Retrieving the image back involves calling one of the `getData` variants on the `PFFile`. Here we retrieve the image file off another `UserPhoto` named `anotherPhoto`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFFile *userImageFile = anotherPhoto[@"imageFile"];
 [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -104,6 +117,7 @@ PFFile *userImageFile = anotherPhoto[@"imageFile"];
     }
 }];
 ```
+
 ```swift
 let userImageFile = anotherPhoto["imageFile"] as PFFile
 userImageFile.getDataInBackgroundWithBlock {
@@ -123,6 +137,7 @@ userImageFile.getDataInBackgroundWithBlock {
 It's easy to get the progress of both uploads and downloads using `PFFile` using `saveInBackgroundWithBlock:progressBlock:` and `getDataInBackgroundWithBlock:progressBlock:` respectively. For example:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSData *data = [@"Working at Parse is great!" dataUsingEncoding:NSUTF8StringEncoding];
 PFFile *file = [PFFile fileWithName:@"resume.txt" data:data];
@@ -132,6 +147,7 @@ PFFile *file = [PFFile fileWithName:@"resume.txt" data:data];
   // Update your progress spinner here. percentDone will be between 0 and 100.
 }];
 ```
+
 ```swift
 let str = "Working at Parse is great!"
 let data = str.dataUsingEncoding(NSUTF8StringEncoding)

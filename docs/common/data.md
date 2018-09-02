@@ -1,5 +1,3 @@
-# Data
-
 We've designed the Parse SDKs so that you typically don't need to worry about how data is saved while using the client SDKs. Simply add data to the Parse `Object`, and it'll be saved correctly.
 
 Nevertheless, there are some cases where it's useful to be aware of how data is stored on the Parse platform.

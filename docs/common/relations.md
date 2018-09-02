@@ -1,5 +1,3 @@
-# Relations
-
 There are three kinds of relationships. One-to-one relationships enable one object to be associated with another object. One-to-many relationships enable one object to have many related objects. Finally, many-to-many relationships enable complex relationships among many objects.
 
 There are four ways to build relationships in Parse:

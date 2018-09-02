@@ -7,7 +7,7 @@
 
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
-
+const markdownInclude = require('./markdownInclude');
 // List of projects/orgs using your project for the users page.
 const users = [
   {
@@ -54,7 +54,7 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2E8555',
+    primaryColor: '#169CEE',
     secondaryColor: '#205C3B',
   },
 
@@ -77,11 +77,15 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: 'tomorrow',
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    "https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js",
+    "/js/code-blocks-buttons.js",
+    'https://buttons.github.io/buttons.js',
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -91,6 +95,9 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
+  markdownPlugins: [
+    markdownInclude,
+  ]
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

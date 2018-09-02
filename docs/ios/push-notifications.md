@@ -1,4 +1,7 @@
-# Push Notifications
+---
+title: Push Notifications
+sidebar_label: Push Notifications
+---
 
 Push Notifications are a great way to keep your users engaged and informed about your app. You can reach your entire user base quickly and effectively. This guide will help you through the setup process and the general usage of Parse to send push notifications.
 
@@ -17,12 +20,14 @@ In iOS or OS X, `Installation` objects are available through the `PFInstallation
 First, make your app register for remote notifications by adding the following in your `application:didFinishLaunchingWithOptions:` method (if you haven't already):
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound);
 UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes  categories:nil];
 [application registerUserNotificationSettings:settings];
 [application registerForRemoteNotifications];
 ```
+
 ```swift
 let userNotificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
 
@@ -35,6 +40,7 @@ application.registerForRemoteNotifications()
 We will then update our `PFInstallation` with the `deviceToken` once the device is registered for push notifications:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   // Store the deviceToken in the current Installation and save it to Parse
@@ -43,6 +49,7 @@ We will then update our `PFInstallation` with the `deviceToken` once the device 
   [currentInstallation saveInBackground];
 }
 ```
+
 ```swift
 func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
   // Store the deviceToken in the current Installation and save it to Parse
@@ -93,12 +100,14 @@ A channel is identified by a string that starts with a letter and consists of al
 
 Adding a channel subscription can be done using the `addUniqueObject:` method in `PFObject`. For example, in a baseball score app, we could do:
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // When users indicate they are Giants fans, we subscribe them to that channel.
 PFInstallation *currentInstallation = [PFInstallation currentInstallation];
 [currentInstallation addUniqueObject:@"Giants" forKey:@"channels"];
 [currentInstallation saveInBackground];
 ```
+
 ```swift
 // When users indicate they are Giants fans, we subscribe them to that channel.
 let currentInstallation = PFInstallation.currentInstallation()
@@ -114,12 +123,14 @@ Once subscribed to the "Giants" channel, your `Installation` object should have 
 Unsubscribing from a channel is just as easy:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // When users indicate they are no longer Giants fans, we unsubscribe them.
 PFInstallation *currentInstallation = [PFInstallation currentInstallation];
 [currentInstallation removeObject:@"Giants" forKey:@"channels"];
 [currentInstallation saveInBackground];
 ```
+
 ```swift
 // When users indicate they are Giants fans, we subscribe them to that channel.
 let currentInstallation = PFInstallation.currentInstallation()
@@ -131,9 +142,11 @@ currentInstallation.saveInBackground()
 The set of subscribed channels is cached in the `currentInstallation` object:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSArray *subscribedChannels = [PFInstallation currentInstallation].channels;
 ```
+
 ```swift
 let subscribedChannels = PFInstallation.currentInstallation().channels
 ```
@@ -146,6 +159,7 @@ If you plan on changing your channels from Cloud Code or the data browser, note 
 In the iOS/OS X SDK, the following code can be used to alert all subscribers of the "Giants" channel that their favorite team just scored. This will display a notification center alert to iOS/OS X users and a system tray notification to Android users.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Send a notification to all devices subscribed to the "Giants" channel.
 PFPush *push = [[PFPush alloc] init];
@@ -153,6 +167,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"The Giants just scored!"];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Send a notification to all devices subscribed to the "Giants" channel.
 let push = PFPush()
@@ -165,6 +180,7 @@ push.sendPushInBackground()
 If you want to target multiple channels with a single push notification, you can use an `NSArray` of channels.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSArray *channels = [NSArray arrayWithObjects:@"Giants", @"Mets", nil];
 PFPush *push = [[PFPush alloc] init];
@@ -174,6 +190,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"The Giants won against the Mets 2-3."];
 [push sendPushInBackground];
 ```
+
 ```swift
 let channels = [ "Giants", "Mets" ];
 let push = PFPush()
@@ -196,6 +213,7 @@ Since `PFInstallation` is a subclass of `PFObject`, you can save any data you wa
 Storing data on an `Installation` object is just as easy as storing [any other data](#objects) on Parse. In our Baseball app, we could allow users to get pushes about game results, scores and injury reports.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Store app language and version
 PFInstallation *installation = [PFInstallation currentInstallation];
@@ -204,6 +222,7 @@ PFInstallation *installation = [PFInstallation currentInstallation];
 [installation setObject:@YES forKey:@"injuryReports"];
 [installation saveInBackground];
 ```
+
 ```swift
 // Store app language and version
 let installation = PFInstallation.currentInstallation()
@@ -217,12 +236,14 @@ installation.saveInBackground()
 You can even create relationships between your `Installation` objects and other classes saved on Parse. To associate a PFInstallation with a particular user, for example, you can simply store the current user on the `PFInstallation`.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Associate the device with a user
 PFInstallation *installation = [PFInstallation currentInstallation];
 installation[@"user"] = [PFUser currentUser];
 [installation saveInBackground];
 ```
+
 ```swift
 // Associate the device with a user
 let installation = PFInstallation.currentInstallation()
@@ -236,6 +257,7 @@ installation.saveInBackground()
 Once you have your data stored on your `Installation` objects, you can use a `PFQuery` to target a subset of these devices. `Installation` queries work just like any other [Parse query](#queries), but we use the special static method `[PFInstallation query]` to create it. We set this query on our `PFPush` object, before sending the notification.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Create our Installation query
 PFQuery *pushQuery = [PFInstallation query];
@@ -247,6 +269,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"Willie Hayes injured by own pop fly."];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Create our Installation query
 let pushQuery = PFInstallation.query()
@@ -263,6 +286,7 @@ push.sendPushInBackground()
 We can even use channels with our query. To send a push to all subscribers of the "Giants" channel but filtered by those who want score update, we can do the following:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Create our Installation query
 PFQuery *pushQuery = [PFInstallation query];
@@ -275,6 +299,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"Giants scored against the A's! It's now 2-2."];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Create our Installation query
 let pushQuery = PFInstallation.query()
@@ -292,6 +317,7 @@ push.sendPushInBackground()
 If we store relationships to other objects in our `Installation` class, we can also use those in our query. For example, we could send a push notification to all users near a given location like this.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Find users near a given location
 PFQuery *userQuery = [PFUser query];
@@ -307,6 +333,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"Free hotdogs at the Parse concession stand!"];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Find users near a given location
 let userQuery = PFUser.query()
@@ -343,6 +370,7 @@ If you want to send more than just a message, you will need to use an `NSDiction
 For example, to send a notification that increases the current badge number by 1 and plays a custom sound, you can do the following:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSDictionary *data = @{
   @"alert" : @"The Mets scored! The game is now tied 1-1!",
@@ -354,6 +382,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setData:data];
 [push sendPushInBackground];
 ```
+
 ```swift
 let data = [
   "alert" : "The Mets scored! The game is now tied 1-1!",
@@ -370,6 +399,7 @@ push.sendPushInBackground()
 It is also possible to specify your own data in this dictionary. As we'll see in the [Receiving Notifications](#receiving-pushes) section, you will have access to this data only when the user opens your app via the notification. This can be useful for displaying a different view controller when a user opens certain notifications.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSDictionary *data = @{
   @"alert" : @"Ricky Vaughn was injured in last night's game!",
@@ -382,6 +412,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setData:data];
 [push sendPushInBackground];
 ```
+
 ```swift
 let data = [
   "alert" : "Ricky Vaughn was injured in last night's game!",
@@ -405,6 +436,7 @@ When a user's device is turned off or not connected to the internet, push notifi
 There are two methods provided by the `PFPush` class to allow setting an expiration date for your notification. The first is `expireAtDate:` which simply takes an `NSDate` specifying when Parse should stop trying to send the notification.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Create date object for tomorrow
 NSDateComponents *comps = [[NSDateComponents alloc] init];
@@ -422,6 +454,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"Season tickets on sale until August 8th!"];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Create date object for tomorrow
 let comps = NSDateComponents()
@@ -443,6 +476,7 @@ push.sendPushInBackground()
 There is however a caveat with this method. Since device clocks are not guaranteed to be accurate, you may end up with inaccurate results. For this reason, the `PFPush` class also provides the `expireAfterTimeInterval:` method which accepts an `NSTimeInterval` object. The notification will expire after the specified interval has elapsed.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Create time interval
 NSTimeInterval interval = 60*60*24*7; // 1 week
@@ -454,6 +488,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setMessage:@"Season tickets on sale until next week!"];
 [push sendPushInBackground];
 ```
+
 ```swift
 // Create time interval
 let interval = 60*60*24*7; // 1 week
@@ -475,6 +510,7 @@ If you build a cross platform app, it is possible you may only want to target de
 The following example would send a different notification to Android, iOS, and Windows users.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFQuery *query = [PFInstallation query];
 [query whereKey:@"channels" equalTo:@"suitcaseOwners"];
@@ -508,6 +544,7 @@ PFPush *wpPush = [[PFPush alloc] init];
 [wpPush setQuery:query];
 [wpPush sendPushInBackground];
 ```
+
 ```swift
 let query = PFInstallation.query()
 if let query = query {
@@ -556,6 +593,7 @@ As we saw in the [Customizing Your Notification](#sending-options) section, it i
 Due to the package size restrictions imposed by Apple, you need to be careful in managing the amount of extra data sent, since it will cut down on the maximum size of your message. For this reason, it is recommended that you keep your extra keys and values as small as possible.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSDictionary *data = @{
   @"alert" : @"James commented on your photo!",
@@ -566,6 +604,7 @@ PFPush *push = [[PFPush alloc] init];
 [push setData:data];
 [push sendPushInBackground];
 ```
+
 ```swift
 let data = [
   "alert" : "James commented on your photo!",
@@ -583,6 +622,7 @@ push.sendPushInBackground()
 When an app is opened from a notification, the data is made available in the `application:didFinishLaunchingWithOptions:` methods through the `launchOptions` dictionary.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   . . .
@@ -603,6 +643,7 @@ When an app is opened from a notification, the data is made available in the `ap
   }];
 }
 ```
+
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
   . . .
@@ -630,6 +671,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 If your app is already running when the notification is received, the data is made available in the `application:didReceiveRemoteNotification:fetchCompletionHandler:` method through the `userInfo` dictionary.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)application:(UIApplication *)application
   didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
@@ -652,6 +694,7 @@ If your app is already running when the notification is received, the data is ma
   }];
 }
 ```
+
 ```swift
 func application(application: UIApplication,  didReceiveRemoteNotification userInfo: [NSObject : AnyObject],  fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
   if let photoId: String = userInfo["p"] as? String {
@@ -685,6 +728,7 @@ This section assumes that you've already set up your application to [save the In
 First, add the following to your `application:didFinishLaunchingWithOptions:` method to collect information about when your application was launched, and what triggered it. The extra checks ensure that, even with iOS 7's more advanced background push features, a single logical app-open or push-open event is counted as such.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 if (application.applicationState != UIApplicationStateBackground) {
   // Track an app open here if we launch with a push, unless
@@ -699,6 +743,7 @@ if (application.applicationState != UIApplicationStateBackground) {
   }
 }
 ```
+
 ```swift
 if application.applicationState != UIApplicationState.Background {
   // Track an app open here if we launch with a push, unless
@@ -717,6 +762,7 @@ if application.applicationState != UIApplicationState.Background {
 Second, if your application is running or backgrounded, the `application:didReceiveRemoteNotification:` method handles the push payload instead. If the user acts on a push notification while the application is backgrounded, the application will be brought to the foreground. To track this transition as the application being "opened from a push notification," perform one more check before calling any tracking code:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
   if (application.applicationState == UIApplicationStateInactive) {
@@ -726,6 +772,7 @@ Second, if your application is running or backgrounded, the `application:didRece
   }
 }
 ```
+
 ```swift
 func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
     if application.applicationState == .Inactive  {
@@ -740,6 +787,7 @@ func application(application: UIApplication, didReceiveRemoteNotification userIn
 Finally, if using iOS 7 any of its new push features (including the new "content-available" push functionality), be sure to also implement the iOS 7-only handler:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   if (application.applicationState == UIApplicationStateInactive) {
@@ -747,6 +795,7 @@ Finally, if using iOS 7 any of its new push features (including the new "content
   }
 }
 ```
+
 ```swift
 func application(application: UIApplication,  didReceiveRemoteNotification userInfo: [NSObject : AnyObject],  fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
   if application.applicationState == .Inactive {
@@ -761,12 +810,14 @@ func application(application: UIApplication,  didReceiveRemoteNotification userI
 If your OS X application supports receiving push notifications and you'd like to track application opens related to pushes, add hooks to the `application:didReceiveRemoteNotification:` method (as in iOS) and the following to `applicationDidFinishLaunching:`
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   // ... other Parse setup logic here
   [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:[notification userInfo]];
 }
 ```
+
 ```swift
 func applicationDidFinishLaunching(notification: NSNotification) {
   // ... other Parse setup logic here
@@ -784,6 +835,7 @@ To track analytics around local notifications, note that `application:didReceive
 A good time to clear your app's badge is usually when your app is opened. Setting the badge property on the current installation will update the application icon badge number and ensure that the latest badge value  will be persisted to the server on the next save. All you need to do is:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   PFInstallation *currentInstallation = [PFInstallation currentInstallation];
@@ -794,6 +846,7 @@ A good time to clear your app's badge is usually when your app is opened. Settin
   // ...
 }
 ```
+
 ```swift
 func applicationDidBecomeActive(application: UIApplication) {
   let currentInstallation = PFInstallation.currentInstallation()
@@ -878,6 +931,7 @@ Having everything set up correctly in your Parse app won't help if your request 
 If the push notification campaign is not showing up on that list, the issue is quite simple to resolve. Go back to your push notification sending code and make sure to check for any error responses. If you're using any of the client SDKs, make sure to listen for and catch any errors that may be returned. For example, you could log errors like so:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
   if (success) {
@@ -889,6 +943,7 @@ If the push notification campaign is not showing up on that list, the issue is q
   }
 }];
 ```
+
 ```swift
 push.sendPushInBackgroundWithBlock {
     (success: Bool , error: NSError?) -> Void in

@@ -1,14 +1,18 @@
-# Handling Errors
+---
+title: Handling Errors
+---
 
 Parse has a few simple patterns for surfacing errors and handling them in your code.
 
 There are two types of errors you may encounter. The first is those dealing with logic errors in the way you're using the SDK. These types of errors result in an `NSException` being raised. For an example take a look at the following code:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFUser *user = [PFUser user];
 [user signUp];
 ```
+
 ```swift
 let user = PFUser()
 user.signUp
@@ -20,6 +24,7 @@ This will throw an `NSInternalInconsistencyException` because `signUp` was calle
 The second type of error is one that occurs when interacting with the Parse Cloud over the network. These errors are either related to problems connecting to the cloud or problems performing the requested operation. Let's take a look at another example:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)getMyNote {
     PFQuery *query = [PFQuery queryWithClassName:@"Note"];
@@ -28,6 +33,7 @@ The second type of error is one that occurs when interacting with the Parse Clou
                               selector:@selector(callbackForGet:error:)];
 }
 ```
+
 ```swift
 func getMyNote() -> Void {
     let query = PFQuery(className: "Note")
@@ -39,6 +45,7 @@ func getMyNote() -> Void {
 In the above code, we try to fetch an object with a non-existent `objectId`. The Parse Cloud will return an error with an error code set in `code` and message in the error's `userInfo`. Here's how to handle it properly in your callback:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)callbackForGet:(PFObject *)result error:(NSError *)error {
     if (result) {
@@ -52,6 +59,7 @@ In the above code, we try to fetch an object with a non-existent `objectId`. The
     }
 }
 ```
+
 ```swift
 func callbackForGet(result: PFObject?, error: NSError?) -> Void {
     if let result = result {
@@ -73,6 +81,7 @@ func callbackForGet(result: PFObject?, error: NSError?) -> Void {
 The query might also fail because the device couldn't connect to the Parse Cloud. Here's the same callback but with a bit of extra code to handle that scenario explicitly:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)callbackForGet:(PFObject *)result error:(NSError *)error {
     if (result) {
@@ -89,6 +98,7 @@ The query might also fail because the device couldn't connect to the Parse Cloud
     }
 }
 ```
+
 ```swift
 func callbackForGet(result: PFObject?, error: NSError?) -> Void {
     if let result = result {
@@ -113,6 +123,7 @@ func callbackForGet(result: PFObject?, error: NSError?) -> Void {
 When the callback expects a `NSNumber`, its `boolValue` tells you whether the operation succeeded or not. For example, this is how you might implement the callback for `PFObject`'s `saveInBackgroundWithTarget:selector:` method:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (void)callbackForSave:(NSNumber *)result error:(NSError *)error {
     if ([result boolValue]) {
@@ -126,6 +137,7 @@ When the callback expects a `NSNumber`, its `boolValue` tells you whether the op
     }
 }
 ```
+
 ```swift
 func callbackForSave(result: NSNumber?, error: NSError?) -> Void {
     if result?.boolValue == true {

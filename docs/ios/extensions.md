@@ -1,4 +1,6 @@
-# App Extensions
+---
+title: App Extensions
+---
 
 Local data sharing in Parse SDKs allows you do share persistent local data between your main application and extensions that it contains, including Keyboard, Share/Today/Photo/Action extensions and Document Providers.
 
@@ -27,6 +29,7 @@ To share your local data between app and extensions you need to do the following
 *   Add the following before you initialize Parse in your Main App:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Enable data sharing in main app.
 [Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.parse.parseuidemo"];
@@ -45,6 +48,7 @@ Parse.setApplicationId("<ParseAppId>", clientKey: "<ClientKey>")
 *   Add the following before you initialize Parse in your App Extension:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Enable data sharing in app extensions.
 [Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.parse.parseuidemo"

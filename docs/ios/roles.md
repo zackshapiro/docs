@@ -1,3 +1,8 @@
+---
+title: Roles
+sidebar_label: Roles
+---
+
 # Roles
 
 As your app grows in scope and user-base, you may find yourself needing more coarse-grained control over access to pieces of your data than user-linked ACLs can provide. To address this requirement, Parse supports a form of [Role-based Access Control](http://en.wikipedia.org/wiki/Role-based_access_control). Roles provide a logical way of grouping users with common access privileges to your Parse data. Roles are named objects that contain users and other roles.  Any permission granted to a role is implicitly granted to its users as well as to the users of any roles that it contains.
@@ -22,6 +27,7 @@ The `PFRole` uses the same security scheme (ACLs) as all other objects on Parse,
 To create a new `PFRole`, you would write:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // By specifying no write privileges for the ACL, we can ensure the role cannot be altered.
 PFACL *roleACL = [PFACL ACL];
@@ -29,6 +35,7 @@ PFACL *roleACL = [PFACL ACL];
 PFRole *role = [PFRole roleWithName:@"Administrator" acl:roleACL];
 [role saveInBackground];
 ```
+
 ```swift
 // By specifying no write privileges for the ACL, we can ensure the role cannot be altered.
 var roleACL = PFACL.ACL()
@@ -41,6 +48,7 @@ role.saveInBackground()
 You can add users and roles that should inherit your new role's permissions through the "users" and "roles" relations on `PFRole`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFRole *role = [PFRole roleWithName:roleName acl:roleACL];
 for (PFUser *user in usersToAddToRole) {
@@ -51,6 +59,7 @@ for (PFRole *childRole in rolesToAddToRole) {
 }
 [role saveInBackground];
 ```
+
 ```swift
 var role = PFRole.roleWithName(roleName, acl:roleACL)
 for user in usersToAddToRole {
@@ -73,6 +82,7 @@ Now that you have created a set of roles for use in your application, you can us
 Giving a role read or write permission to an object is straightforward.  You can either use the `PFRole`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFRole *moderators = /* Query for some PFRole */;
 PFObject *wallPost = [PFObject objectWithClassName:@"WallPost"];
@@ -81,6 +91,7 @@ PFACL *postACL = [PFACL ACL];
 wallPost.ACL = postACL;
 [wallPost saveInBackground];
 ```
+
 ```swift
 var moderators = /* Query for some PFRole */
 var wallPost = PFObject(className:"WallPost")
@@ -94,6 +105,7 @@ wallPost.saveInBackground()
 You can avoid querying for a role by specifying its name for the ACL:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *wallPost = [PFObject objectWithClassName:@"WallPost"];
 PFACL *postACL = [PFACL ACL];
@@ -101,6 +113,7 @@ PFACL *postACL = [PFACL ACL];
 wallPost.ACL = postACL;
 [wallPost saveInBackground];
 ```
+
 ```swift
 var wallPost = PFObject(className:"WallPost")
 var postACL = PFACL.ACL()
@@ -113,6 +126,7 @@ wallPost.saveInBackground()
 Role-based `PFACL`s can also be used when specifying default ACLs for your application, making it easy to protect your users' data while granting access to users with additional privileges.  For example, a moderated forum application might specify a default ACL like this:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFACL *defaultACL = [PFACL ACL];
 // Everybody can read objects created by this user
@@ -122,6 +136,7 @@ PFACL *defaultACL = [PFACL ACL];
 // And the user can read and modify its own objects
 [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 ```
+
 ```swift
 var defaultACL = PFACL.ACL()
 // Everybody can read objects created by this user
@@ -140,12 +155,14 @@ As described above, one role can contain another, establishing a parent-child re
 These types of relationships are commonly found in applications with user-managed content, such as forums. Some small subset of users are "Administrators", with the highest level of access to tweaking the application's settings, creating new forums, setting global messages, and so on. Another set of users are "Moderators", who are responsible for ensuring that the content created by users remains appropriate. Any user with Administrator privileges should also be granted the permissions of any Moderator. To establish this relationship, you would make your "Administrators" role a child role of "Moderators", like this:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFRole *administrators = /* Your "Administrators" role */;
 PFRole *moderators = /* Your "Moderators" role */;
 [moderators.roles addObject:administrators];
 [moderators saveInBackground];
 ```
+
 ```swift
 var administrators = /* Your "Administrators" role */
 var moderators = /* Your "Moderators" role */

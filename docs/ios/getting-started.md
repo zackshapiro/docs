@@ -1,10 +1,7 @@
 ---
-id: getting-started
 title: Getting Started
 sidebar_label: Getting Started
 ---
-
-# Getting Started
 
 To use parse, head on over to the [releases][releases] page, and download the latest build.
 And you're off! Take a look at the public [documentation][docs] and start building.

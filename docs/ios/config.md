@@ -1,6 +1,6 @@
-# Config
-
-## Parse Config
+---
+title: Parse Config
+---
 
 `PFConfig` is a way to configure your applications remotely by storing a single configuration object on Parse. It enables you to add things like feature gating or a simple "Message of the Day". To start using `PFConfig` you need to add a few key/value pairs (parameters) to your app on the Parse Config Dashboard.
 
@@ -9,12 +9,14 @@
 After that you will be able to fetch the `PFConfig` on the client, like in this example:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
   NSNumber *number = config[@"winningNumber"];
   NSLog(@"Yay! The number is %@!", [number stringValue]);
 }];
 ```
+
 ```swift
 PFConfig.getConfigInBackgroundWithBlock {
   (config: PFConfig?, error: NSError?) -> Void in
@@ -29,6 +31,7 @@ PFConfig.getConfigInBackgroundWithBlock {
 `PFConfig` is built to be as robust and reliable as possible, even in the face of poor internet connections. Caching is used by default to ensure that the latest successfully fetched config is always available. In the below example we use `getConfigInBackgroundWithBlock` to retrieve the latest version of config from the server, and if the fetch fails we can simply fall back to the version that we successfully fetched before via `currentConfig`.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSLog(@"Getting the latest config...");
 [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
@@ -47,6 +50,7 @@ NSLog(@"Getting the latest config...");
   NSLog(@"Welcome Messsage = %@", welcomeMessage);
 }];
 ```
+
 ```swift
 print("Getting the latest config...");
 PFConfig.getConfigInBackgroundWithBlock {
@@ -76,6 +80,7 @@ Every `PFConfig` instance that you get is always immutable. When you retrieve a 
 It might be troublesome to retrieve the config from the server every time you want to use it. You can avoid this by simply using the cached `currentConfig` object and fetching the config only once in a while.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Fetches the config at most once every 12 hours per app runtime
 const NSTimeInterval configRefreshInterval = 12.0 * 60.0 * 60.0;
@@ -86,6 +91,7 @@ if (lastFetchedDate == nil ||
   lastFetchedDate = [NSDate date];
 }
 ```
+
 ```swift
 // Fetches the config at most once every 12 hours per app runtime
 let configRefreshInterval: NSTimeInterval  = 12.0 * 60.0 * 60.0

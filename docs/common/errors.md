@@ -1,5 +1,3 @@
-# Error Codes
-
 The following is a list of all the error codes that can be returned by the Parse API. You may also refer to [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) for a list of http error codes. Make sure to check the error message for more details.
 
 ## API Issues

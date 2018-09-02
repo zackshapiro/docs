@@ -1,4 +1,6 @@
-# Analytics
+---
+title: Analytics
+---
 
 Parse provides a number of hooks for you to get a glimpse into the ticking heart of your app. We understand that it's important to understand what your app is doing, how frequently, and when.
 
@@ -11,6 +13,7 @@ Without having to implement any client-side logic, you can view real-time graphs
 Our initial analytics hook allows you to track your application being launched. By adding the following line to `applicationDidFinishLaunching:`, you'll begin to collect data on when and how often your application is opened.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // in iOS
 [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
@@ -18,6 +21,7 @@ Our initial analytics hook allows you to track your application being launched. 
 // in OS X
 [PFAnalytics trackAppOpenedWithLaunchOptions:nil];
 ```
+
 ```swift
 // in iOS
 PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
@@ -25,6 +29,7 @@ PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 // in OS X
 PFAnalytics.trackAppOpenedWithLaunchOptions(nil)
 ```
+
 </div>
 
 ## Custom Analytics
@@ -34,6 +39,7 @@ PFAnalytics.trackAppOpenedWithLaunchOptions(nil)
 Say your app offers search functionality for apartment listings, and you want to track how often the feature is used, with some additional metadata.
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSDictionary *dimensions = @{
   // Define ranges to bucket data points into meaningful segments
@@ -46,6 +52,7 @@ NSDictionary *dimensions = @{
 // Send the dimensions to Parse along with the 'search' event
 [PFAnalytics trackEvent:@"search" dimensions:dimensions];
 ```
+
 ```swift
 let dimensions = [
   // Define ranges to bucket data points into meaningful segments
@@ -63,10 +70,12 @@ PFAnalytics.trackEvent("search", dimensions:dimensions)
 `PFAnalytics` can even be used as a lightweight error tracker — simply invoke the following and you'll have access to an overview of the rate and frequency of errors, broken down by error code, in your application:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSString *codeString = [NSString stringWithFormat:@"%d", [error code]];
 [PFAnalytics trackEvent:@"error" dimensions:@{ @"code": codeString }];
 ```
+
 ```swift
 let codeString = NSString(format:"%@", error.code)
 PFAnalytics.trackEvent("error", dimensions:["code": codeString])

@@ -1,4 +1,7 @@
-# In-App Purchases
+---
+title: In App Purchases
+sidebar_label: In App Purchases
+---
 
 Parse provides a set of APIs for working with in-app purchases. Parse makes it easier to work with `StoreKit` and facilitates delivery of downloadable content with receipt verification in the cloud. Receipt verification is a mechanism that allows you to restrict downloads to only those users that have paid accordingly.
 
@@ -18,6 +21,7 @@ Once the setup above is complete, you can begin working with in-app purchases.
 
 On the main thread, register the handlers for the products:
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Use the product identifier from iTunes to register a handler.
 [PFPurchase addObserverForProduct:@"Pro" block:^(SKPaymentTransaction *transaction) {
@@ -25,6 +29,7 @@ On the main thread, register the handlers for the products:
     isPro = YES;
 }];
 ```
+
 ```swift
 // Use the product identifier from iTunes to register a handler.
 PFPurchase.addObserverForProduct("Pro") {
@@ -37,6 +42,7 @@ PFPurchase.addObserverForProduct("Pro") {
 Note that this does not make the purchase, but simply registers a block to be run if a purchase is made later. This registration must be done on the main thread, preferably as soon as the app is launched, i.e. in `application:didFinishLaunchingWithOptions:`. If there are multiple products, we recommend registering all product handlers in the same method, such as `application:didFinishLaunchingWithOptions`:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ...
@@ -48,6 +54,7 @@ Note that this does not make the purchase, but simply registers a block to be ru
     }];
 }
 ```
+
 ```swift
 PFPurchase.addObserverForProduct("Pro") {
     (transaction: SKPaymentTransaction?) -> Void in
@@ -62,6 +69,7 @@ PFPurchase.addObserverForProduct("VIP") {
 
 To initiate a purchase, use the `+[PFPurchase buyProduct:block:]` method:
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFPurchase buyProduct:@"Pro" block:^(NSError *error) {
     if (!error) {
@@ -69,6 +77,7 @@ To initiate a purchase, use the `+[PFPurchase buyProduct:block:]` method:
     }
 }];
 ```
+
 ```swift
 PFPurchase.buyProduct("Pro") {
     (error: NSError?) -> Void in
@@ -95,6 +104,7 @@ Many IAP products such as books and movies have associated content files that sh
  6.  `download`: the downloadable content file. Note that the file uploaded in `download` is not publicly accessible, and only becomes available for download when a purchase is made. `downloadName` is the name of the file on disk once downloaded. You don't need to fill this in.
 3.  Next, you need to register the product handler:
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFPurchase addObserverForProduct:@"Pro" block:^(SKPaymentTransaction *transaction) {
     [PFPurchase downloadAssetForTransaction:transaction completion:^(NSString *filePath, NSError *error) {
@@ -104,6 +114,7 @@ Many IAP products such as books and movies have associated content files that sh
     }];
 }];
 ```
+
 ```swift
 PFPurchase.addObserverForProduct("Pro") {
     (transaction: SKPaymentTransaction?) -> Void in
@@ -122,6 +133,7 @@ Note that this does not make the purchase, but simply registers a block to be ru
 
 To make the purchase:
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFPurchase buyProduct:@"Pro" block:^(NSError *error) {
     if (!error) {
@@ -129,6 +141,7 @@ To make the purchase:
     }
 }];
 ```
+
 ```swift
 PFPurchase.buyProduct("Pro") {(error: NSError?) -> Void in
     if error == nil {
@@ -147,11 +160,13 @@ You can query the product objects created in the data browser using `PFProduct`.
 For example, here's a simple query to get a product:
 
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFQuery *productQuery = [PFProduct query];
 PFProduct *product = [[productQuery findObjects] lastObject];
 NSLog(@"%@, %@", product.productIdentifier, product.title);
 ```
+
 ```swift
 let productQuery = PFProduct.query()
 if let product = productQuery.findObjects.lastObject as? PFProduct {}

@@ -5,7 +5,7 @@
       "ios/objects",
       "ios/queries",
       "ios/users",
-      "common/sessions",
+      "ios/sessions",
       "ios/roles",
       "ios/files",
       "ios/geopoints",
@@ -16,14 +16,16 @@
       "ios/analytics",
       "ios/user-interface",
       "ios/in-app-purchases",
-      "common/data",
-      "common/relations",
+      "ios/data",
+      "ios/relations",
       "ios/handling-errors",
-      "common/security",
-      "common/performance",
-      "common/errors"],
+      "ios/security",
+      "ios/performance",
+      "ios/errors"]
+  },
+  "rest-guide": {
     "REST API Guide": [
-      "common/server-customize",
+      "rest/server-customize",
 		  "rest/getting-started",
 			"rest/quick-reference",
 			"rest/objects",
@@ -33,15 +35,15 @@
 			"rest/roles",
 			"rest/files",
 			"rest/geopoints",
-			"common/data",
+			"rest/data",
 			"rest/push-notifications",
 			"rest/config",
 			"rest/analytics",
 			"rest/cloud-code",
 			"rest/schemas",
 			"rest/hooks",
-			"common/security",
-			"common/errors"
+			"rest/security",
+			"rest/errors"
     ]
   },
   "docs-other": {
