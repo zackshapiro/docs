@@ -1,5 +1,5 @@
 {
-  "docs": {
+  "ios-guide": {
     "iOS Guide": [
       "ios/getting-started",
       "ios/objects",
@@ -22,6 +22,30 @@
       "ios/security",
       "ios/performance",
       "ios/errors"]
+  },
+  "js-guide": {
+    "Javascript Guide": [
+			"js/getting-started",
+			"js/objects",
+			"js/queries",
+			"js/live-queries",
+			"js/users",
+			"js/sessions",
+			"js/roles",
+			"js/files",
+			"js/promises",
+			"js/geopoints",
+			"js/push-notifications",
+			"js/config",
+			"js/analytics",
+			"js/data",
+			"js/relations",
+			"js/schema",
+			"js/handling-errors",
+			"js/security",
+			"js/performance",
+      "js/errors"
+    ]
   },
   "rest-guide": {
     "REST API Guide": [

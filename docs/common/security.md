@@ -72,10 +72,12 @@ Once you have a User, you can start using ACLs. Remember: Users can be created t
 
 {% if page.language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFUser *user = [PFUser currentUser];
 user.ACL = [PFACL ACLWithUser:user];
 ```
+
 ```swift
 if let user = PFUser.currentUser() {
     user.ACL = PFACL(user: user)
@@ -130,9 +132,11 @@ To make it super easy to create user-private ACLs for every object, we have a wa
 
 {% if page.language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 [PFACL setDefaultACL:[PFACL ACL] withAccessForCurrentUser:YES];
 ```
+
 ```swift
 PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
 ```
@@ -179,6 +183,7 @@ If you want the user to have some data that is public and some that is private, 
 
 {% if page.language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *privateData = [PFObject objectWithClassName:@"PrivateUserData"];
 privateData.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
@@ -186,6 +191,7 @@ privateData.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
 
 [[PFUser currentUser] setObject:privateData forKey:@"privateData"];
 ```
+
 ```swift
 if let currentUser = PFUser.currentUser() {
     let privateData = PFObject(className: "PrivateUserData")
@@ -253,11 +259,13 @@ Of course, you can set different read and write permissions on an object. For ex
 
 {% if page.language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFACL *acl = [PFACL ACL];
 [acl setPublicReadAccess:true];
 [acl setWriteAccess:true forUser:[PFUser currentUser]];
 ```
+
 ```swift
 let acl = PFACL()
 acl.setPublicReadAccess(true)
@@ -316,12 +324,14 @@ Sometimes it's inconvenient to manage permissions on a per-user basis, and you w
 
 {% if page.language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // Assuming you've already created a role called "admins"...
 PFACL *acl = [PFACL ACL];
 [acl setPublicReadAccess:true];
 [acl setWriteAccess:true forRoleWithName:@"admins"];
 ```
+
 ```swift
 let acl = PFACL()
 acl.setPublicReadAccess(true)
