@@ -1,4 +1,6 @@
-# Keys
+---
+title: Keys
+---
 
 Parse Server does not require the use of client-side keys. This includes the client key, JavaScript key, .NET key, and REST API key. The Application ID is sufficient to secure your app.
 

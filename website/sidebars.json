@@ -93,6 +93,26 @@
 			"rest/errors"
     ]
   },
+  "parse-server": {
+    "Parse Server Guide": [
+      "parse-server/getting-started",
+			"parse-server/database",
+			"parse-server/usage",
+			"parse-server/keys",
+			"parse-server/using-parse-sdks",
+			"parse-server/deploying",
+			"parse-server/push-notifications",
+			"parse-server/push-notifications-clients",
+			"parse-server/class-level-permissions",
+			"parse-server/file-adapters",
+			"parse-server/cache-adapters",
+			"parse-server/live-query",
+			"parse-server/third-party-auth",
+			"parse-server/compatibility",
+			"parse-server/MongoRocks",
+			"parse-server/development"
+    ]
+  },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
   }

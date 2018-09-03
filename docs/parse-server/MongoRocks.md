@@ -1,4 +1,6 @@
-# Using MongoDB + RocksDB
+---
+title: Using MongoDB + RocksDB
+---
 
 ## MongoRocks: What and Why?
 

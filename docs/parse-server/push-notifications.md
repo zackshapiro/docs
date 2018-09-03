@@ -1,4 +1,6 @@
-# Push Notifications
+---
+title: Push Notifications
+---
 
 Parse Server provides basic push notification functionality for iOS, macOS, tvOS and Android. With this feature, you can:
 

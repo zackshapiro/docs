@@ -1,4 +1,6 @@
-# Class Level Permissions
+---
+title: Class Level Permissions
+---
 
 Class level permissions are a security feature from that allows one to restrict access on a broader way than the [ACL based permissions]({{ site.baseUrl }}/rest/guide/#security).
 

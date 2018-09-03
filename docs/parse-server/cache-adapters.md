@@ -1,4 +1,6 @@
-# Configuring Cache Adapters
+---
+title: Configuring Cache Adapters
+---
 
 By default, parse-server provides an internal cache layer to speed up schema verifications, user, roles and sessions lookup.
 

@@ -1,4 +1,6 @@
-# Database
+---
+title: Database
+---
 
 Parse Server let you use [MongoDB](https://www.mongodb.org/) or [Postgres](https://www.postgresql.org/) as a database.
 

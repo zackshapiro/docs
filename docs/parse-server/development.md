@@ -1,4 +1,6 @@
-# Development Guide
+---
+title: Development Guide
+---
 
 ## Running Parse Server for development
 

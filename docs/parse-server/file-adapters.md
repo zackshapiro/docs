@@ -1,4 +1,6 @@
-# Configuring File Adapters
+---
+title: Configuring File Adapters
+---
 
 Parse Server allows developers to choose from several options when hosting files:
 

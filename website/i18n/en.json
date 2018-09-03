@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "The Complete Application Stack",
     "docs": {
       "android/analytics": {
         "title": "Analytics"
@@ -324,16 +324,16 @@
         "title": "js/users"
       },
       "parse-server/cache-adapters": {
-        "title": "parse-server/cache-adapters"
+        "title": "Configuring Cache Adapters"
       },
       "parse-server/class-level-permissions": {
-        "title": "parse-server/class-level-permissions"
+        "title": "Class Level Permissions"
       },
       "parse-server/compatibility": {
-        "title": "parse-server/compatibility"
+        "title": "Compatibility with parse.com"
       },
       "parse-server/database": {
-        "title": "parse-server/database"
+        "title": "Database"
       },
       "parse-server/deploying-heroku-mlab": {
         "title": "parse-server/deploying-heroku-mlab"
@@ -342,52 +342,52 @@
         "title": "parse-server/deploying-hyperdev-mlab"
       },
       "parse-server/deploying": {
-        "title": "parse-server/deploying"
+        "title": "Deploying Parse Server"
       },
       "parse-server/development": {
-        "title": "parse-server/development"
+        "title": "Development Guide"
       },
       "parse-server/file-adapters": {
-        "title": "parse-server/file-adapters"
+        "title": "Configuring File Adapters"
       },
       "parse-server/Files-Migration": {
         "title": "parse-server/Files-Migration"
       },
       "parse-server/getting-started": {
-        "title": "parse-server/getting-started"
+        "title": "Getting Started"
       },
       "parse-server/keys": {
-        "title": "parse-server/keys"
+        "title": "Keys"
       },
       "parse-server/live-query": {
-        "title": "parse-server/live-query"
+        "title": "Live Queries"
       },
       "parse-server/MongoRocks": {
-        "title": "parse-server/MongoRocks"
+        "title": "Using MongoDB + RocksDB"
       },
       "parse-server/ParsePlatform": {
-        "title": "parse-server/ParsePlatform"
+        "title": "Using MongoDB + RocksDB"
       },
       "parse-server/push-notifications-android": {
         "title": "parse-server/push-notifications-android"
       },
       "parse-server/push-notifications-clients": {
-        "title": "parse-server/push-notifications-clients"
+        "title": "Configuring your clients to receive Push Notifications"
       },
       "parse-server/push-notifications-ios": {
         "title": "parse-server/push-notifications-ios"
       },
       "parse-server/push-notifications": {
-        "title": "parse-server/push-notifications"
+        "title": "Push Notifications"
       },
       "parse-server/third-party-auth": {
-        "title": "parse-server/third-party-auth"
+        "title": "OAuth and 3rd Party Authentication"
       },
       "parse-server/usage": {
-        "title": "parse-server/usage"
+        "title": "Usage"
       },
       "parse-server/using-parse-sdks": {
-        "title": "parse-server/using-parse-sdks"
+        "title": "Using Parse SDKs with Parse Server"
       },
       "php/analytics": {
         "title": "php/analytics"
@@ -543,6 +543,7 @@
       "Android Guide": "Android Guide",
       "Javascript Guide": "Javascript Guide",
       "REST API Guide": "REST API Guide",
+      "Parse Server Guide": "Parse Server Guide",
       "First Category": "First Category"
     }
   },
