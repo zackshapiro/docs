@@ -4,614 +4,221 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "The Complete Application Stack",
-    "docs": {
-      "android/analytics": {
-        "title": "Analytics"
-      },
-      "android/config": {
-        "title": "Config"
-      },
-      "android/data": {
-        "title": "Data"
-      },
-      "android/errors": {
-        "title": "Error Codes"
-      },
-      "android/files": {
-        "title": "Files"
-      },
-      "android/geopoints": {
-        "title": "GeoPoints"
-      },
-      "android/getting-started": {
-        "title": "Getting Started"
-      },
-      "android/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "android/local-datastore": {
-        "title": "Local Datastore"
-      },
-      "android/objects": {
-        "title": "Objects"
-      },
-      "android/performance": {
-        "title": "Performance"
-      },
-      "android/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "android/queries": {
-        "title": "Queries"
-      },
-      "android/relations": {
-        "title": "Relations"
-      },
-      "android/roles": {
-        "title": "Roles"
-      },
-      "android/security": {
-        "title": "Security"
-      },
-      "android/sessions": {
-        "title": "Sessions"
-      },
-      "android/user-interface": {
-        "title": "User Interface"
-      },
-      "android/users": {
-        "title": "Users"
-      },
-      "arduino/analytics": {
-        "title": "Analytics"
-      },
-      "arduino/cloud-code": {
-        "title": "Cloud Functions"
-      },
-      "arduino/errors": {
-        "title": "Error Codes"
-      },
-      "arduino/getting-started": {
-        "title": "Getting Started"
-      },
-      "arduino/objects": {
-        "title": "Objects"
-      },
-      "arduino/other": {
-        "title": "REST API"
-      },
-      "arduino/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "arduino/queries": {
-        "title": "Queries"
-      },
-      "arduino/requests": {
-        "title": "Requests"
-      },
-      "arduino/sample-app": {
-        "title": "Sample App"
-      },
-      "arduino/users": {
-        "title": "Users and Sessions"
-      },
-      "cloudcode/cloud-code-advanced": {
-        "title": "Networking"
-      },
-      "cloudcode/cloud-code": {
-        "title": "Cloud Functions"
-      },
-      "cloudcode/getting-started": {
-        "title": "Getting Started"
-      },
-      "common/data": {
-        "title": "common/data"
-      },
-      "common/errors": {
-        "title": "common/errors"
-      },
-      "common/performance": {
-        "title": "common/performance"
-      },
-      "common/relations": {
-        "title": "common/relations"
-      },
-      "common/security": {
-        "title": "common/security"
-      },
-      "common/sessions": {
-        "title": "common/sessions"
-      },
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
-      "doc2": {
-        "title": "document number 2"
-      },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "dotnet/analytics": {
-        "title": "Analytics"
-      },
-      "dotnet/config": {
-        "title": "Config"
-      },
-      "dotnet/data": {
-        "title": "Data"
-      },
-      "dotnet/errors": {
-        "title": "Error Codes"
-      },
-      "dotnet/files": {
-        "title": "Files"
-      },
-      "dotnet/geopoints": {
-        "title": "GeoPoints"
-      },
-      "dotnet/getting-started": {
-        "title": "Getting Started"
-      },
-      "dotnet/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "dotnet/objects": {
-        "title": "Objects"
-      },
-      "dotnet/performance": {
-        "title": "Performance"
-      },
-      "dotnet/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "dotnet/queries": {
-        "title": "Queries"
-      },
-      "dotnet/relations": {
-        "title": "Relations"
-      },
-      "dotnet/roles": {
-        "title": "Roles"
-      },
-      "dotnet/security": {
-        "title": "Security"
-      },
-      "dotnet/sessions": {
-        "title": "Sessions"
-      },
-      "dotnet/users": {
-        "title": "Users"
-      },
-      "embedded_c/cloud-code": {
-        "title": "Cloud Functions"
-      },
-      "embedded_c/errors": {
-        "title": "Error Codes"
-      },
-      "embedded_c/getting-started": {
-        "title": "Getting Started"
-      },
-      "embedded_c/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "embedded_c/objects": {
-        "title": "Objects"
-      },
-      "embedded_c/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "embedded_c/requests": {
-        "title": "Requests"
-      },
-      "embedded_c/sample-app": {
-        "title": "Sample App"
-      },
-      "embedded_c/users": {
-        "title": "Users & Sessions"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
-      },
-      "ios/analytics": {
-        "title": "Analytics"
-      },
-      "ios/config": {
-        "title": "Parse Config"
-      },
-      "ios/data": {
-        "title": "Data"
-      },
-      "ios/errors": {
-        "title": "Error Codes"
-      },
-      "ios/extensions": {
-        "title": "App Extensions"
-      },
-      "ios/files": {
-        "title": "Files"
-      },
-      "ios/geopoints": {
-        "title": "GeoPoints"
-      },
-      "ios/getting-started": {
-        "title": "Getting Started",
-        "sidebar_label": "Getting Started"
-      },
-      "ios/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "ios/in-app-purchases": {
-        "title": "In App Purchases",
-        "sidebar_label": "In App Purchases"
-      },
-      "ios/local-datastore": {
-        "title": "Local Datastore"
-      },
-      "ios/objects": {
-        "title": "Objects",
-        "sidebar_label": "Objects"
-      },
-      "ios/performance": {
-        "title": "Performance"
-      },
-      "ios/push-notifications": {
-        "title": "Push Notifications",
-        "sidebar_label": "Push Notifications"
-      },
-      "ios/queries": {
-        "title": "Queries",
-        "sidebar_label": "Queries"
-      },
-      "ios/relations": {
-        "title": "Relations"
-      },
-      "ios/roles": {
-        "title": "Roles",
-        "sidebar_label": "Roles"
-      },
-      "ios/security": {
-        "title": "Security"
-      },
-      "ios/sessions": {
-        "title": "Sessions"
-      },
-      "ios/user-interface": {
-        "title": "User Interface",
-        "sidebar_label": "User Interface"
-      },
-      "ios/users": {
-        "title": "Users",
-        "sidebar_label": "Users"
-      },
-      "js/analytics": {
-        "title": "Analytics"
-      },
-      "js/config": {
-        "title": "Config"
-      },
-      "js/data": {
-        "title": "Data"
-      },
-      "js/errors": {
-        "title": "Error Codes"
-      },
-      "js/files": {
-        "title": "Files"
-      },
-      "js/geopoints": {
-        "title": "GeoPoints"
-      },
-      "js/getting-started": {
-        "title": "Getting Started"
-      },
-      "js/handling-errors": {
-        "title": "Error Handling"
-      },
-      "js/live-queries": {
-        "title": "Live Queries"
-      },
-      "js/objects": {
-        "title": "Objects"
-      },
-      "js/performance": {
-        "title": "Performance"
-      },
-      "js/promises": {
-        "title": "Promises"
-      },
-      "js/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "js/queries": {
-        "title": "Queries"
-      },
-      "js/relations": {
-        "title": "Relations"
-      },
-      "js/roles": {
-        "title": "Roles"
-      },
-      "js/schema": {
-        "title": "Schema"
-      },
-      "js/security": {
-        "title": "Security"
-      },
-      "js/sessions": {
-        "title": "Sessions"
-      },
-      "js/users": {
-        "title": "Users"
-      },
-      "parse-server/cache-adapters": {
-        "title": "Configuring Cache Adapters"
-      },
-      "parse-server/class-level-permissions": {
-        "title": "Class Level Permissions"
-      },
-      "parse-server/compatibility": {
-        "title": "Compatibility with parse.com"
-      },
-      "parse-server/database": {
-        "title": "Database"
-      },
-      "parse-server/deploying-heroku-mlab": {
-        "title": "parse-server/deploying-heroku-mlab"
-      },
-      "parse-server/deploying-hyperdev-mlab": {
-        "title": "parse-server/deploying-hyperdev-mlab"
-      },
-      "parse-server/deploying": {
-        "title": "Deploying Parse Server"
-      },
-      "parse-server/development": {
-        "title": "Development Guide"
-      },
-      "parse-server/file-adapters": {
-        "title": "Configuring File Adapters"
-      },
-      "parse-server/Files-Migration": {
-        "title": "parse-server/Files-Migration"
-      },
-      "parse-server/getting-started": {
-        "title": "Getting Started"
-      },
-      "parse-server/keys": {
-        "title": "Keys"
-      },
-      "parse-server/live-query": {
-        "title": "Live Queries"
-      },
-      "parse-server/MongoRocks": {
-        "title": "Using MongoDB + RocksDB"
-      },
-      "parse-server/ParsePlatform": {
-        "title": "Using MongoDB + RocksDB"
-      },
-      "parse-server/push-notifications-android": {
-        "title": "parse-server/push-notifications-android"
-      },
-      "parse-server/push-notifications-clients": {
-        "title": "Configuring your clients to receive Push Notifications"
-      },
-      "parse-server/push-notifications-ios": {
-        "title": "parse-server/push-notifications-ios"
-      },
-      "parse-server/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "parse-server/third-party-auth": {
-        "title": "OAuth and 3rd Party Authentication"
-      },
-      "parse-server/usage": {
-        "title": "Usage"
-      },
-      "parse-server/using-parse-sdks": {
-        "title": "Using Parse SDKs with Parse Server"
-      },
-      "php/analytics": {
-        "title": "Analytics"
-      },
-      "php/cloud": {
-        "title": "Cloud Code"
-      },
-      "php/config": {
-        "title": "Config"
-      },
-      "php/data": {
-        "title": "Data"
-      },
-      "php/errors": {
-        "title": "Error Codes"
-      },
-      "php/files": {
-        "title": "Files"
-      },
-      "php/geopoints": {
-        "title": "GeoPoints"
-      },
-      "php/getting-started": {
-        "title": "Getting Started"
-      },
-      "php/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "php/installation": {
-        "title": "Installation"
-      },
-      "php/logs": {
-        "title": "Logs"
-      },
-      "php/objects": {
-        "title": "Objects"
-      },
-      "php/performance": {
-        "title": "Performance"
-      },
-      "php/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "php/queries": {
-        "title": "Queries"
-      },
-      "php/relations": {
-        "title": "Relations"
-      },
-      "php/roles": {
-        "title": "Roles"
-      },
-      "php/schema": {
-        "title": "Schema"
-      },
-      "php/security": {
-        "title": "Security"
-      },
-      "php/server-info": {
-        "title": "Server Info"
-      },
-      "php/sessions": {
-        "title": "Sessions"
-      },
-      "php/setup": {
-        "title": "Setup"
-      },
-      "php/users": {
-        "title": "Users"
-      },
-      "rest/analytics": {
-        "title": "Analytics"
-      },
-      "rest/cloud-code": {
-        "title": "Cloud Code"
-      },
-      "rest/config": {
-        "title": "Config"
-      },
-      "rest/data": {
-        "title": "Data"
-      },
-      "rest/errors": {
-        "title": "Error Codes"
-      },
-      "rest/files": {
-        "title": "Files"
-      },
-      "rest/geopoints": {
-        "title": "GeoPoints"
-      },
-      "rest/getting-started": {
-        "title": "Getting Started"
-      },
-      "rest/hooks": {
-        "title": "Hooks"
-      },
-      "rest/objects": {
-        "title": "Objects"
-      },
-      "rest/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "rest/queries": {
-        "title": "Queries"
-      },
-      "rest/quick-reference": {
-        "title": "Quick Reference"
-      },
-      "rest/roles": {
-        "title": "Roles"
-      },
-      "rest/schemas": {
-        "title": "Schema"
-      },
-      "rest/security": {
-        "title": "Security"
-      },
-      "rest/server-customize": {
-        "title": "Your Configuration"
-      },
-      "rest/sessions": {
-        "title": "Sessions"
-      },
-      "rest/users": {
-        "title": "Users"
-      },
-      "unity/analytics": {
-        "title": "Analytics"
-      },
-      "unity/config": {
-        "title": "Config"
-      },
-      "unity/data": {
-        "title": "Data"
-      },
-      "unity/errors": {
-        "title": "Error Codes"
-      },
-      "unity/files": {
-        "title": "Files"
-      },
-      "unity/geopoints": {
-        "title": "GeoPoints"
-      },
-      "unity/getting-started": {
-        "title": "Getting Started"
-      },
-      "unity/handling-errors": {
-        "title": "Handling Errors"
-      },
-      "unity/objects": {
-        "title": "Objects"
-      },
-      "unity/performance": {
-        "title": "Performance"
-      },
-      "unity/push-notifications": {
-        "title": "Push Notifications"
-      },
-      "unity/queries": {
-        "title": "Queries"
-      },
-      "unity/relations": {
-        "title": "Relations"
-      },
-      "unity/roles": {
-        "title": "Roles"
-      },
-      "unity/security": {
-        "title": "Security"
-      },
-      "unity/sessions": {
-        "title": "Sessions"
-      },
-      "unity/users": {
-        "title": "Users"
-      }
-    },
-    "links": {
-      "iOS Guide": "iOS Guide",
-      "JS Guide": "JS Guide",
-      "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
-    },
-    "categories": {
-      "iOS Guide": "iOS Guide",
-      "Android Guide": "Android Guide",
-      "Javascript Guide": "Javascript Guide",
-      "REST API Guide": "REST API Guide",
-      "Parse Server Guide": "Parse Server Guide",
-      "Unity Guide": "Unity Guide",
-      "Arduino Guide": "Arduino Guide",
-      "Cloud Code Guide": "Cloud Code Guide",
-      ".Net Guide": ".Net Guide",
-      "C Guide": "C Guide",
-      "PHP Guide": "PHP Guide",
-      "First Category": "First Category"
-    }
+    "android/analytics": "Analytics",
+    "android/config": "Config",
+    "android/data": "Data",
+    "android/errors": "Error Codes",
+    "android/files": "Files",
+    "android/geopoints": "GeoPoints",
+    "android/getting-started": "Getting Started",
+    "android/handling-errors": "Handling Errors",
+    "android/local-datastore": "Local Datastore",
+    "android/objects": "Objects",
+    "android/performance": "Performance",
+    "android/push-notifications": "Push Notifications",
+    "android/queries": "Queries",
+    "android/relations": "Relations",
+    "android/roles": "Roles",
+    "android/security": "Security",
+    "android/sessions": "Sessions",
+    "android/user-interface": "User Interface",
+    "android/users": "Users",
+    "arduino/analytics": "Analytics",
+    "arduino/cloud-code": "Cloud Functions",
+    "arduino/errors": "Error Codes",
+    "arduino/getting-started": "Getting Started",
+    "arduino/objects": "Objects",
+    "arduino/other": "REST API",
+    "arduino/push-notifications": "Push Notifications",
+    "arduino/queries": "Queries",
+    "arduino/requests": "Requests",
+    "arduino/sample-app": "Sample App",
+    "arduino/users": "Users and Sessions",
+    "cloudcode/cloud-code-advanced": "Networking",
+    "cloudcode/cloud-code": "Cloud Functions",
+    "cloudcode/getting-started": "Getting Started",
+    "common/data": "common/data",
+    "common/errors": "common/errors",
+    "common/performance": "common/performance",
+    "common/relations": "common/relations",
+    "common/security": "common/security",
+    "common/sessions": "common/sessions",
+    "doc1": "Latin-ish",
+    "Example Page": "Example Page",
+    "doc2": "document number 2",
+    "doc3": "This is document number 3",
+    "dotnet/analytics": "Analytics",
+    "dotnet/config": "Config",
+    "dotnet/data": "Data",
+    "dotnet/errors": "Error Codes",
+    "dotnet/files": "Files",
+    "dotnet/geopoints": "GeoPoints",
+    "dotnet/getting-started": "Getting Started",
+    "dotnet/handling-errors": "Handling Errors",
+    "dotnet/objects": "Objects",
+    "dotnet/performance": "Performance",
+    "dotnet/push-notifications": "Push Notifications",
+    "dotnet/queries": "Queries",
+    "dotnet/relations": "Relations",
+    "dotnet/roles": "Roles",
+    "dotnet/security": "Security",
+    "dotnet/sessions": "Sessions",
+    "dotnet/users": "Users",
+    "embedded_c/cloud-code": "Cloud Functions",
+    "embedded_c/errors": "Error Codes",
+    "embedded_c/getting-started": "Getting Started",
+    "embedded_c/handling-errors": "Handling Errors",
+    "embedded_c/objects": "Objects",
+    "embedded_c/push-notifications": "Push Notifications",
+    "embedded_c/requests": "Requests",
+    "embedded_c/sample-app": "Sample App",
+    "embedded_c/users": "Users & Sessions",
+    "doc4": "Other Document",
+    "doc5": "Fifth Document",
+    "ios/analytics": "Analytics",
+    "ios/config": "Parse Config",
+    "ios/data": "Data",
+    "ios/errors": "Error Codes",
+    "ios/extensions": "App Extensions",
+    "ios/files": "Files",
+    "ios/geopoints": "GeoPoints",
+    "ios/getting-started": "Getting Started",
+    "Getting Started": "Getting Started",
+    "ios/handling-errors": "Handling Errors",
+    "ios/in-app-purchases": "In App Purchases",
+    "In App Purchases": "In App Purchases",
+    "ios/local-datastore": "Local Datastore",
+    "ios/objects": "Objects",
+    "Objects": "Objects",
+    "ios/performance": "Performance",
+    "ios/push-notifications": "Push Notifications",
+    "Push Notifications": "Push Notifications",
+    "ios/queries": "Queries",
+    "Queries": "Queries",
+    "ios/relations": "Relations",
+    "ios/roles": "Roles",
+    "Roles": "Roles",
+    "ios/security": "Security",
+    "ios/sessions": "Sessions",
+    "ios/user-interface": "User Interface",
+    "User Interface": "User Interface",
+    "ios/users": "Users",
+    "Users": "Users",
+    "js/analytics": "Analytics",
+    "js/config": "Config",
+    "js/data": "Data",
+    "js/errors": "Error Codes",
+    "js/files": "Files",
+    "js/geopoints": "GeoPoints",
+    "js/getting-started": "Getting Started",
+    "js/handling-errors": "Error Handling",
+    "js/live-queries": "Live Queries",
+    "js/objects": "Objects",
+    "js/performance": "Performance",
+    "js/promises": "Promises",
+    "js/push-notifications": "Push Notifications",
+    "js/queries": "Queries",
+    "js/relations": "Relations",
+    "js/roles": "Roles",
+    "js/schema": "Schema",
+    "js/security": "Security",
+    "js/sessions": "Sessions",
+    "js/users": "Users",
+    "parse-server/cache-adapters": "Configuring Cache Adapters",
+    "parse-server/class-level-permissions": "Class Level Permissions",
+    "parse-server/compatibility": "Compatibility with parse.com",
+    "parse-server/database": "Database",
+    "parse-server/deploying-heroku-mlab": "parse-server/deploying-heroku-mlab",
+    "parse-server/deploying-hyperdev-mlab": "parse-server/deploying-hyperdev-mlab",
+    "parse-server/deploying": "Deploying Parse Server",
+    "parse-server/development": "Development Guide",
+    "parse-server/file-adapters": "Configuring File Adapters",
+    "parse-server/Files-Migration": "parse-server/Files-Migration",
+    "parse-server/getting-started": "Getting Started",
+    "parse-server/keys": "Keys",
+    "parse-server/live-query": "Live Queries",
+    "parse-server/MongoRocks": "Using MongoDB + RocksDB",
+    "parse-server/ParsePlatform": "Using MongoDB + RocksDB",
+    "parse-server/push-notifications-android": "parse-server/push-notifications-android",
+    "parse-server/push-notifications-clients": "Configuring your clients to receive Push Notifications",
+    "parse-server/push-notifications-ios": "parse-server/push-notifications-ios",
+    "parse-server/push-notifications": "Push Notifications",
+    "parse-server/third-party-auth": "OAuth and 3rd Party Authentication",
+    "parse-server/usage": "Usage",
+    "parse-server/using-parse-sdks": "Using Parse SDKs with Parse Server",
+    "php/analytics": "Analytics",
+    "php/cloud": "Cloud Code",
+    "php/config": "Config",
+    "php/data": "Data",
+    "php/errors": "Error Codes",
+    "php/files": "Files",
+    "php/geopoints": "GeoPoints",
+    "php/getting-started": "Getting Started",
+    "php/handling-errors": "Handling Errors",
+    "php/installation": "Installation",
+    "php/logs": "Logs",
+    "php/objects": "Objects",
+    "php/performance": "Performance",
+    "php/push-notifications": "Push Notifications",
+    "php/queries": "Queries",
+    "php/relations": "Relations",
+    "php/roles": "Roles",
+    "php/schema": "Schema",
+    "php/security": "Security",
+    "php/server-info": "Server Info",
+    "php/sessions": "Sessions",
+    "php/setup": "Setup",
+    "php/users": "Users",
+    "rest/analytics": "Analytics",
+    "rest/cloud-code": "Cloud Code",
+    "rest/config": "Config",
+    "rest/data": "Data",
+    "rest/errors": "Error Codes",
+    "rest/files": "Files",
+    "rest/geopoints": "GeoPoints",
+    "rest/getting-started": "Getting Started",
+    "rest/hooks": "Hooks",
+    "rest/objects": "Objects",
+    "rest/push-notifications": "Push Notifications",
+    "rest/queries": "Queries",
+    "rest/quick-reference": "Quick Reference",
+    "rest/roles": "Roles",
+    "rest/schemas": "Schema",
+    "rest/security": "Security",
+    "rest/server-customize": "Your Configuration",
+    "rest/sessions": "Sessions",
+    "rest/users": "Users",
+    "unity/analytics": "Analytics",
+    "unity/config": "Config",
+    "unity/data": "Data",
+    "unity/errors": "Error Codes",
+    "unity/files": "Files",
+    "unity/geopoints": "GeoPoints",
+    "unity/getting-started": "Getting Started",
+    "unity/handling-errors": "Handling Errors",
+    "unity/objects": "Objects",
+    "unity/performance": "Performance",
+    "unity/push-notifications": "Push Notifications",
+    "unity/queries": "Queries",
+    "unity/relations": "Relations",
+    "unity/roles": "Roles",
+    "unity/security": "Security",
+    "unity/sessions": "Sessions",
+    "unity/users": "Users",
+    "Docs": "Docs",
+    "Blog": "Blog",
+    "iOS Guide": "iOS Guide",
+    "Android Guide": "Android Guide",
+    "Javascript Guide": "Javascript Guide",
+    "REST API Guide": "REST API Guide",
+    "Parse Server Guide": "Parse Server Guide",
+    "Unity Guide": "Unity Guide",
+    "Arduino Guide": "Arduino Guide",
+    "Cloud Code Guide": "Cloud Code Guide",
+    ".Net Guide": ".Net Guide",
+    "C Guide": "C Guide",
+    "PHP Guide": "PHP Guide",
+    "First Category": "First Category"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
