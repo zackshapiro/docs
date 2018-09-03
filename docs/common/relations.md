@@ -12,19 +12,21 @@ Let's say we have a game app. The game keeps track of the player's score and ach
 
 Suppose in this game app, we want to make sure that every `Game` object is associated with a Parse User. We can implement this like so:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseObject game = new ParseObject("Game");
 game.put("createdBy", ParseUser.getCurrentUser());
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFObject *game= [PFObject objectWithClassName:@"Game"];
 [game setObject:[PFUser currentUser] forKey:@"createdBy"];
 ```
+
 ```swift
 let game = PFObject(className:"Game")
 game["createdBy"] = PFUser.currentUser()
@@ -32,7 +34,7 @@ game["createdBy"] = PFUser.currentUser()
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $game = ParseObject::create("Game");
 
@@ -40,27 +42,27 @@ $game->set("createdBy", ParseUser::getCurrentUser());
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var game = new ParseObject("Game");
 game["createdBy"] = ParseUser.CurrentUser;
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var game = new Parse.Object("Game");
 game.set("createdBy", Parse.User.current());
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -68,19 +70,21 @@ game.set("createdBy", Parse.User.current());
 
 We can obtain all of the `Game` objects created by a Parse User with a query:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseQuery<ParseObject> gameQuery = ParseQuery.getQuery("Game");
 gameQuery.whereEqualTo("createdBy", ParseUser.getCurrentUser());
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 PFQuery *gameQuery = [PFQuery queryWithClassName:@"Game"];
 [gameQuery whereKey:@"createdBy" equalTo:[PFUser currentUser]];
 ```
+
 ```swift
 let gameQuery = PFQuery(className:"Game")
 if let user = PFUser.currentUser() {
@@ -90,7 +94,7 @@ if let user = PFUser.currentUser() {
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $gameQuery = new ParseQuery("Game");
 
@@ -98,26 +102,26 @@ $gameQuery->equalTo("createdBy", ParseUser::getCurrentUser());
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var query = ParseObject.getQuery("Game").WhereEqualTo("createdBy", ParseUser.CurrentUser);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var query = new Parse.Query("Game");
 query.equalTo("createdBy", Parse.User.current());
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -125,7 +129,7 @@ query.equalTo("createdBy", Parse.User.current());
 
 And, if we want to find the Parse User who created a specific `Game`, that is a lookup on the `createdBy` key:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // say we have a Game object
 ParseObject game = ...
@@ -135,8 +139,9 @@ ParseUser createdBy = game.getUser("createdBy");
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // say we have a Game object
 PFObject *game = ...
@@ -144,6 +149,7 @@ PFObject *game = ...
 // getting the user who created the Game
 PFUser *createdBy = [game objectForKey@"createdBy"];
 ```
+
 ```swift
 // say we have a Game object
 let game = ...
@@ -154,7 +160,7 @@ let createdBy = game["createdBy"]
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // say we have a Game object
 $game = ...
@@ -164,7 +170,7 @@ $user = $game->get("createdBy");
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // say we have a Game object
 ParseObject game = ...
@@ -174,7 +180,7 @@ ParseUser user = game["createdBy"];
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // say we have a Game object
 var game = ...
@@ -184,13 +190,13 @@ var user = game.get("createdBy");
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -208,7 +214,7 @@ Let's start by creating a column on our Parse User object called `weaponsList`.
 
 Now let's store some `Weapon` objects in the `weaponsList`:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // let's say we have four weapons
 ParseObject scimitar = ...
@@ -228,8 +234,9 @@ ParseUser.getCurrentUser().put("weaponsList", weapons);
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // let's say we have four weapons
 PFObject *scimitar = ...
@@ -243,6 +250,7 @@ NSArray *weapons = @[scimitar, plasmaRifle, grenade, bunnyRabbit];
 // store the weapons for the user
 [[PFUser currentUser] setObject:weapons forKey:@weaponsList"];
 ```
+
 ```swift
 // let's say we have four weapons
 let scimitar = ...
@@ -260,7 +268,7 @@ user["weaponsList"] = weapons
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // let's say we have four weapons
 $scimitar = ...
@@ -277,7 +285,7 @@ $user->set("weaponsList", weapons);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // let's say we have four weapons
 var scimitar = ...
@@ -298,7 +306,7 @@ user.AddRangeToList("weaponsList", weapons);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // let's say we have four weapons
 var scimitar = ...
@@ -315,13 +323,13 @@ user.set("weaponsList", weapons);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -329,48 +337,50 @@ user.set("weaponsList", weapons);
 
 Later, if we want to retrieve the `Weapon` objects, it's just one line of code:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ArrayList<ParseObject> weapons = ParseUser.getCurrentUser().get("weaponsList");
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSArray *weapons = [[PFUser currentUser] objectForKey:@"weaponsList"];
 ```
+
 ```swift
 let weapons = PFUser.currentUser()?.objectForKey("weaponsList")
 ```
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $weapons = ParseUser::getCurrentUser()->get("weaponsList");
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var weapons = ParseUser.CurrentUser.Get<IList<Object>>("weaponsList");
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var weapons = Parse.User.current().get("weaponsList")
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -378,7 +388,7 @@ var weapons = Parse.User.current().get("weaponsList")
 
 Sometimes, we will want to fetch the "many" objects in our one-to-many relationship at the same time as we fetch the "one" object. One trick we could employ is to use the `includeKey` (or `include` in Android) parameter whenever we use a Parse Query to also fetch the array of `Weapon` objects (stored in the `weaponsList` column) along with the Parse User object:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // set up our query for a User object
 ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
@@ -398,8 +408,9 @@ userQuery.findInBackground(new FindCallback<ParseUser>() {
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // set up our query for a User object
 PFQuery *userQuery = [PFUser query];
@@ -416,6 +427,7 @@ PFQuery *userQuery = [PFUser query];
     // objects contains all of the User objects, and their associated Weapon objects, too
 }];
 ```
+
 ```swift
 // set up our query for a User object
 let userQuery = PFUser.query();
@@ -436,7 +448,7 @@ userQuery?.findObjectsInBackgroundWithBlock {
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // set up our query for a User object
 $userQuery = ParseUser::query();
@@ -454,7 +466,7 @@ $results = $userQuery->find();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // set up our query for a User object
 var userQuery = ParseUser.Query;
@@ -472,7 +484,7 @@ IEnumerable<ParseUser> results = await userQuery.FindAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // set up our query for a User object
 var userQuery = new Parse.Query(Parse.User);
@@ -490,13 +502,13 @@ const results = await userQuery.find();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -504,7 +516,7 @@ const results = await userQuery.find();
 
 You can also get the "one" side of the one-to-many relationship from the "many" side. For example, if we want to find all Parse User objects who also have a given `Weapon`, we can write a constraint for our query like this:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // add a constraint to query for whenever a specific Weapon is in an array
 userQuery.whereEqualTo("weaponsList", scimitar);
@@ -514,8 +526,9 @@ userQuery.whereEqualTo("weaponsList", arrayOfWeapons);
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // add a constraint to query for whenever a specific Weapon is in an array
 [userQuery whereKey:@"weaponsList" equalTo:scimitar];
@@ -523,6 +536,7 @@ userQuery.whereEqualTo("weaponsList", arrayOfWeapons);
 // or query using an array of Weapon objects...
 [userQuery whereKey:@"weaponsList" containedIn:arrayOfWeapons];
 ```
+
 ```swift
 // add a constraint to query for whenever a specific Weapon is in an array
 userQuery?.whereKey("weaponsList", equalTo: scimitar);
@@ -533,7 +547,7 @@ userQuery?.whereKey("weaponsList", containedIn: arrayOfWeapons)
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // add a constraint to query for whenever a specific Weapon is in an array
 $userQuery->equalTo("weaponsList", $scimitar);
@@ -543,7 +557,7 @@ $userQuery->containedIn("weaponsList", $arrayOfWeapons);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // add a constraint to query for whenever a specific Weapon is in an array
 userQuery = userQuery.WhereEqualTo("weaponsList", scimitar);
@@ -553,7 +567,7 @@ userQuery = userQuery.WhereContainedIn("weaponsList", arrayOfWeapons);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // add a constraint to query for whenever a specific Weapon is in an array
 userQuery.equalTo("weaponsList", scimitar);
@@ -563,13 +577,13 @@ userQuery.containedIn("weaponsList", arrayOfWeapons);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -589,7 +603,7 @@ Using Parse Relations, we can create a relationship between a `Book` and a few `
 
 After that, we can associate a few authors with this book:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // let’s say we have a few objects representing Author objects
 ParseObject authorOne =
@@ -611,8 +625,9 @@ book.saveInBackground();
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // let’s say we have a few objects representing Author objects
 PFObject *authorOne = …
@@ -632,6 +647,7 @@ PFRelation *relation = [book relationForKey:@"authors"];
 // now save the book object
 [book saveInBackground];
 ```
+
 ```swift
 // let’s say we have a few objects representing Author objects
 let authorOne = ...
@@ -654,7 +670,7 @@ book.saveInBackground()
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // let’s say we have a few objects representing Author objects
 $authorOne = ...
@@ -676,7 +692,7 @@ $book->save();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // let’s say we have a few objects representing Author objects
 var authorOne = ...
@@ -698,7 +714,7 @@ await book.SaveAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // let’s say we have a few objects representing Author objects
 var authorOne = ...
@@ -720,13 +736,13 @@ book.save();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -734,7 +750,7 @@ book.save();
 
 To get the list of authors who wrote a book, create a query:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // suppose we have a book object
 ParseObject book = ...
@@ -749,8 +765,9 @@ ParseQuery query = relation.getQuery();
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // suppose we have a book object
 PFObject *book = ...
@@ -763,6 +780,7 @@ PFQuery *query = [relation query];
 
 // now execute the query
 ```
+
 ```swift
 // suppose we have a book object
 let book = ...
@@ -778,7 +796,7 @@ let query = relation.query()
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // suppose we have a book object
 $book = ...
@@ -793,7 +811,7 @@ $query = $relation->getQuery();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // suppose we have a book object
 var book = ...
@@ -808,7 +826,7 @@ var query = relation.Query;
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // suppose we have a book object
 var book = ...
@@ -823,13 +841,13 @@ var query = relation.query();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -837,7 +855,7 @@ var query = relation.query();
 
 Perhaps you even want to get a list of all the books to which an author contributed. You can create a slightly different kind of query to get the inverse of the relationship:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // suppose we have a author object, for which we want to get all books
 ParseObject author = ...
@@ -851,8 +869,9 @@ query.whereEqualTo("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // suppose we have a author object, for which we want to get all books
 PFObject *author = ...
@@ -864,6 +883,7 @@ PFQuery *query = [PFQuery queryWithClassName:@"Book"];
 // we have is contained therein
 [query whereKey:@"authors" equalTo:author];
 ```
+
 ```swift
 // suppose we have a author object, for which we want to get all books
 let author = ...
@@ -878,7 +898,7 @@ query?.whereKey("authors", equalTo: author)
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // suppose we have a author object, for which we want to get all books
 $author = ...
@@ -892,7 +912,7 @@ $query->equalTo("authors", $author);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // suppose we have a author object, for which we want to get all books
 var author = ...
@@ -906,7 +926,7 @@ query = query.WhereEqualTo("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // suppose we have a author object, for which we want to get all books
 var author = ...
@@ -920,13 +940,13 @@ query.equalTo("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -938,7 +958,7 @@ There may be certain cases where we want to know more about a relationship. For 
 
 Now, when you want to save the following relationship between two users, create a row in the `Follow` table, filling in the `from`, `to`, and `date` keys appropriately:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // suppose we have a user we want to follow
 ParseUser otherUser = ...
@@ -952,8 +972,9 @@ follow.saveInBackground();
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // suppose we have a user we want to follow
 PFUser *otherUser = ...
@@ -965,6 +986,7 @@ PFObject *follow = [PFObject objectWithClassName:@"Follow"];
 [follow setObject:[NSDate date] forKey@"date"];
 [follow saveInBackground];
 ```
+
 ```swift
 // suppose we have a user we want to follow
 let otherUser = ...
@@ -979,7 +1001,7 @@ follow.saveInBackground()
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // suppose we have a user we want to follow
 $otherUser = ...
@@ -993,7 +1015,7 @@ $follow->save();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // suppose we have a user we want to follow
 ParseUser otherUser = ...
@@ -1007,7 +1029,7 @@ await follow.SaveAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var otherUser = ...
 
@@ -1020,13 +1042,13 @@ follow.save();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1034,7 +1056,7 @@ follow.save();
 
 If we want to find all of the people we are following, we can execute a query on the `Follow` table:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // set up the query on the Follow table
 ParseQuery<ParseObject> query = ParseQuery.getQuery("Follow");
@@ -1049,8 +1071,9 @@ query.findInBackground(newFindCallback<ParseObject>() {
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // set up the query on the Follow table
 PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
@@ -1068,6 +1091,7 @@ PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
   }
 }];
 ```
+
 ```swift
 // set up the query on the Follow table
 let query = PFQuery(className: "Follow")
@@ -1091,7 +1115,7 @@ query.findObjectsInBackgroundWithBlock{
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // set up the query on the Follow table
 $query = new ParseQuery("Follow");
@@ -1102,7 +1126,7 @@ $results = $query->find();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // set up the query on the Follow table
 ParseQuery<ParseObject> query = ParseQuery.getQuery("Follow");
@@ -1113,7 +1137,7 @@ IEnumerable<ParseObject> results = await query.FindAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 const query = new Parse.Query("Follow");
 query.equalTo("from", Parse.User.current());
@@ -1121,13 +1145,13 @@ const users = await query.find();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1135,7 +1159,7 @@ const users = await query.find();
 
 It’s also pretty easy to find all the users that are following the current user by querying on the `to` key:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // set up the query on the Follow table
 ParseQuery<ParseObject> query = ParseQuery.getQuery("Follow");
@@ -1150,8 +1174,9 @@ query.findInBackground(newFindCallback<ParseObject>() {
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // set up the query on the Follow table
 PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
@@ -1168,6 +1193,7 @@ PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
   }
 }];
 ```
+
 ```swift
 // set up the query on the Follow table
 let query = PFQuery(className: "Follow")
@@ -1191,7 +1217,7 @@ query.findObjectsInBackgroundWithBlock{
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // create an entry in the Follow table
 $query = new ParseQuery("Follow");
@@ -1200,7 +1226,7 @@ $results = $query->find();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // create an entry in the Follow table
 var query = ParseObject.GetQuery("Follow")
@@ -1209,7 +1235,7 @@ IEnumerable<ParseObject> results = await query.FindAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // create an entry in the Follow table
 const query = new Parse.Query("Follow");
@@ -1218,13 +1244,13 @@ const users = query.find();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1238,7 +1264,7 @@ Suppose we have a book reading app with `Book` and `Author` objects. The `Book` 
 
 Here is how we save a relationship between a `Book` and an `Author`.
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // let's say we have an author
 ParseObject author = ...
@@ -1251,8 +1277,9 @@ book.put("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // let's say we have an author
 PFObject *author = ...
@@ -1263,6 +1290,7 @@ PFObject *book = ...
 // add the author to the authors list for the book
 [book addObject:author forKey:@"authors"];
 ```
+
 ```swift
 // let's say we have an author
 let author = ...
@@ -1276,7 +1304,7 @@ book.addObject(author, forKey: "authors")
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // let's say we have an author
 $author = ...
@@ -1289,7 +1317,7 @@ $book->addUnique("authors", array($author));
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // let's say we have an author
 var author = ...
@@ -1302,7 +1330,7 @@ book.AddToList("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // let's say we have an author
 var author = ...
@@ -1315,13 +1343,13 @@ book.add("authors", author);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1329,7 +1357,7 @@ book.add("authors", author);
 
 Because the author list is an Array, you should use the `includeKey` (or `include` on Android) parameter when fetching a `Book` so that Parse returns all the authors when it also returns the book:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // set up our query for the Book object
 ParseQuery bookQuery = ParseQuery.getQuery("Book");
@@ -1346,8 +1374,9 @@ bookQuery.findInBackground(newFindCallback<ParseObject>() {
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // set up our query for the Book object
 PFQuery *bookQuery = [PFQuery queryWithClassName:@"Book"];
@@ -1362,6 +1391,7 @@ PFQuery *bookQuery = [PFQuery queryWithClassName:@"Book"];
     // Author objects, too
 }];
 ```
+
 ```swift
 // set up our query for the Book object
 let bookQuery = PFQuery(className: "Book")
@@ -1380,7 +1410,7 @@ bookQuery.findObjectsInBackgroundWithBlock{
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // set up our query for the Book object
 $bookQuery = new ParseQuery("Book");
@@ -1394,7 +1424,7 @@ $books= $bookQuery->find();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // set up our query for the Book object
 var bookQuery = ParseObject.GetQuery("Book");
@@ -1408,7 +1438,7 @@ IEnumerable<ParseObject> books= await bookQuery.FindAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // set up our query for the Book object
 cosnt bookQuery = new Parse.Query("Book");
@@ -1422,13 +1452,13 @@ const books = await bookQuery.find();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1436,48 +1466,50 @@ const books = await bookQuery.find();
 
 At that point, getting all the `Author` objects in a given `Book` is a pretty straightforward call:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ArrayList<ParseObject> authorList = book.getList("authors");
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 NSArray *authorList = [book objectForKey@"authors"];
 ```
+
 ```swift
 let authorList = book.objectForKey("authors") as? NSArray
 ```
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $authorList = $book->get("authors");
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var authorList = book.Get<List<ParseObject>>("authors");
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var authorList = book.get("authors")
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -1485,7 +1517,7 @@ var authorList = book.get("authors")
 
 Finally, suppose you have an `Author` and you want to find all the `Book` objects in which she appears. This is also a pretty straightforward query with an associated constraint:
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // set up our query for the Book object
 ParseQuery bookQuery = ParseQuery.getQuery("Book");
@@ -1505,8 +1537,9 @@ bookQuery.findInBackground(newFindCallback<ParseObject>() {
 ```
 {% endif %}
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
+
 ```objective_c
 // suppose we have an Author object
 PFObject *author = ...
@@ -1525,6 +1558,7 @@ PFQuery *bookQuery = [PFQuery queryWithClassName:@"Book"];
     // objects is all of the Book objects, and their associated Author objects, too
 }];
 ```
+
 ```swift
 // suppose we have an Author object
 let author = ...
@@ -1547,7 +1581,7 @@ bookQuery.findObjectsInBackgroundWithBlock{
 </div>
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 // set up our query for the Book object
 $bookQuery = new ParseQuery("Book");
@@ -1563,7 +1597,7 @@ $books = $bookQuery->find();
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // set up our query for the Book object
 var bookQuery = ParseObject.GetQuery("Book");
@@ -1579,7 +1613,7 @@ IEnumerable<ParseObject> books = await bookQuery.FindAsync();
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // set up our query for the Book object
 var bookQuery = new Parse.Query("Book");
@@ -1595,13 +1629,13 @@ const books = await bookQuery.find();
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No REST API example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```

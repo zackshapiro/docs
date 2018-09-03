@@ -26,7 +26,7 @@ With revocable sessions, your current session token could become invalid if its 
 
 To handle this error, we recommend writing a global utility function that is called by all of your Parse request error callbacks. You can then handle the "invalid session token" error in this global function. You should prompt the user to login again so that they can obtain a new session token. This code could look like this:
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -144,7 +144,7 @@ query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 public class ParseErrorHandler {
   public static void handleParseError(ParseException e) {
@@ -189,7 +189,7 @@ query.findInBackground(new FindCallback<ParseObject>() {
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 function handleParseError(err) {
   switch (err.code) {
@@ -212,7 +212,7 @@ query.find().then(function() {
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 public class ParseErrorHandler {
   public static void HandleParseError(ParseException e) {
@@ -250,7 +250,7 @@ query.FindAsync().ContinueWith(t => {
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 public class ParseErrorHandler {
   public static handleParseError(ParseException $e) {
@@ -276,13 +276,13 @@ try {
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 // No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```

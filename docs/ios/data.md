@@ -2,18 +2,8 @@
 title: Data
 ---
 
+{% declare language="objective_c-swift" %}
 
-# My Data contents
+{% include common/data.md %}
 
-{% declare language=objective_c-swift %}
-
-I kove this
-
-```js
-var yolo = 'yeah'
-```
-
-{% include common/data.md language=objective_c-swift %}
-
-### Other contents
 

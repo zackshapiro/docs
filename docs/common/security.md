@@ -70,7 +70,7 @@ The easiest way to control who can access which data is through access control l
 
 Once you have a User, you can start using ACLs. Remember: Users can be created through traditional username/password signup, through a third-party login system like Facebook or Twitter, or even by using Parse's [automatic anonymous users]({{ site.baseUrl }}/ios/guide/#anonymous-users) functionality. To set an ACL on the current user's data to not be publicly readable, all you have to do is:
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -86,41 +86,41 @@ if let user = PFUser.currentUser() {
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseUser user = ParseUser.getCurrentUser();
 user.setACL(new ParseACL(user));
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var user = Parse.User.current();
 user.setACL(new Parse.ACL(user));
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var user = ParseUser.CurrentUser;
 user.ACL = new ParseACL(user);
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $user = ParseUser::getCurrentUser();
 $user->setACL(new ParseACL($user))
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -130,7 +130,7 @@ Most apps should do this. If you store any sensitive user data, such as email ad
 
 To make it super easy to create user-private ACLs for every object, we have a way to set a default ACL that will be used for every new object you create:
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -143,37 +143,37 @@ PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseACL.setDefaultACL(new ParseACL(), true);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 // not available in the JavaScript SDK
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 // not available in the .NET SDK
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 ParseACL::setDefaultACL(new ParseACL(), true);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -181,7 +181,7 @@ ParseACL::setDefaultACL(new ParseACL(), true);
 
 If you want the user to have some data that is public and some that is private, it's best to have two separate objects. You can add a pointer to the private data from the public one.
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -203,7 +203,7 @@ if let currentUser = PFUser.currentUser() {
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseObject privateData = new ParseObject("PrivateUserData");
 privateData.setACL(new ParseACL(ParseUser.getCurrentUser()));
@@ -213,7 +213,7 @@ ParseUser.getCurrentUser().put("privateData", privateData);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var privateData = Parse.Object.extend("PrivateUserData");
 privateData.setACL(new Parse.ACL(Parse.User.current()));
@@ -223,7 +223,7 @@ Parse.User.current().set("privateData", privateData);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var privateData = new ParseObject("PrivateUserData");
 privateData.ACL = new ParseACL(ParseUser.CurrentUser);
@@ -233,7 +233,7 @@ ParseUser.CurrentUser["privateData"] =  privateData;
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $privateData = ParseObject::create("PrivateUserData");
 $privateData->setACL(new ParseACL(ParseUser::getCurrentUser()));
@@ -243,13 +243,13 @@ ParseUser::getCurrentUser()->set("privateData", $privateData);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -257,7 +257,7 @@ ParseUser::getCurrentUser()->set("privateData", $privateData);
 
 Of course, you can set different read and write permissions on an object. For example, this is how you would create an ACL for a public post by a user, where anyone can read it:
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -276,7 +276,7 @@ if let currentUser = PFUser.currentUser() {
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 ParseACL acl = new ParseACL();
 acl.setPublicReadAccess(true);
@@ -284,7 +284,7 @@ acl.setWriteAccess(ParseUser.getCurrentUser(), true);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var acl = new Parse.ACL();
 acl.setPublicReadAccess(true);
@@ -292,7 +292,7 @@ acl.setWriteAccess(Parse.User.current().id, true);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var acl = new ParseACL();
 acl.PublicReadAccess = true;
@@ -300,7 +300,7 @@ acl.SetRoleWriteAccess(ParseUser.CurrentUser.ObjectId, true);
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $acl = new ParseACL();
 $acl->setPublicReadAccess(true);
@@ -308,13 +308,13 @@ $acl->setWriteAccess(ParseUser::getCurrentUser(), true);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```
@@ -322,7 +322,7 @@ $acl->setWriteAccess(ParseUser::getCurrentUser(), true);
 
 Sometimes it's inconvenient to manage permissions on a per-user basis, and you want to have groups of users who get treated the same (like a set of admins with special powers). Roles are are a special kind of object that let you create a group of users that can all be assigned to the ACL. The best thing about roles is that you can add and remove users from a role without having to update every single object that is restricted to that role. To create an object that is writeable only by admins:
 
-{% if page.language == "objective_c-swift" %}
+{% if language == "objective_c-swift" %}
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -340,7 +340,7 @@ acl.setWriteAccess(true, forRoleWithName: "admins")
 </div>
 {% endif %}
 
-{% if page.language == "java" %}
+{% if language == "java" %}
 ```java
 // Assuming you've already created a role called "admins"...
 ParseACL acl = new ParseACL();
@@ -349,7 +349,7 @@ acl.setRoleWriteAccess("admins", true);
 ```
 {% endif %}
 
-{% if page.language == "js" %}
+{% if language == "js" %}
 ```js
 var acl = new Parse.ACL();
 acl.setPublicReadAccess(true);
@@ -357,7 +357,7 @@ acl.setRoleWriteAccess("admins", true);
 ```
 {% endif %}
 
-{% if page.language == "cs" %}
+{% if language == "cs" %}
 ```cs
 var acl = new ParseACL();
 acl.PublicReadAccess = true;
@@ -365,7 +365,7 @@ acl.SetRoleWriteAccess("admins", true);
 ```
 {% endif %}
 
-{% if page.language == "php" %}
+{% if language == "php" %}
 ```php
 $acl = new ParseACL();
 $acl->setPublicReadAccess(true);
@@ -373,13 +373,13 @@ $acl->setRoleWriteAccessWithName("admins", true);
 ```
 {% endif %}
 
-{% if page.language == "bash" %}
+{% if language == "bash" %}
 ```bash
 # No command line example
 ```
 {% endif %}
 
-{% if page.language == "cpp" %}
+{% if language == "cpp" %}
 ```cpp
 // No C++ example
 ```

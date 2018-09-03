@@ -58,7 +58,9 @@ module.exports = function (md) {
 
   var inIf = false;
   var srcs = [];
-  md.inline.ruler.push('templating', function(state) {
+  var memoize = [];
+  console.log(md);
+  md.inline.ruler.push('template', function(state) {
     const template = getTemplateString(state);
     if (!template) {
       return;
@@ -71,22 +73,20 @@ module.exports = function (md) {
         level: state.level,
         content: { declare: components[2] }
       });
-    } else if (components[1] === 'endif') {
-      // inIf.content.srcs = srcs;
-      // state.push(inIf);
-      // inIf = false;
-      // srcs = [];
     } else if (components[1] === 'if') {
-      // // console.log(state.src);
-      // const stmt = components.slice(2, components.length - 1);
-      // // console.log(stmt);
-      // inIf = {
-      //   type: 'template',
-      //   level: state.level,
-      //   content: { statement: stmt }
-      // };
+      const stmt = components.slice(2, components.length - 1).join(' ');
+      var res = eval(`(() => (${stmt}))()`);
+      state.push({
+        type: 'template',
+        level: state.level,
+        content: { ifstatement: true, shouldShow: res }
+      });
     } else if (components[1] === 'endif') {
-
+      state.push({
+        type: 'template',
+        level: state.level,
+        content: { endif: true }
+      });
     } else if (components[1] === 'include') {
       var file = components[2];
       var variables;
@@ -113,12 +113,15 @@ module.exports = function (md) {
         return;
       }
       var variables = token.content.variables;
-      if (token.content.statement) {
-        eval(allVariables.map(elt => elt+';\n'));
-        var res = eval(`(() => (${token.content.statement.join(' ')}))()`);
-        if (res) {
-          console.log(token.content.srcs);
+      if (token.content.ifstatement) {
+        if (!token.content.shouldShow) {
+          return '<div style="display: none;">';
+        } else {
+          return '<div>';
         }
+      }
+      if (token.content.endif) {
+        return '</div>';
       }
       if (token.content.declare) {
         eval(token.content.declare);
@@ -137,7 +140,8 @@ module.exports = function (md) {
         }
         return renderMarkdown(contents);
       }
-  }).join('');
+    }).join('');
     return result;
   }
+  console.log(md);
 }
