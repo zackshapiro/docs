@@ -6,7 +6,7 @@ title: Config
 
 `ParseConfig` is a way to configure your applications remotely by storing a single configuration object on Parse. It enables you to add things like feature gating or a simple "Message of the Day". To start using `ParseConfig` you need to add a few key/value pairs (parameters) to your app on the Parse Config Dashboard.
 
-<img alt="Configuration Editor" data-echo="{{ '/assets/images/config_editor.png' | prepend: site.baseurl }}"/>
+<img alt="Configuration Editor" src="/img/config_editor.png"/>
 
 After that you will be able to fetch the `ParseConfig` on the client, like in this example:
 

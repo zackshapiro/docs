@@ -1,4 +1,6 @@
-# Networking
+---
+title: Networking
+---
 
 ## httpRequest
 
@@ -226,7 +228,7 @@ This response would indicate an error in the webhook:
 
 You can activate this webhook from the Dashboard UI.
 
-<img alt="" data-echo="{{ '/assets/images/new_webhook.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/new_webhook.png"/>
 
 Once the webhook is set, you can call it from any of our SDKs or from the REST API, the same way you would a normal Cloud function.
 

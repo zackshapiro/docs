@@ -34,7 +34,7 @@ self.presentViewController(logInController, animated:true, completion: nil)
 
 ### Configuring the Log In Elements
 
-<img alt="" data-echo="{{ '/assets/images/login_diagram.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/login_diagram.png"/>
 
 `PFLogInViewController` can be configured to provide a variety of log in options. By default, `PFLogInViewController` presents the following UI:
 
@@ -275,7 +275,7 @@ That is all you need to do to get a functional sign up screen.
 
 ### Configuring the Sign Up Elements
 
-<img alt="" data-echo="{{ '/assets/images/signup_diagram.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/signup_diagram.png"/>
 
 `PFSignUpViewController` can be configured to provide a variety of sign up options. By default, it presents the following UI:
 
@@ -590,7 +590,7 @@ class SimpleTableViewController : PFQueryTableViewController {
 ```
 </div>
 
-<img data-echo="{{ site.baseUrl }}/assets/images/todo_view.png" style="max-width:200px"/>
+<img src="/img/todo_view.png" style="max-width:200px"/>
 
 This view shows a list of Todo items and also allows the user to pull-to-refresh and load the next page by touching a special pagination cell at the end of the table. It also properly caches the objects such that  when the view is no longer in memory, the next time it loads it will use the query cache to immediately show the previously loaded objects while making a network call to update.
 
@@ -642,7 +642,7 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
 ```
 </div>
 
-<img data-echo="{{ site.baseUrl }}/assets/images/images_table.png" style="max-width:200px"/>
+<img src="/img/images_table.png" style="max-width:200px"/>
 
 This table shows a list of cute animal photos which are stored in the Parse Cloud, as `PFFile`s. "placeholder.jpg" is an image included in the application bundle which is shown before the animal photos are downloaded.
 
@@ -666,7 +666,7 @@ Several methods are exposed that are called at major events during the data life
 
 ### Pagination
 
-<img data-echo="{{ site.baseUrl }}/assets/images/pagination.png" style="max-width:200px"/>
+<img src="/img/pagination.png" style="max-width:200px"/>
 
 Pagination ensures that the table only gets one page of objects at a time. You can customize how many objects are in a page by setting the `objectsPerPage` instance variable.
 
@@ -676,7 +676,7 @@ Pagination is turned on by default. If you want to turn it off, simply set `pagi
 
 ### Pull to Refresh
 
-<img data-echo="{{ site.baseUrl }}/assets/images/pull_to_refresh.png" style="max-width:200px"/>
+<img src="/img/pull_to_refresh.png" style="max-width:200px"/>
 
 Pull to Refresh is a feature that allows users to pull the table down and release to reload the data. Essentially, the first page of data is reloaded from your class and the table is cleared and updated with the data.
 

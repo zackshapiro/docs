@@ -126,7 +126,7 @@ The full configuration of the LiveQuery server should look like this:
 
 ### Basic Architecture
 
-<img alt="" data-echo="{{ '/assets/images/lq_local.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/lq_local.png"/>
 
 The LiveQuery server is a separate server from Parse Server. As shown in the picture, it mainly contains four components at the runtime.
 
@@ -163,11 +163,11 @@ This redis database should be different from the redis database used for `RedisC
 
 The architecture of the whole LiveQuery system after you use Redis should be like this:
 
-<img alt="" data-echo="{{ '/assets/images/lq_multiple.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/lq_multiple.png"/>
 
 For example, if you use Heroku to deploy your Live Query server, after you setup the Redis with the LiveQuery server, you can simply add more dynos to make your app more scalable like this:
 
-<img alt="" data-echo="{{ '/assets/images/lq_heroku.png' | prepend: site.baseurl }}"/>
+<img alt="" src="/img/lq_heroku.png"/>
 
 ### Security with LiveQuery
 
