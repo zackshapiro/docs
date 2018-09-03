@@ -2,6 +2,6 @@
 title: Error Codes
 ---
 
-{% declare language="objective_c-swift" %}
+{% declare language="cs" %}
 
 {% include common/errors.md %}

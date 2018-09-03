@@ -2,7 +2,7 @@
 title: Data
 ---
 
-{% declare language="objective_c-swift" %}
+{% declare language="java" %}
 
 {% include common/data.md %}
 

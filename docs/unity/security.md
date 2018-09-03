@@ -2,6 +2,6 @@
 title: Security
 ---
 
-{% declare language="objective_c-swift" %}
+{% declare language="cs" %}
 
 {% include common/security.md %}

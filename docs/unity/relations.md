@@ -2,6 +2,6 @@
 title: Relations
 ---
 
-{% declare language="objective_c-swift" %}
+{% declare language="cs" %}
 
 {% include common/relations.md %}

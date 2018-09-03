@@ -2,6 +2,6 @@
 title: Performance
 ---
 
-{% declare language="objective_c-swift" %}
+{% declare language="cs" %}
 
 {% include common/performance.md %}
