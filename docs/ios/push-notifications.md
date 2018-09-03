@@ -875,7 +875,7 @@ For each push campaign sent through the Parse web push console, you can allocate
 
 After you send the push, you can come back to the push console to see in real time which version resulted in more push opens, along with other metrics such as statistical confidence interval. It's normal for the number of recipients in each group to be slightly different because some devices that we had originally allocated to that experiment group may have uninstalled the app. It's also possible for the  random group assignment to be slightly uneven when the test audience size is small. Since we calculate open rate separately for each group based on recipient count, this should not significantly affect your experiment results.
 
-<img alt="Getting experiment results" src="/img/experiment_results_.png"/>
+<img alt="Getting experiment results" src="/img/experiment_results.png"/>
 
 If you are happy with the way one message performed, you can send that to the rest of your app's devices (i.e. the “Launch Group”). This step only applies to A/B tests where you vary the message.
 
@@ -913,7 +913,7 @@ Our web push console guides you through every step of setting up a Localized Pus
 
 ## Troubleshooting
 
-Setting up Push Notifications is often a source of frustration for developers. The process is complicated and invites problems to happen along the way. We have created a [tutorial which covers all the necessary steps to configure your app for push notifications](/tutorials/ios-push-notifications). If you run into issues, try some of the following troubleshooting tips.
+Setting up Push Notifications is often a source of frustration for developers. The process is complicated and invites problems to happen along the way. We have created a [tutorial which covers all the necessary steps to configure your app for push notifications](parse-server/push-notifications-ios.md). If you run into issues, try some of the following troubleshooting tips.
 
 It's important to break down the system into components when troubleshooting push notification issues. You can start by asking yourself the following questions:
 

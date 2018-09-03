@@ -396,7 +396,7 @@ Learn more about [Facebook login](https://developers.facebook.com/docs/authentic
 }
 ```
 
-Learn more about [Twitter login](https://dev.twitter.com/docs/auth/implementing-sign-twitter).
+Learn more about [Twitter login](https://developer.twitter.com/en/docs/twitter-for-websites/log-in-with-twitter/login-in-with-twitter).
 
 ### Anonymous user `authData`
 

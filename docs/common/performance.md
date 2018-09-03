@@ -1048,7 +1048,7 @@ Cloud Code allows you to run custom JavaScript logic on Parse Server instead of 
 
 You can use this to offload processing to the Parse servers thus increasing your app's perceived performance.  You can create hooks that run whenever an object is saved or deleted. This is useful if you want to validate or sanitize your data. You can also use Cloud Code to modify related objects or kick off other processes such as sending off a push notification.
 
-We saw examples of limiting the data returned by writing restrictive queries. You can also use [Cloud Functions]({cloudcode/guide/#cloud-functions) to help limit the amount of data returned to your app. In the following example, we use a Cloud Function to get a movie's average rating:
+We saw examples of limiting the data returned by writing restrictive queries. You can also use [Cloud Functions](cloudcode/index.md#cloud-functions) to help limit the amount of data returned to your app. In the following example, we use a Cloud Function to get a movie's average rating:
 
 ```javascript
 Parse.Cloud.define("averageStars", function(request, response) {
@@ -1069,7 +1069,7 @@ Parse.Cloud.define("averageStars", function(request, response) {
 
 You could have ran a query on the Review class on the client, returned only the stars field data and computed the result on the client. As the number of reviews for a movie increases you can see that the data being returned to the device using this methodology also increases. Implementing the functionality through a Cloud Function returns the one result if successful.
 
-As you look at optimizing your queries, you'll find that you may have to change the queries - sometimes even after you've shipped your app to the App Store or Google Play. The ability to change your queries without a client update is possible if you use [Cloud Functions](cloudcode#cloud-functions). Even if you have to redesign your schema, you could make all the changes in your Cloud Functions while keeping the client interface the same to avoid an app update. Take the average stars Cloud Function example from before, calling it from a client SDK would look like this:
+As you look at optimizing your queries, you'll find that you may have to change the queries - sometimes even after you've shipped your app to the App Store or Google Play. The ability to change your queries without a client update is possible if you use [Cloud Functions](cloudcode/index.md#cloud-functions). Even if you have to redesign your schema, you could make all the changes in your Cloud Functions while keeping the client interface the same to avoid an app update. Take the average stars Cloud Function example from before, calling it from a client SDK would look like this:
 
 {% if language == "js" %}
 ```javascript

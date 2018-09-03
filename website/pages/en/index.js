@@ -120,8 +120,8 @@ const platformDocs = [
     name: 'Parse Server',
     symbol: 'infinity',
     links: [
-      {title: 'Guide', href: '/docs/parse-server/getting-started'},
-      {title: 'API Reference', href: 'https://parseplatform.org/parse-server/api/'}
+      {title: 'Guide', href: '/docs/parse-server/index'},
+      {title: 'API Reference', href: 'https://parseplatform.org/parse-server/api/master'}
     ],
     download: 'https://npmjs.com/package/parse-server'
   },
@@ -129,7 +129,7 @@ const platformDocs = [
     name: 'iOS / macOS / tvOS',
     symbol: 'apple',
     links: [
-      {title: 'Guide', href: '/docs/ios/getting-started'},
+      {title: 'Guide', href: '/docs/ios/index'},
       {title: 'API Reference', href: 'https://parseplatform.org/Parse-SDK-iOS-OSX/api'}
     ],
     download: 'https://github.com/parse-community/Parse-SDK-iOS-OSX/releases/latest'
@@ -138,7 +138,7 @@ const platformDocs = [
     name: 'Android',
     symbol: 'android',
     links: [
-      {title: 'Guide', href: '/docs/android/getting-started'},
+      {title: 'Guide', href: '/docs/android/index'},
       {title: 'API Reference', href: 'https://parseplatform.org/Parse-SDK-Android/api'}
     ],
     download: 'https://github.com/parse-community/Parse-SDK-Android/releases/latest'
@@ -147,7 +147,7 @@ const platformDocs = [
     name: 'JavaScript',
     symbol: 'javascript',
     links: [
-      {title: 'Guide', href: '/docs/js/getting-started'},
+      {title: 'Guide', href: '/docs/js/index'},
       {title: 'API Reference', href: 'https://parseplatform.org/Parse-SDK-JS/api/'}
     ],
     download: 'https://github.com/parse-community/Parse-SDK-JS/releases/latest'
@@ -156,7 +156,7 @@ const platformDocs = [
     name: '.Net + Xamarin',
     symbol: 'dotnet',
     links: [
-      {title: 'Guide', href: '/docs/dotnet/getting-started'},
+      {title: 'Guide', href: '/docs/dotnet/index'},
       {title: 'API Reference', href: 'https://parseplatform.org/Parse-SDK-dotNET/api'}
     ],
     download: 'https://github.com/parse-community/Parse-SDK-dotNET/releases/latest'
@@ -165,7 +165,7 @@ const platformDocs = [
     name: 'Unity',
     symbol: 'unity',
     links: [
-      {title: 'Guide', href: '/docs/unity/getting-started'},
+      {title: 'Guide', href: '/docs/unity/index'},
       {title: 'API Reference', href: 'https://parseplatform.org/Parse-SDK-dotNET/api'}
     ],
     download: 'https://github.com/parse-community/Parse-SDK-dotNET/releases/latest'
@@ -174,7 +174,7 @@ const platformDocs = [
     name: 'PHP',
     symbol: 'php',
     links: [
-      {title: 'Guide', href: '/docs/php/getting-started'},
+      {title: 'Guide', href: '/docs/php/index'},
     ],
     download: 'https://github.com/parse-community/parse-php-sdk/releases/latest'
   },
@@ -182,7 +182,7 @@ const platformDocs = [
     name: 'Arduino',
     symbol: 'arduino',
     links: [
-      {title: 'Guide', href: '/docs/arduino/getting-started'},
+      {title: 'Guide', href: '/docs/arduino/index'},
     ],
     download: 'https://github.com/parse-community/Parse-SDK-Arduino/releases/latest'
   },
@@ -190,7 +190,7 @@ const platformDocs = [
     name: 'Embedded C',
     symbol: 'embedded_c',
     links: [
-      {title: 'Guide', href: '/docs/embedded_c/getting-started'},
+      {title: 'Guide', href: '/docs/embedded_c/index'},
     ],
     download: 'https://github.com/parse-community/parse-embedded-sdks/releases/latest'
   },
@@ -198,14 +198,14 @@ const platformDocs = [
     name: 'Cloud Code',
     symbol: 'cloudcode',
     links: [
-      {title: 'Guide', href: '/docs/cloudcode/getting-started'},
+      {title: 'Guide', href: '/docs/cloudcode/index'},
     ]
   },
   {
     name: 'REST API',
     symbol: 'rest',
     links: [
-      {title: 'Guide', href: '/docs/embedded_c/getting-started'},
+      {title: 'Guide', href: '/docs/embedded_c/index'},
     ],
   }
 ]

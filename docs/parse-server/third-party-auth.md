@@ -98,7 +98,7 @@ Two ways to [retrieve access token](https://developers.facebook.com/docs/account
 }
 ```
 
-Learn more about [Twitter login](https://dev.twitter.com/docs/auth/implementing-sign-twitter).
+Learn more about [Twitter login](https://developer.twitter.com/en/docs/twitter-for-websites/log-in-with-twitter/login-in-with-twitter).
 
 ### Anonymous user `authData`
 

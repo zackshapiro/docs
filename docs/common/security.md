@@ -68,7 +68,7 @@ When a user logs into an app, they initiate a session with Parse. Through this s
 
 The easiest way to control who can access which data is through access control lists, commonly known as ACLs. The idea behind an ACL is that each object has a list of users and roles along with what permissions that user or role has. A user needs read permissions (or must belong to a role that has read permissions) in order to retrieve an object's data, and a user needs write permissions (or must belong to a role that has write permissions) in order to update or delete that object.
 
-Once you have a User, you can start using ACLs. Remember: Users can be created through traditional username/password signup, through a third-party login system like Facebook or Twitter, or even by using Parse's [automatic anonymous users](/ios/users.md#anonymous-users) functionality. To set an ACL on the current user's data to not be publicly readable, all you have to do is:
+Once you have a User, you can start using ACLs. Remember: Users can be created through traditional username/password signup, through a third-party login system like Facebook or Twitter, or even by using Parse's [automatic anonymous users](ios/users.md#anonymous-users) functionality. To set an ACL on the current user's data to not be publicly readable, all you have to do is:
 
 {% if language == "objective_c-swift" %}
 

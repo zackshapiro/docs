@@ -428,7 +428,7 @@ ParseFacebookUtils.BeginLogin(permissions);
 
 ### Facebook SDK and Parse
 
-Microsoft provides an open-source SDK for making Graph API requests to Facebook. The SDK is [available on NuGet](http://www.nuget.org/packages/facebook), and you can learn more about it from [their website](http://www.csharpsdk.org).
+Microsoft provides an open-source SDK for making Graph API requests to Facebook. The SDK is [available on NuGet](https://www.nuget.org/packages/facebook), and you can learn more about it from [their website](http://www.csharpsdk.org).
 
 To use the Facebook SDK to fetch information about the current user, for example, you would install it using NuGet and then write code similar to this:
 

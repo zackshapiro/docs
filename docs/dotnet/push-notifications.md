@@ -14,24 +14,13 @@ The .NET SDK can send push notifications from all runtimes, but only Windows 8, 
 
 Currently .NET SDK can receive push on Windows 8, Windows Phone 8, Xamarin iOS and Xamarin Android.
 
-### Push on Windows 8
-
-If you want to start using push on Windows 8, start by completing the [Windows 8 Push tutorial](/tutorials/windows-8-push-tutorial) to learn how to configure your app. Come back to this guide afterwards to learn more about the push features offered by Parse.
-
-### Push on Windows Phone 8
-
-Windows Phone 8 supports authenticated and unauthenticated push notifications. Authenticated push notifications are not supported at this time. In the meantime, enjoy toast push notifications without any required setup. Some things you need to keep in mind:
-
-*   The communication between Parse and Microsoft's cloud is unencrypted. The communication between your device and Parse will always be secure.
-*   You are limited to 500 pushes per day per subscription.
-
 ### Push on Xamarin iOS
 
-If you want to start using push on Xamarin iOS, start by completing the [iOS Push tutorial](/tutorials/ios-push-notifications) to learn how to configure your push certificate.
+If you want to start using push on Xamarin iOS, start by completing the [iOS Push tutorial](parse-server/push-notifications-ios.md) to learn how to configure your push certificate.
 
 ### Push on Xamarin Android
 
-If you want to start using push on Unity Android, start by completing [Android Push tutorial](/tutorials/android-push-notifications) to learn how to configure your app.
+If you want to start using push on Unity Android, start by completing [Android Push tutorial](parse-server/push-notifications-android.md) to learn how to configure your app.
 
 ## Installations
 
@@ -147,7 +136,7 @@ Since `ParseInstallation` is a subclass of `ParseObject`, you can save any data 
 
 #### Saving Installation Data
 
-Storing data on an `Installation` object is just as easy as storing [any other data](dotnet/object.md) on Parse. In our Baseball app, we could allow users to get pushes about game results, scores and injury reports.
+Storing data on an `Installation` object is just as easy as storing [any other data](dotnet/objects.md) on Parse. In our Baseball app, we could allow users to get pushes about game results, scores and injury reports.
 
 ```cs
 // Store the category of push notifications the user would like to receive.
@@ -428,7 +417,7 @@ For each push campaign sent through the Parse web push console, you can allocate
 
 After you send the push, you can come back to the push console to see in real time which version resulted in more push opens, along with other metrics such as statistical confidence interval. It's normal for the number of recipients in each group to be slightly different because some devices that we had originally allocated to that experiment group may have uninstalled the app. It's also possible for the  random group assignment to be slightly uneven when the test audience size is small. Since we calculate open rate separately for each group based on recipient count, this should not significantly affect your experiment results.
 
-<img alt="Getting experiment results" src="/img/experiment_results_.png"/>
+<img alt="Getting experiment results" src="/img/experiment_results.png"/>
 
 If you are happy with the way one message performed, you can send that to the rest of your app's devices (i.e. the “Launch Group”). This step only applies to A/B tests where you vary the message.
 
@@ -468,7 +457,6 @@ Our web push console guides you through every step of setting up a Localized Pus
 
 Setting up Push Notifications is often a source of frustration for developers. The process is complicated and invites problems to happen along the way. If you run into issues, try some of these troubleshooting tips.
 
-* Make sure you are using the correct Package SID and client secret, as shown in Step 3 of the [Windows 8 Push Quickstart](/tutorials/windows-8-push-tutorial).
 * Clean and build your project.
 * Check the number of recipients in your Parse Push Console. Does it match the expected number of recipients? Your push might be targeted incorrectly.
 * Open your project's `package.appxmanifest` file and make sure "Toast Capable" is set to "yes."* If your app has been released for a while, it's possible for the recipient estimate on the push composer page to be higher than the pushes sent value on the push results page. The push composer estimate is generated via running your push segment query over your app's installation table.  We do not automatically delete installation objects when the users uninstall your app.  When we try to send a push, we detect uninstalled installations and do not include them in the pushes sent value on the results page.
