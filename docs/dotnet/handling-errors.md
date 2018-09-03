@@ -1,4 +1,6 @@
-# Handling Errors
+---
+title: Handling Errors
+---
 
 Parse has a few simple patterns for surfacing errors and handling them in your code.
 

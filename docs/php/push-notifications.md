@@ -1,4 +1,6 @@
-# Push Notifications
+---
+title: Push Notifications
+---
 
 ## Introduction
 

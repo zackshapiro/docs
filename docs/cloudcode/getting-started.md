@@ -1,4 +1,6 @@
-# Getting Started
+---
+title:  Getting Started
+---
 
 Cloud Code is [built into Parse Server]({{ site.baseUrl }}/parse-server/guide/). The default entry point for your Cloud Code is at `./cloud/main.js`.
 

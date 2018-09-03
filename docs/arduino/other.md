@@ -1,4 +1,6 @@
-# REST API
+---
+title:  REST API
+---
 
 Because the Arduino SDK was designed to minimize memory footprint, it doesn't provide direct functions for all the Parse features that are present in the mobile SDKs. However, it does have the capability to call the REST API, which offers the full range of functionality.
 

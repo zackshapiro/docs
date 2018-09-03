@@ -1,4 +1,6 @@
-# Getting Started
+---
+title: Getting Started
+---
 
 If you haven't set up your project yet, please [head over to the PHP SDK setup guide](https://github.com/parse-community/parse-php-sdk#installation) or read the [Installation](#installation) section below to get up and running. You can also check out our [API Reference]({{ site.apis.php }}) for more detailed information about our SDK.
 

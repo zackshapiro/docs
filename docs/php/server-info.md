@@ -1,4 +1,6 @@
-# Server Info
+---
+title: Server Info
+---
 
 Any server version **2.1.4** or later supports access to detailed information about itself and it's capabilities. 
 

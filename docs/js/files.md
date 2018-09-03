@@ -1,4 +1,6 @@
-# Files
+---
+title: Files
+---
 
 ## Creating a Parse.File
 

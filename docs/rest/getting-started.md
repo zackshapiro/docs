@@ -1,4 +1,6 @@
-# Getting Started
+---
+title: Getting Started
+---
 
 The REST API lets you interact with Parse Server from anything that can send an HTTP request. There are many things you can do with the REST API. For example:
 

@@ -113,6 +113,109 @@
 			"parse-server/development"
     ]
   },
+  "unity-guide": {
+    "Unity Guide": [
+			"unity/getting-started",
+			"unity/objects",
+			"unity/queries",
+			"unity/users",
+			"unity/sessions",
+			"unity/roles",
+			"unity/files",
+			"unity/geopoints",
+			"unity/push-notifications",
+			"unity/config",
+			"unity/analytics",
+			"unity/data",
+			"unity/relations",
+			"unity/handling-errors",
+			"unity/security",
+			"unity/performance",
+			"unity/errors"
+    ]
+  },
+  "arduino-guide": {
+    "Arduino Guide": [
+      "arduino/getting-started",
+			"arduino/objects",
+			"arduino/queries",
+			"arduino/requests",
+			"arduino/users",
+			"arduino/push-notifications",
+			"arduino/analytics",
+			"arduino/cloud-code",
+			"arduino/sample-app",
+			"arduino/errors"
+    ]
+  },
+  "cloud-code": {
+    "Cloud Code Guide": [
+      "cloudcode/getting-started",
+      "cloudcode/cloud-code",
+      "cloudcode/cloud-code-advanced"
+    ]
+  },
+  "dotnet-guide": {
+    ".Net Guide": [
+      "dotnet/getting-started",
+      "dotnet/objects",
+      "dotnet/queries",
+      "dotnet/users",
+      "dotnet/sessions",
+      "dotnet/roles",
+      "dotnet/files",
+      "dotnet/geopoints",
+      "dotnet/push-notifications",
+      "dotnet/config",
+      "dotnet/analytics",
+      "dotnet/data",
+      "dotnet/relations",
+      "dotnet/handling-errors",
+      "dotnet/security",
+      "dotnet/performance",
+      "dotnet/errors"
+    ]
+  },
+  "embedded-c-guide": {
+    "C Guide": [
+      "embedded_c/getting-started",
+			"embedded_c/objects",
+			"embedded_c/requests",
+			"embedded_c/users",
+			"embedded_c/push-notifications",
+			"embedded_c/cloud-code",
+			"embedded_c/sample-app",
+			"embedded_c/handling-errors",
+			"embedded_c/errors"
+    ]
+  },
+  "php-guide": {
+    "PHP Guide": [
+    	"php/getting-started",
+			"php/installation",
+			"php/setup",
+			"php/objects",
+			"php/queries",
+			"php/users",
+			"php/sessions",
+			"php/roles",
+			"php/files",
+			"php/geopoints",
+			"php/push-notifications",
+			"php/server-info",
+			"php/schema",
+			"php/cloud",
+			"php/logs",
+			"php/config",
+			"php/analytics",
+			"php/data",
+			"php/relations",
+			"php/handling-errors",
+			"php/security",
+			"php/performance",
+      "php/errors"
+    ]
+  },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
   }

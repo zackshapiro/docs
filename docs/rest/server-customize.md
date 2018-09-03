@@ -1,4 +1,6 @@
-# Your Configuration
+---
+title: Your Configuration
+---
 
 <noscript>
 <p style='padding:8px;color:#fff;background:#f06;border-radius:4px;font-weight:bold'>Customization requires Javascript to be enabled!</p>

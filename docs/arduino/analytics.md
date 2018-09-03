@@ -1,4 +1,6 @@
-# Analytics
+---
+title:  Analytics
+---
 
 Some examples:
 

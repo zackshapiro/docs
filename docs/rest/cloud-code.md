@@ -1,4 +1,6 @@
-# Cloud Code
+---
+title: Cloud Code
+---
 
 ## Calling Cloud Functions
 

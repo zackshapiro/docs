@@ -1,4 +1,6 @@
-# Installation
+---
+title: Installation
+---
 
 There are various ways to install and use this sdk. We'll elaborate on a couple here.
 Note that the Parse PHP SDK requires PHP 5.4 or newer. It can also run on HHVM (recommended 3.0 or newer).

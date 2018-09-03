@@ -1,4 +1,6 @@
-# Setup
+---
+title: Setup
+---
 
 Once you have access to the sdk you'll need to set it up in order to begin working with parse-server.
 

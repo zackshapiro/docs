@@ -1,4 +1,6 @@
-# Analytics
+---
+title: Analytics
+---
 
 Parse provides a number of hooks for you to get a glimpse into the ticking heart of your app. We understand that it's important to understand what your app is doing, how frequently, and when.
 

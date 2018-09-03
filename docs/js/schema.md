@@ -1,4 +1,6 @@
-# Schema
+---
+title: Schema
+---
 
 Schema is the structure representing classes in your app. You can use the schema
 of an app to verify operations in a unit test, generate test data, generate test

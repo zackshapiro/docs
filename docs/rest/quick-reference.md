@@ -1,4 +1,6 @@
-# Quick Reference
+---
+title: Quick Reference
+---
 
 For your convenience you can customize [your configuration](#your-configuration) to change the default server url, mount path and additional values to match your personal setup.
 
@@ -17,7 +19,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>classes/&lt;className&gt;/&lt;objectId&gt;</code> | PUT       | [Updating Objects](#updating-objects)      |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>classes/&lt;className&gt;</code>            | GET       | [Queries](#queries)                                |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>classes/&lt;className&gt;/&lt;objectId&gt;</code> | DELETE    | [Deleting Objects](#deleting-objects)      |
-{: .docs_table}
+
 
 ## Users API
 
@@ -32,7 +34,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>users</code>                | GET       | [Querying Users](#querying)                                  |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>users/&lt;objectId&gt;</code>     | DELETE    | [Deleting Users](#deleting-users)                            |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>requestPasswordReset</code> | POST      | [Requesting A Password Reset](#requesting-a-password-reset)  |
-{: .docs_table}
+
 
 ## Sessions API
 
@@ -45,7 +47,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>sessions</code>             | GET       | [Querying Sessions](#querying-sessions) |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>sessions/&lt;objectId&gt;</code>  | DELETE    | [Deleting Sessions](#deleting-sessions) |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>sessions/me</code>          | PUT       | [Pairing with Installation](#pairing-session-with-installation) |
-{: .docs_table}
+
 
 ## Roles API
 
@@ -55,14 +57,14 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>roles/&lt;objectId&gt;</code> | GET       | [Retrieving Roles](#retrieving-roles) |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>roles/&lt;objectId&gt;</code> | PUT       | [Updating Roles](#updating-roles)     |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>roles/&lt;objectId&gt;</code> | DELETE    | [Deleting Roles](#deleting-roles)     |
-{: .docs_table}
+
 
 ## Files API
 
 | URL                   | HTTP Verb | Functionality                             |
 |-----------------------|-----------|-------------------------------------------|
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>files/&lt;fileName&gt;</code> | POST      | [Uploading Files](#uploading-files) |
-{: .docs_table}
+
 
 ## Analytics API
 
@@ -70,14 +72,14 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 |-------------------------|-----------|-------------------------------------------------|
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>events/AppOpened</code>   | POST      | [Analytics](#app-open-analytics)      |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>events/&lt;eventName&gt;</code> | POST      | [Custom Analytics](#custom-analytics) |
-{: .docs_table}
+
 
 ## Push Notifications API
 
 | URL       | HTTP Verb | Functionality                |
 |-----------|-----------|------------------------------|
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>push</code> | POST      | [Push Notifications](#push-notifications)  |
-{: .docs_table}
+
 
 ## Installations API
 
@@ -88,7 +90,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>installations/&lt;objectId&gt;</code> | PUT       | [Updating Installations](#updating-installations)        |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>installations</code>            | GET       | [Querying Installations](#querying-installations)        |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>installations/&lt;objectId&gt;</code> | DELETE    | [Deleting Installations](#deleting-installations)        |
-{: .docs_table}
+
 
 ## Cloud Functions API
 
@@ -96,7 +98,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 |-----------------------|-----------|-----------------------------------------------------------|
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>functions/&lt;name&gt;</code> | POST      | [Calling Cloud Functions](#calling-cloud-functions)    |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>jobs/&lt;name&gt;</code>      | POST      | [Triggering Background Jobs](#triggering-background-jobs) |
-{: .docs_table}
+
 
 ## Schemas API
 
@@ -107,7 +109,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>schemas/&lt;className&gt;</code>| POST      | [Create Schema](#adding-a-schema)                  |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>schemas/&lt;className&gt;</code>| PUT       | [Modify Schema](#modifying-the-schema)             |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>schemas/&lt;className&gt;</code>| DELETE    | [Delete Schema](#removing-a-schema)                |
-{: .docs_table}
+
 
 ## Function Hooks API
 
@@ -117,7 +119,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/functions/</code>               | POST      | [Create Cloud Function](#create-function-webhook) |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/functions/&lt;functionName&gt;</code> | PUT       | [Edit Cloud Function](#edit-function-webhook)     |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/functions/&lt;functionName&gt;</code> | DELETE    | [Delete Cloud Function](#delete-function-webhook) |
-{: .docs_table}
+
 
 ## Trigger Hooks API
 
@@ -127,7 +129,7 @@ API access can be provided over **HTTPS** and **HTTP**. We recommend utilizing *
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/triggers/</code>                          | POST      | [Create Cloud Trigger](#create-trigger-webhook)   |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/triggers/&lt;className&gt;/&lt;triggerName&gt;</code> | PUT       | [Edit Cloud Trigger](#edit-trigger-webhook)       |
 | <code class="highlighter-rouge"><span class="custom-parse-server-mount">/parse/</span>hooks/triggers/&lt;className&gt;/&lt;triggerName&gt;</code> | DELETE    | [Delete Cloud Trigger](#delete-trigger-webhook)   |
-{: .docs_table}
+
 
 ## Request Format
 

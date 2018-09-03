@@ -1,4 +1,6 @@
-# Users & Sessions
+---
+title: Users & Sessions
+---
 
 At the core of many apps, there is a notion of user accounts that lets users access their information in a secure manner. In our other SDKs, we provide a specialized user class that automatically handles much of the functionality required for user account management. Users are a special class of Parse Objects and has all the same features, such as flexible schema, automatic persistence, and a key value interface.
 

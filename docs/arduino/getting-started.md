@@ -1,4 +1,6 @@
-# Getting Started
+---
+title:  Getting Started
+---
 
 If you haven't installed the SDK yet, please [head over to the Arduino SDK repository](https://github.com/parse-community/Parse-SDK-Arduino) to install the SDK in the Arduino IDE. Note that this SDK requires the Arduino Yún and the Arduino IDE v1.6.0+.
 

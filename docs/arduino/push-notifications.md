@@ -1,4 +1,6 @@
-# Push Notifications
+---
+title:  Push Notifications
+---
 
 Using Push Notifications, you'll be able to send realtime notifications to your Arduino. This can be triggered by changes in your data, custom code in Cloud Code, a companion mobile app, and much more.
 

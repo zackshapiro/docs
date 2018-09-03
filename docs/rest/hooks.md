@@ -1,4 +1,6 @@
-# Hooks
+---
+title: Hooks
+---
 
 You can create, update, list or delete all your cloud code webhooks via the Hooks API,
 in addition to being able to do so through the parse website.

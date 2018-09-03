@@ -1,4 +1,6 @@
-# Cloud Functions
+---
+title:  Cloud Functions
+---
 
 Cloud Functions allow you to run custom app logic in the Parse Cloud. This is especially useful for running complex app logic in the cloud so that you can reduce the memory footprint of your code on the IoT device. In a Cloud Function, you can query/save Parse data, send push notifications, and log analytics events.
 

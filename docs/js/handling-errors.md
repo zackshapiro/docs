@@ -1,4 +1,6 @@
-# Error Handling
+---
+title: Error Handling
+---
 
 Most Parse JavaScript functions report their success or failure using an object with callbacks, similar to a Backbone "options" object.  The two primary callbacks used are `success` and `error`.  `success` is called whenever an operation completes without errors.  Generally, its parameter will be either the `Parse.Object` in the case of `save` or `get`, or an array of `Parse.Object` for `find`.
 

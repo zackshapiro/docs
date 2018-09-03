@@ -1,4 +1,6 @@
-# Logs
+---
+title: Logs
+---
 
 `ParseLogs` allows info and error logs to be retrieved from the server as JSON.
 This is available in sdk versions **1.4.0** and up.

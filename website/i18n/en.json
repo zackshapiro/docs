@@ -63,43 +63,46 @@
         "title": "Users"
       },
       "arduino/analytics": {
-        "title": "arduino/analytics"
+        "title": "Analytics"
       },
       "arduino/cloud-code": {
-        "title": "arduino/cloud-code"
+        "title": "Cloud Functions"
+      },
+      "arduino/errors": {
+        "title": "Error Codes"
       },
       "arduino/getting-started": {
-        "title": "arduino/getting-started"
+        "title": "Getting Started"
       },
       "arduino/objects": {
-        "title": "arduino/objects"
+        "title": "Objects"
       },
       "arduino/other": {
-        "title": "arduino/other"
+        "title": "REST API"
       },
       "arduino/push-notifications": {
-        "title": "arduino/push-notifications"
+        "title": "Push Notifications"
       },
       "arduino/queries": {
-        "title": "arduino/queries"
+        "title": "Queries"
       },
       "arduino/requests": {
-        "title": "arduino/requests"
+        "title": "Requests"
       },
       "arduino/sample-app": {
-        "title": "arduino/sample-app"
+        "title": "Sample App"
       },
       "arduino/users": {
-        "title": "arduino/users"
+        "title": "Users and Sessions"
       },
       "cloudcode/cloud-code-advanced": {
         "title": "cloudcode/cloud-code-advanced"
       },
       "cloudcode/cloud-code": {
-        "title": "cloudcode/cloud-code"
+        "title": "Cloud Functions"
       },
       "cloudcode/getting-started": {
-        "title": "cloudcode/getting-started"
+        "title": "Getting Started"
       },
       "common/data": {
         "title": "common/data"
@@ -130,61 +133,82 @@
         "title": "This is document number 3"
       },
       "dotnet/analytics": {
-        "title": "dotnet/analytics"
+        "title": "Analytics"
       },
       "dotnet/config": {
-        "title": "dotnet/config"
+        "title": "Config"
+      },
+      "dotnet/data": {
+        "title": "Data"
+      },
+      "dotnet/errors": {
+        "title": "Error Codes"
       },
       "dotnet/files": {
-        "title": "dotnet/files"
+        "title": "Files"
       },
       "dotnet/geopoints": {
-        "title": "dotnet/geopoints"
+        "title": "GeoPoints"
       },
       "dotnet/getting-started": {
-        "title": "dotnet/getting-started"
+        "title": "Getting Started"
       },
       "dotnet/handling-errors": {
-        "title": "dotnet/handling-errors"
+        "title": "Handling Errors"
       },
       "dotnet/objects": {
-        "title": "dotnet/objects"
+        "title": "Objects"
+      },
+      "dotnet/performance": {
+        "title": "Performance"
       },
       "dotnet/push-notifications": {
-        "title": "dotnet/push-notifications"
+        "title": "Push Notifications"
       },
       "dotnet/queries": {
-        "title": "dotnet/queries"
+        "title": "Queries"
+      },
+      "dotnet/relations": {
+        "title": "Relations"
       },
       "dotnet/roles": {
-        "title": "dotnet/roles"
+        "title": "Roles"
+      },
+      "dotnet/security": {
+        "title": "Security"
+      },
+      "dotnet/sessions": {
+        "title": "Sessions"
       },
       "dotnet/users": {
-        "title": "dotnet/users"
+        "title": "Users"
       },
       "embedded_c/cloud-code": {
-        "title": "embedded_c/cloud-code"
+        "title": "Cloud Functions"
+      },
+      "embedded_c/errors": {
+        "title": "Error Codes"
       },
       "embedded_c/getting-started": {
-        "title": "embedded_c/getting-started"
+        "title": "Getting Started"
       },
       "embedded_c/handling-errors": {
-        "title": "embedded_c/handling-errors"
+        "title": "Handling Errors"
       },
       "embedded_c/objects": {
-        "title": "embedded_c/objects"
+        "title": "Objects"
       },
       "embedded_c/push-notifications": {
-        "title": "embedded_c/push-notifications"
+        "title": "Push Notifications"
       },
       "embedded_c/requests": {
-        "title": "embedded_c/requests"
+        "title": "Requests"
       },
       "embedded_c/sample-app": {
-        "title": "embedded_c/sample-app"
+        "title": "Sample App"
       },
       "embedded_c/users": {
-        "title": "embedded_c/users"
+        "title": "Users & Sessions"
       },
       "doc4": {
         "title": "Other Document"
@@ -264,10 +288,10 @@
         "sidebar_label": "Users"
       },
       "js/analytics": {
-        "title": "js/analytics"
+        "title": "Analytics"
       },
       "js/config": {
-        "title": "js/config"
+        "title": "Config"
       },
       "js/data": {
         "title": "Data"
@@ -276,43 +300,43 @@
         "title": "Error Codes"
       },
       "js/files": {
-        "title": "js/files"
+        "title": "Files"
       },
       "js/geopoints": {
-        "title": "js/geopoints"
+        "title": "GeoPoints"
       },
       "js/getting-started": {
-        "title": "js/getting-started"
+        "title": "Getting Started"
       },
       "js/handling-errors": {
-        "title": "js/handling-errors"
+        "title": "Error Handling"
       },
       "js/live-queries": {
-        "title": "js/live-queries"
+        "title": "Live Queries"
       },
       "js/objects": {
-        "title": "js/objects"
+        "title": "Objects"
       },
       "js/performance": {
         "title": "Performance"
       },
       "js/promises": {
-        "title": "js/promises"
+        "title": "Promises"
       },
       "js/push-notifications": {
-        "title": "js/push-notifications"
+        "title": "Push Notifications"
       },
       "js/queries": {
-        "title": "js/queries"
+        "title": "Queries"
       },
       "js/relations": {
         "title": "Relations"
       },
       "js/roles": {
-        "title": "js/roles"
+        "title": "Roles"
       },
       "js/schema": {
-        "title": "js/schema"
+        "title": "Schema"
       },
       "js/security": {
         "title": "Security"
@@ -321,7 +345,7 @@
         "title": "Sessions"
       },
       "js/users": {
-        "title": "js/users"
+        "title": "Users"
       },
       "parse-server/cache-adapters": {
         "title": "Configuring Cache Adapters"
@@ -390,145 +414,181 @@
         "title": "Using Parse SDKs with Parse Server"
       },
       "php/analytics": {
-        "title": "php/analytics"
+        "title": "Analytics"
       },
       "php/cloud": {
-        "title": "php/cloud"
+        "title": "Cloud Code"
       },
       "php/config": {
-        "title": "php/config"
+        "title": "Config"
+      },
+      "php/data": {
+        "title": "Data"
+      },
+      "php/errors": {
+        "title": "Error Codes"
       },
       "php/files": {
-        "title": "php/files"
+        "title": "Files"
       },
       "php/geopoints": {
-        "title": "php/geopoints"
+        "title": "GeoPoints"
       },
       "php/getting-started": {
-        "title": "php/getting-started"
+        "title": "Getting Started"
       },
       "php/handling-errors": {
-        "title": "php/handling-errors"
+        "title": "Handling Errors"
       },
       "php/installation": {
-        "title": "php/installation"
+        "title": "Installation"
       },
       "php/logs": {
-        "title": "php/logs"
+        "title": "Logs"
       },
       "php/objects": {
-        "title": "php/objects"
+        "title": "Objects"
+      },
+      "php/performance": {
+        "title": "Performance"
       },
       "php/push-notifications": {
-        "title": "php/push-notifications"
+        "title": "Push Notifications"
       },
       "php/queries": {
-        "title": "php/queries"
+        "title": "Queries"
+      },
+      "php/relations": {
+        "title": "Relations"
       },
       "php/roles": {
-        "title": "php/roles"
+        "title": "Roles"
       },
       "php/schema": {
-        "title": "php/schema"
+        "title": "Schema"
+      },
+      "php/security": {
+        "title": "Security"
       },
       "php/server-info": {
-        "title": "php/server-info"
+        "title": "Server Info"
+      },
+      "php/sessions": {
+        "title": "Sessions"
       },
       "php/setup": {
-        "title": "php/setup"
+        "title": "Setup"
       },
       "php/users": {
-        "title": "php/users"
+        "title": "Users"
       },
       "rest/analytics": {
-        "title": "rest/analytics"
+        "title": "Analytics"
       },
       "rest/cloud-code": {
-        "title": "rest/cloud-code"
+        "title": "Cloud Code"
       },
       "rest/config": {
-        "title": "rest/config"
+        "title": "Config"
       },
       "rest/data": {
-        "title": "rest/data"
+        "title": "Data"
       },
       "rest/errors": {
-        "title": "rest/errors"
+        "title": "Error Codes"
       },
       "rest/files": {
-        "title": "rest/files"
+        "title": "Files"
       },
       "rest/geopoints": {
-        "title": "rest/geopoints"
+        "title": "GeoPoints"
       },
       "rest/getting-started": {
-        "title": "rest/getting-started"
+        "title": "Getting Started"
       },
       "rest/hooks": {
-        "title": "rest/hooks"
+        "title": "Hooks"
       },
       "rest/objects": {
-        "title": "rest/objects"
+        "title": "Objects"
       },
       "rest/push-notifications": {
-        "title": "rest/push-notifications"
+        "title": "Push Notifications"
       },
       "rest/queries": {
-        "title": "rest/queries"
+        "title": "Queries"
       },
       "rest/quick-reference": {
-        "title": "rest/quick-reference"
+        "title": "Quick Reference"
       },
       "rest/roles": {
-        "title": "rest/roles"
+        "title": "Roles"
       },
       "rest/schemas": {
-        "title": "rest/schemas"
+        "title": "Schema"
       },
       "rest/security": {
-        "title": "rest/security"
+        "title": "Security"
       },
       "rest/server-customize": {
-        "title": "rest/server-customize"
+        "title": "Your Configuration"
       },
       "rest/sessions": {
-        "title": "rest/sessions"
+        "title": "Sessions"
       },
       "rest/users": {
-        "title": "rest/users"
+        "title": "Users"
       },
       "unity/analytics": {
-        "title": "unity/analytics"
+        "title": "Analytics"
       },
       "unity/config": {
-        "title": "unity/config"
+        "title": "Config"
+      },
+      "unity/data": {
+        "title": "Data"
+      },
+      "unity/errors": {
+        "title": "Error Codes"
       },
       "unity/files": {
-        "title": "unity/files"
+        "title": "Files"
       },
       "unity/geopoints": {
-        "title": "unity/geopoints"
+        "title": "GeoPoints"
       },
       "unity/getting-started": {
-        "title": "unity/getting-started"
+        "title": "Getting Started"
       },
       "unity/handling-errors": {
-        "title": "unity/handling-errors"
+        "title": "Handling Errors"
       },
       "unity/objects": {
-        "title": "unity/objects"
+        "title": "Objects"
+      },
+      "unity/performance": {
+        "title": "Performance"
       },
       "unity/push-notifications": {
-        "title": "unity/push-notifications"
+        "title": "Push Notifications"
       },
       "unity/queries": {
-        "title": "unity/queries"
+        "title": "Queries"
+      },
+      "unity/relations": {
+        "title": "Relations"
       },
       "unity/roles": {
-        "title": "unity/roles"
+        "title": "Roles"
+      },
+      "unity/security": {
+        "title": "Security"
+      },
+      "unity/sessions": {
+        "title": "Sessions"
       },
       "unity/users": {
-        "title": "unity/users"
+        "title": "Users"
       }
     },
     "links": {
@@ -544,6 +604,12 @@
       "Javascript Guide": "Javascript Guide",
       "REST API Guide": "REST API Guide",
       "Parse Server Guide": "Parse Server Guide",
+      "Unity Guide": "Unity Guide",
+      "Arduino Guide": "Arduino Guide",
+      "Cloud Code Guide": "Cloud Code Guide",
+      ".Net Guide": ".Net Guide",
+      "C Guide": "C Guide",
+      "PHP Guide": "PHP Guide",
       "First Category": "First Category"
     }
   },

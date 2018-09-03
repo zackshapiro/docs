@@ -1,4 +1,6 @@
-# Push Notifications
+---
+title: Push Notifications
+---
 
 Push Notifications are a great way to keep your users engaged and informed about your app. You can reach your entire user base quickly and effectively. This guide will help you through the setup process and the general usage of Parse to send push notifications.
 

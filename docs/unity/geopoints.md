@@ -1,4 +1,6 @@
-# GeoPoints
+---
+title: GeoPoints
+---
 
 Parse allows you to associate real-world latitude and longitude coordinates with an object.  Adding a `ParseGeoPoint` to a `ParseObject` allows queries to take into account the proximity of an object to a reference point.  This allows you to easily do things like find out what user is closest to another user or which places are closest to a user.
 

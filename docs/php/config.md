@@ -1,4 +1,6 @@
-# Config
+---
+title: Config
+---
 
 **ParseConfig** allows you to access the global **Config** object for your parse server setup.
 

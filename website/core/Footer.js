@@ -33,45 +33,56 @@ class Footer extends React.Component {
             )}
           </a>
           <div>
-            <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <h5>Parse Server Guides</h5>
+            <a href={this.docUrl('parse-server/getting-started')}>
+              Parse Server Guide
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.docUrl('cloudcode/getting-started')}>
+              Cloud Code Guide
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('rest/getting-started')}>
+              REST Guide
+            </a>
+            <a href={this.docUrl('js/getting-started')}>
+              JavaScript Guide
             </a>
           </div>
           <div>
-            <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
+            <h5>Client Guides</h5>
+            <a href={this.docUrl('ios/getting-started')}>
+              iOS / macOS / tvOS Guide
             </a>
-            <a
-              href="http://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
+            <a href={this.docUrl('android/getting-started')}>
+              Android Guide
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Twitter
+            <a href={this.docUrl('dotnet/getting-started')}>
+              .Net + Xamarin Guide
+            </a>
+            <a href={this.docUrl('unity/getting-started')}>
+              Unity Guide
+            </a>
+          </div>
+          <div>
+            <br/>
+            <a href={this.docUrl('php/getting-started')}>
+              PHP Guide
+            </a>
+            <a href={this.docUrl('arduino/getting-started')}>
+              Arduino Guide
+            </a>
+            <a href={this.docUrl('embedded_c/getting-started')}>
+              Embedded C Guide
             </a>
           </div>
           <div>
             <h5>More</h5>
             <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/prse-community">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href="/parse-community/parse-server/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">

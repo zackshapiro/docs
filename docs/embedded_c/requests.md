@@ -1,4 +1,6 @@
-# Requests
+---
+title: Requests
+---
 
 The main way you'll be interacting with Parse is through the `parseSendRequest` function, which sends a request to the REST API. For example, here's how to save an object with some data:
 

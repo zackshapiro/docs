@@ -1,4 +1,6 @@
-# Promises
+---
+title: Promises
+---
 
 In addition to callbacks, every asynchronous method in the Parse JavaScript SDK returns a `Promise`. With promises, your code can be much cleaner than the nested code you get with callbacks.
 

@@ -1,4 +1,6 @@
-# Config
+---
+title: Config
+---
 
 ## Parse Config
 

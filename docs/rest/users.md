@@ -1,4 +1,6 @@
-# Users
+---
+title: Users
+---
 
 Many apps have a unified login that works across the mobile app and other systems. Accessing user accounts through the REST API lets you build this functionality on top of Parse.
 

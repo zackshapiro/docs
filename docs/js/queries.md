@@ -1,4 +1,6 @@
-# Queries
+---
+title: Queries
+---
 
 We've already seen how a `Parse.Query` with `get` can retrieve a single `Parse.Object` from Parse. There are many other ways to retrieve data with `Parse.Query` - you can retrieve many objects at once, put conditions on the objects you wish to retrieve, and more.
 

@@ -1,4 +1,6 @@
-# Sessions
+---
+title: Sessions
+---
 
 Sessions represent an instance of a user logged into a device. Sessions are automatically created when users log in or sign up. They are automatically deleted when users log out. There is one distinct `Session` object for each user-installation pair; if a user issues a login request from a device they're already logged into, that user's previous `Session` object for that Installation is automatically deleted. `Session` objects are stored on Parse in the Session class, and you can view them on the Parse.com Data Browser. We provide a set of APIs to manage `Session` objects in your app.
 

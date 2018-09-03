@@ -1,4 +1,6 @@
-# Handling Errors
+---
+title: Handling Errors
+---
 
 There are two main ways an error from the SDK can be propagated to the caller - as a return result of the method call, or through the request and push callbacks.
 

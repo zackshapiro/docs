@@ -1,4 +1,6 @@
-# Queries
+---
+title:  Queries
+---
 
 We've already seen how a `ParseObjectGet` with an `objectId` can retrieve a single object from Parse. There are many other ways to retrieve data with `ParseQuery` -- you can retrieve many objects at once, put conditions on the objects you wish to retrieve, and more.
 

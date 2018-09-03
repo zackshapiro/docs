@@ -1,4 +1,6 @@
-# Getting Started
+---
+title: Getting Started
+---
 
 The Parse platform provides a complete backend solution for your mobile application. Our goal is to totally eliminate the need for writing server code or maintaining servers.
 

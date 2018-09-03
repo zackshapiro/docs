@@ -1,4 +1,6 @@
-# Config
+---
+title: Config
+---
 
 `Parse Config` is a way to configure your applications remotely by storing a single configuration object on Parse. It enables you to add things like feature gating or a simple "Message of the day". To start using `Parse Config` you need to add a few key/value pairs (parameters) to your app on the Parse Config Dashboard.
 

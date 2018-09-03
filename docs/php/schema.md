@@ -1,4 +1,6 @@
-# Schema
+---
+title: Schema
+---
 
 Direct manipulation of the classes that are on your server is possible through `ParseSchema`. Although fields and classes can be automatically generated (the latter assuming client class creation is enabled) ParseSchema gives you explicit control over these classes and their fields.
 

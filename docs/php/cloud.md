@@ -1,4 +1,6 @@
-# Cloud Code
+---
+title:  Cloud Code
+---
 
 Server side cloud code is a powerful component of parse server. 
 

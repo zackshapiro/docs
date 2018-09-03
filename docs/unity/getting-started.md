@@ -1,4 +1,6 @@
-# Getting Started
+---
+title: Getting Started
+---
 
 If you're familiar with web frameworks like ASP.NET MVC we've taken many of the same principles and applied them to our platform. In particular, our SDK is ready to use out of the box with minimal configuration on your part.
 
