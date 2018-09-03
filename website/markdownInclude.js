@@ -55,11 +55,7 @@ function getTemplateString(state, advance = true, startPos) {
 }
 
 module.exports = function (md) {
-
-  var inIf = false;
-  var srcs = [];
-  var memoize = [];
-  console.log(md);
+  const variables = {};
   md.inline.ruler.push('template', function(state) {
     const template = getTemplateString(state);
     if (!template) {
@@ -68,6 +64,13 @@ module.exports = function (md) {
     const { block, start, end } = template;
     var components = block.split(' ');
     if (components[1] === 'declare') {
+      const assignment = components[2].split('=');
+      const key = assignment[0];
+      const value =  (function() {
+        'use strict';
+        return eval(assignment[1]);
+      }());
+      variables[key] = value;
       state.push({
         type: 'template',
         level: state.level,
@@ -75,7 +78,19 @@ module.exports = function (md) {
       });
     } else if (components[1] === 'if') {
       const stmt = components.slice(2, components.length - 1).join(' ');
-      var res = eval(`(() => (${stmt}))()`);
+      const res = (function() {
+        'use strict';
+        let evaledString = '';
+        Object.keys(variables).forEach((key) => {
+          let value = variables[key];
+          if (typeof value === 'string') {
+            value = `'${value}'`;
+          }
+          evaledString += `var ${key} = ${value};\n`;
+        });
+        evaledString += stmt;
+        return eval(evaledString);
+      }());
       state.push({
         type: 'template',
         level: state.level,
@@ -87,27 +102,26 @@ module.exports = function (md) {
         level: state.level,
         content: { endif: true }
       });
-    } else if (components[1] === 'include') {
-      var file = components[2];
-      var variables;
+    } /* else if (components[1] === 'include') {
+      const file = components[2];
+      let variables;
       if (components.length == 5) {
         variables = components[3];
       }
-      var token = {
+      const token = {
         type: "template",
         level: state.level,
         content: { import: file, variables }
       };
       state.pos = end;
       state.push(token);
-    } else {
+    } */ else {
       return false;
     }
     return true;
   });
   var allVariables = [];
   md.renderer.rules.template = function(tokens, idx, options) {
-    var renderMarkdown = require('docusaurus/lib/core/renderMarkdown');
     const result = tokens.map((token) => {
       if (token.type !== 'template') {
         return;
@@ -123,10 +137,7 @@ module.exports = function (md) {
       if (token.content.endif) {
         return '</div>';
       }
-      if (token.content.declare) {
-        eval(token.content.declare);
-      }
-      if (token.content.import) {
+      /* if (token.content.import) {
         try {
           var contentData = fs.readFileSync(path.resolve(CWD, '../', docsPath(),  token.content.import));
         } catch (e) {
@@ -134,14 +145,12 @@ module.exports = function (md) {
         }
         var contents = contentData.toString('utf8');
         if (variables) {
-          console.log(variables);
           allVariables.push(variables);
           // contents = '{% declare '+variables+' %}\n'+contents;
         }
         return renderMarkdown(contents);
-      }
+      } */
     }).join('');
     return result;
   }
-  console.log(md);
 }
