@@ -42,7 +42,7 @@ catch (InvalidOperationException e)
 At the moment there are a couple of things to watch out for:
 
 1.  Due to limitations with Unity's `WWW` class, error details from Parse Cloud interactions are not passed back to the SDK. The error message in these scenarios is of the form ''40x message'' for example, ''400 Bad Request'' or ''404 Not Found''. You can implement a generic error handler for those scenarios.
-2.  If you want finer grained control over your error handling, you could look into using [Cloud Functions]({{ site.baseUrl }}/cloudcode/guide/#cloud-functions) to wrap your calls and send back the error information via the Cloud Code success path. Sending the error information through the success path ensures that they are passed back to the SDK.
+2.  If you want finer grained control over your error handling, you could look into using [Cloud Functions](cloudcode/index.md#cloud-functions) to wrap your calls and send back the error information via the Cloud Code success path. Sending the error information through the success path ensures that they are passed back to the SDK.
 
 Let's take a look at another error handling example:
 

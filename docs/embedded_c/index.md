@@ -9,7 +9,7 @@ We provide two open source reference implementations for embedded environments:
 1.  Embedded C SDK - Targeted for Linux. This can be adapted to target OSes like Ubuntu, Debian, and others.
 2.  Embedded RTOS C SDK - Targeted for Real Time OSes. This can be adapted for other embedded RTOS environments.
 
-Both these SDKs provide a consistent interface to interact with the [Parse REST API]({{ site.baseurl }}/rest/guide), but with different underlying implementations.
+Both these SDKs provide a consistent interface to interact with the [Parse REST API](rest/index.md), but with different underlying implementations.
 
 On Parse, you create an App for each of your mobile and embedded applications. Each App has its own application ID and client key that you apply to your SDK install. Your account on Parse can accommodate multiple Apps. This is useful even if you have one application, since you can deploy different versions for test and production.
 

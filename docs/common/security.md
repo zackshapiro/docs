@@ -22,7 +22,7 @@ The second level of security is at the schema and data level. Enforcing security
 *   A client application can add fields to classes
 *   A client application can modify or query for objects on Parse
 
-You can configure any of these permissions to apply to everyone, no one, or to specific users or roles in your app. Roles are groups that contain users or other roles, which you can assign to an object to restrict its use. Any permission granted to a role is also granted to any of its children, whether they are users or other roles, enabling you to create an access hierarchy for your apps. Each of [the Parse guides]({{ site.baseUrl }}/) includes a detailed description of employing Roles in your apps.
+You can configure any of these permissions to apply to everyone, no one, or to specific users or roles in your app. Roles are groups that contain users or other roles, which you can assign to an object to restrict its use. Any permission granted to a role is also granted to any of its children, whether they are users or other roles, enabling you to create an access hierarchy for your apps. Each of [the Parse guides](/) includes a detailed description of employing Roles in your apps.
 
 Once you are confident that you have the right classes and relationships between classes in your app, you should begin to lock it down by doing the following:
 
@@ -68,9 +68,10 @@ When a user logs into an app, they initiate a session with Parse. Through this s
 
 The easiest way to control who can access which data is through access control lists, commonly known as ACLs. The idea behind an ACL is that each object has a list of users and roles along with what permissions that user or role has. A user needs read permissions (or must belong to a role that has read permissions) in order to retrieve an object's data, and a user needs write permissions (or must belong to a role that has write permissions) in order to update or delete that object.
 
-Once you have a User, you can start using ACLs. Remember: Users can be created through traditional username/password signup, through a third-party login system like Facebook or Twitter, or even by using Parse's [automatic anonymous users]({{ site.baseUrl }}/ios/guide/#anonymous-users) functionality. To set an ACL on the current user's data to not be publicly readable, all you have to do is:
+Once you have a User, you can start using ACLs. Remember: Users can be created through traditional username/password signup, through a third-party login system like Facebook or Twitter, or even by using Parse's [automatic anonymous users](/ios/users.md#anonymous-users) functionality. To set an ACL on the current user's data to not be publicly readable, all you have to do is:
 
 {% if language == "objective_c-swift" %}
+
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -84,46 +85,59 @@ if let user = PFUser.currentUser() {
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "java" %}
+
 ```java
 ParseUser user = ParseUser.getCurrentUser();
 user.setACL(new ParseACL(user));
 ```
+
 {% endif %}
 
 {% if language == "js" %}
+
 ```js
 var user = Parse.User.current();
 user.setACL(new Parse.ACL(user));
 ```
+
 {% endif %}
 
 {% if language == "cs" %}
+
 ```cs
 var user = ParseUser.CurrentUser;
 user.ACL = new ParseACL(user);
 ```
+
 {% endif %}
 
 {% if language == "php" %}
+
 ```php
 $user = ParseUser::getCurrentUser();
 $user->setACL(new ParseACL($user))
 ```
+
 {% endif %}
 
 {% if language == "bash" %}
+
 ```bash
 # No command line example
 ```
+
 {% endif %}
 
 {% if language == "cpp" %}
+
 ```cpp
 // No C++ example
 ```
+
 {% endif %}
 
 Most apps should do this. If you store any sensitive user data, such as email addresses or phone numbers, you need to set an ACL like this so that the user's private information isn't visible to other users. If an object doesn't have an ACL, it's readable and writeable by everyone. The only exception is the `_User` class. We never allow users to write each other's data, but they can read it by default. (If you as the developer need to update other `_User` objects, remember that your master key can provide the power to do this.)
@@ -131,6 +145,7 @@ Most apps should do this. If you store any sensitive user data, such as email ad
 To make it super easy to create user-private ACLs for every object, we have a way to set a default ACL that will be used for every new object you create:
 
 {% if language == "objective_c-swift" %}
+
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -141,6 +156,7 @@ To make it super easy to create user-private ACLs for every object, we have a wa
 PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
 ```
 </div>
+
 {% endif %}
 
 {% if language == "java" %}
@@ -182,6 +198,7 @@ ParseACL::setDefaultACL(new ParseACL(), true);
 If you want the user to have some data that is public and some that is private, it's best to have two separate objects. You can add a pointer to the private data from the public one.
 
 {% if language == "objective_c-swift" %}
+
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -201,6 +218,7 @@ if let currentUser = PFUser.currentUser() {
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "java" %}
@@ -258,6 +276,7 @@ ParseUser::getCurrentUser()->set("privateData", $privateData);
 Of course, you can set different read and write permissions on an object. For example, this is how you would create an ACL for a public post by a user, where anyone can read it:
 
 {% if language == "objective_c-swift" %}
+
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -274,6 +293,7 @@ if let currentUser = PFUser.currentUser() {
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "java" %}
@@ -323,6 +343,7 @@ $acl->setWriteAccess(ParseUser::getCurrentUser(), true);
 Sometimes it's inconvenient to manage permissions on a per-user basis, and you want to have groups of users who get treated the same (like a set of admins with special powers). Roles are are a special kind of object that let you create a group of users that can all be assigned to the ACL. The best thing about roles is that you can add and remove users from a role without having to update every single object that is restricted to that role. To create an object that is writeable only by admins:
 
 {% if language == "objective_c-swift" %}
+
 <div class="language-toggle" markdown="1">
 
 ```objective_c
@@ -338,6 +359,7 @@ acl.setPublicReadAccess(true)
 acl.setWriteAccess(true, forRoleWithName: "admins")
 ```
 </div>
+
 {% endif %}
 
 {% if language == "java" %}
@@ -380,6 +402,7 @@ $acl->setRoleWriteAccessWithName("admins", true);
 {% endif %}
 
 {% if language == "cpp" %}
+
 ```cpp
 // No C++ example
 ```
@@ -511,17 +534,17 @@ There are some special classes in Parse that don't follow all of the same securi
 
 6. Get requests on installations follow ACLs normally. Find requests without master key is not allowed unless you supply the `installationId` as a constraint.
 
-7. Update requests on installations do adhere to the ACL defined on the installation, but Delete requests are master-key-only. For more information about how installations work, check out the [installations section of the REST guide]({{ site.baseUrl }}/rest/guide/#installations).
+7. Update requests on installations do adhere to the ACL defined on the installation, but Delete requests are master-key-only. For more information about how installations work, check out the [installations section of the REST guide](rest/push-notifications.md#installations).
 
 ## Data Integrity in Cloud Code
 
-For most apps, care around keys, class-level permissions, and object-level ACLs are all you need to keep your app and your users' data safe. Sometimes, though, you'll run into an edge case where they aren't quite enough. For everything else, there's [Cloud Code]({{ site.baseUrl }}/cloudcode/guide/).
+For most apps, care around keys, class-level permissions, and object-level ACLs are all you need to keep your app and your users' data safe. Sometimes, though, you'll run into an edge case where they aren't quite enough. For everything else, there's [Cloud Code](cloudcode/index.md).
 
 Cloud Code allows you to upload JavaScript to Parse's servers, where we will run it for you. Unlike client code running on users' devices that may have been tampered with, Cloud Code is guaranteed to be the code that you've written, so it can be trusted with more responsibility.
 
 One particularly common use case for Cloud Code is preventing invalid data from being stored. For this sort of situation, it's particularly important that a malicious client not be able to bypass the validation logic.
 
-To create validation functions, Cloud Code allows you to implement a `beforeSave` trigger for your class. These triggers are run whenever an object is saved, and allow you to modify the object or completely reject a save. For example, this is how you create a [Cloud Code beforeSave trigger]({{ site.baseUrl }}/cloudcode/guide/#beforesave-triggers) to make sure every user has an email address set:
+To create validation functions, Cloud Code allows you to implement a `beforeSave` trigger for your class. These triggers are run whenever an object is saved, and allow you to modify the object or completely reject a save. For example, this is how you create a [Cloud Code beforeSave trigger](cloudcode/index.md#beforesave-triggers) to make sure every user has an email address set:
 
 ```js
 Parse.Cloud.beforeSave(Parse.User, function(request, response) {

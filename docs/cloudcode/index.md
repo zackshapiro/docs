@@ -1,6 +1,21 @@
 ---
-title: Cloud Functions
+title:  Getting Started
 ---
+
+Cloud Code is [built into Parse Server](parse-server/index.md). The default entry point for your Cloud Code is at `./cloud/main.js`.
+
+## What is Cloud Code?
+
+For complex apps, sometimes you just need a bit of logic that isn't running on a mobile device. Cloud Code makes this possible.
+
+Cloud Code is easy to use because it's built on the same JavaScript SDK that powers thousands of apps. The only difference is that this code runs in your Parse Server rather than running on the user's mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don't have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.
+
+Even if you're only familiar with mobile development, we hope you'll find Cloud Code straightforward and easy to use.
+
+
+## Cloud Functions
+
+### Defining Functions
 
 Let's look at a slightly more complex example where Cloud Code is useful. One reason to do computation in the cloud is so that you don't have to send a huge list of objects down to a device if you only want a little bit of information. For example, let's say you're writing an app that lets people review movies. A single `Review` object could look like:
 
@@ -37,6 +52,8 @@ Parse.Cloud.define("averageStars", function(request, response) {
 The only difference between using `averageStars` and `hello` is that we have to provide the parameter that will be accessed in `request.params.movie` when we call the Cloud function. Read on to learn more about how Cloud functions can be called.
 
 Cloud functions can be called from any of the client SDKs, as well as through the REST API. For example, to call the Cloud function named `averageStars` with a parameter named `movie` from an Android app:
+
+### Running Functions
 
 ```java
 HashMap<String, Object> params = new HashMap<String, Object>();
@@ -132,11 +149,11 @@ If there is an error, the response in the client looks like:
 }
 ```
 
-# Cloud Jobs
+## Cloud Jobs
 
 Sometimes you want to execute long running functions, and you don't want to wait for the response. Cloud Jobs are just meant for that.
 
-## Define a Job
+### Define a Job
 
 ```javascript
 Parse.Cloud.job("myJob", function(request, status) {
@@ -164,7 +181,7 @@ Parse.Cloud.job("myJob", function(request, status) {
 
 Note that calling `status.success` or `status.error` won't prevent any further execution of the job.
 
-## Running a Job
+### Running a Job
 
 Calling jobs is done via the REST API and is protected by the master key.
 
@@ -176,7 +193,7 @@ The response will consist of an empty body and contain the `X-Parse-Job-Status-I
 
 You can pass some data alongside the call if you want to customize the job execution.
 
-## Scheduling a Job
+### Scheduling a Job
 
 We don't support at the moment job scheduling and highly recommend to use a 3rd party system for scheduling your jobs.
 
@@ -184,13 +201,13 @@ We don't support at the moment job scheduling and highly recommend to use a 3rd 
 - On [Google App Engine](https://cloud.google.com/appengine/docs/flexible/nodejs/scheduling-jobs-with-cron-yaml)
 - On [Heroku](https://devcenter.heroku.com/articles/scheduler#scheduling-jobs)
 
-## Viewing Jobs
+### Viewing Jobs
 
 Viewing jobs is supported on parse-dashboard starting version 1.0.19, but you can also query the _JobStatus class with a masterKey call to fetch your recent jobs.
 
-# beforeSave Triggers
+## beforeSave Triggers
 
-## Implementing validation
+### Implementing validation
 
 Another reason to run code in the cloud is to enforce a particular data format. For example, you might have both an Android and an iOS app, and you want to validate data for each of those. Rather than writing code once for each client environment, you can write it just once with Cloud Code.
 
@@ -224,7 +241,7 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 });
 ```
 
-## Modifying Objects on Save
+### Modifying Objects on Save
 
 In some cases, you don't want to throw out invalid data. You just want to tweak it a bit before saving it. `beforeSave` can handle this case, too. You just call `response.success` on the altered object.
 
@@ -241,7 +258,7 @@ Parse.Cloud.beforeSave("Review", function(request, response) {
 });
 ```
 
-# afterSave Triggers
+## afterSave Triggers
 
 In some cases, you may want to perform some action, such as a push, after an object has been saved. You can do this by registering a handler with the `afterSave` method. For example, suppose you want to keep track of the number of comments on a blog post. You can do that by writing a function like this:
 
@@ -263,7 +280,7 @@ The client will receive a successful response to the save request after the hand
 
 If you want to use `afterSave` for a predefined class in the Parse JavaScript SDK (e.g. [Parse.User]({{ site.apis.js }}classes/Parse.User.html)), you should not pass a String for the first argument. Instead, you should pass the class itself.
 
-# beforeDelete Triggers
+## beforeDelete Triggers
 
 You can run custom Cloud Code before an object is deleted. You can do this with the `beforeDelete` method. For instance, this can be used to implement a restricted delete policy that is more sophisticated than what can be expressed through  [ACLs]({{ site.apis.js }}/classes/Parse.ACL.html). For example, suppose you have a photo album app, where many photos are associated with each album, and you want to prevent the user from deleting an album if it still has a photo in it. You can do that by writing a function like this:
 
@@ -290,7 +307,7 @@ If `response.error` is called, the `Album` object will not be deleted, and the c
 If you want to use `beforeDelete` for a predefined class in the Parse JavaScript SDK (e.g. [Parse.User]({{ site.apis.js }}classes/Parse.User.html)), you should not pass a String for the first argument. Instead, you should pass the class itself.
 
 
-# afterDelete Triggers
+## afterDelete Triggers
 
 In some cases, you may want to perform some action, such as a push, after an object has been deleted. You can do this by registering a handler with the `afterDelete` method. For example, suppose that after deleting a blog post, you also want to delete all associated comments. You can do that by writing a function like this:
 
@@ -312,14 +329,12 @@ The client will receive a successful response to the delete request after the ha
 
 If you want to use `afterDelete` for a predefined class in the Parse JavaScript SDK (e.g. [Parse.User]({{ site.apis.js }}classes/Parse.User.html)), you should not pass a String for the first argument. Instead, you should pass the class itself.
 
-# beforeFind Triggers
+## beforeFind Triggers
 
 *Available only on parse-server cloud code starting 2.2.20*
 
 In some cases you may want to transform an incoming query, adding an additional limit or increasing the default limit, adding extra includes or restrict the results to a subset of keys. You can do so with the `beforeFind` trigger.
 
-
-## Examples
 
 ```javascript
 // Properties available
@@ -367,10 +382,9 @@ Parse.Cloud.beforeFind('MyObject', function(req) {
 });
 ```
 
-# Using the Master Key in cloud code 
+## Using the Master Key in cloud code 
 Set `useMasterKey:true` in the requests that require master key. 
 
-## Examples:
 
 ```javascript
 query.find({useMasterKey:true});

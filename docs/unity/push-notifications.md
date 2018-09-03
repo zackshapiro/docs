@@ -4,7 +4,7 @@ title: Push Notifications
 
 Push Notifications are a great way to keep your users engaged and informed about your app. You can reach your entire user base quickly and effectively. This guide will help you through the setup process and the general usage of Parse to send push notifications.
 
-If you haven't installed the SDK yet, please [head over to the Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to get our SDK up and running.
+If you haven't installed the SDK yet, please [head over to the Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to get our SDK up and running.
 
 <div class='tip info'><div>
 The Unity SDK can send push notifications from all runtimes, but only iOS and Android apps can receive pushes from APNS and FCM push servers.
@@ -13,8 +13,8 @@ The Unity SDK can send push notifications from all runtimes, but only iOS and An
 ## Setting Up Push
 
 Currently, only two platforms are supported to receive push from Parse, Unity iOS and Unity Android.
-* If you want to start using push on Unity iOS, start by completing the [iOS Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to learn how to configure your push certificate.
-* If you want to start using push on Unity Android, start by completing [Android Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to learn how to configure your app.
+* If you want to start using push on Unity iOS, start by completing the [iOS Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to learn how to configure your push certificate.
+* If you want to start using push on Unity Android, start by completing [Android Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to learn how to configure your app.
 Come back to this guide afterwards to learn more about the push features offered by Parse.
 
 
@@ -22,7 +22,7 @@ Come back to this guide afterwards to learn more about the push features offered
 
 Every Parse application installed on a device registered for push notifications has an associated `Installation` object. The `Installation` object is where you store all the data needed to target push notifications. For example, in a baseball app, you could store the teams a user is interested in to send updates about their performance. Saving the `Installation` object is also required for tracking push-related app open events.
 
-On Unity, `Installation` objects are available through the `ParseInstallation` class, a subclass of `ParseObject`. It uses the [same API]({{ site.baseUrl }}/dotnet/guide/#objects) for storing and retrieving data. To access the current `Installation` object from your .NET app, use the `ParseInstallation.CurrentInstallation` property.
+On Unity, `Installation` objects are available through the `ParseInstallation` class, a subclass of `ParseObject`. It uses the [same API](dotnet/push-notifications.md#objects) for storing and retrieving data. To access the current `Installation` object from your .NET app, use the `ParseInstallation.CurrentInstallation` property.
 
 While it is possible to modify a `ParseInstallation` just like you would a `ParseObject`, there are several special fields that help manage and target devices.
 
@@ -43,7 +43,7 @@ While it is possible to modify a `ParseInstallation` just like you would a `Pars
 
 There are two ways to send push notifications using Parse: [channels](#using-channels) and [advanced targeting](#using-advanced-targeting). Channels offer a simple and easy to use model for sending pushes, while advanced targeting offers a more powerful and flexible model. Both are fully compatible with each other and will be covered in this section.
 
-Sending notifications is often done from the Parse.com push console, the [REST API]({{ site.baseUrl }}/rest/guide/#sending-pushes) or from [Cloud Code]({{ site.baseUrl }}/js/guide/#sending-pushes). However, push notifications can also be triggered by the existing client SDKs. If you decide to send notifications from the client SDKs, you will need to set **Client Push Enabled** in the Push Notifications settings of your Parse app.
+Sending notifications is often done from the Parse.com push console, the [REST API](rest/push-notifications.md#sending-pushes) or from [Cloud Code](js/push-notifications.md#sending-pushes). However, push notifications can also be triggered by the existing client SDKs. If you decide to send notifications from the client SDKs, you will need to set **Client Push Enabled** in the Push Notifications settings of your Parse app.
 
 However, be sure you understand that enabling Client Push can lead to a security vulnerability in your app, as outlined [on our blog](http://blog.parse.com/2014/09/03/the-dangerous-world-of-client-push/). We recommend that you enable Client Push for testing purposes only, and move your push notification logic into Cloud Code when your app is ready to go into production.
 
@@ -125,13 +125,13 @@ If you want to target multiple channels with a single push notification, you can
 
 ### Using Advanced Targeting
 
-While channels are great for many applications, sometimes you need more precision when targeting the recipients of your pushes. Parse allows you to write a query for any subset of your `Installation` objects using the [querying API]({{ site.baseUrl }}/unity/guide/#queries) and to send them a push.
+While channels are great for many applications, sometimes you need more precision when targeting the recipients of your pushes. Parse allows you to write a query for any subset of your `Installation` objects using the [querying API](unity/queries.md) and to send them a push.
 
 Since `ParseInstallation` is a subclass of `ParseObject`, you can save any data you want and even create relationships between `Installation` objects and your other objects. This allows you to send pushes to a very customized and dynamic segment of your user base.
 
 #### Saving Installation Data
 
-Storing data on an `Installation` object is just as easy as storing [any other data]({{ site.baseUrl }}/unity/guide/#objects) on Parse. In our Baseball app, we could allow users to get pushes about game results, scores and injury reports.
+Storing data on an `Installation` object is just as easy as storing [any other data](unity/push-notifications.md#objects) on Parse. In our Baseball app, we could allow users to get pushes about game results, scores and injury reports.
 
 ```cs
 // Store the category of push notifications the user would like to receive.
@@ -153,7 +153,7 @@ installation.SaveAsync();
 
 #### Sending Pushes to Queries
 
-Once you have your data stored on your `Installation` objects, you can use a `ParseQuery` to target a subset of these devices. `Installation` queries work just like any other [Parse query]({{ site.baseUrl }}/unity/guide/#queries), but we use the special static property `ParseInstallation.Query` to create it. We set this query on our `ParsePush` object, before sending the notification.
+Once you have your data stored on your `Installation` objects, you can use a `ParseQuery` to target a subset of these devices. `Installation` queries work just like any other [Parse query](unity/queries.md), but we use the special static property `ParseInstallation.Query` to create it. We set this query on our `ParsePush` object, before sending the notification.
 
 ```cs
 var push = new ParsePush();
@@ -291,7 +291,7 @@ wpPush.SendAsync();
 
 ## Scheduling Pushes
 
-Sending scheduled push notifications is not currently supported by the .NET SDK. Take a look at the [REST API]({{ site.baseUrl }}/rest/guide/#scheduling-pushes), [JavaScript SDK]({{ site.baseUrl }}/js/guide/#scheduling-pushes) or the Parse.com push console.
+Sending scheduled push notifications is not currently supported by the .NET SDK. Take a look at the [REST API](rest/push-notifications.md#scheduling-pushes), [JavaScript SDK](js/push-notifications.md#scheduling-pushes) or the Parse.com push console.
 
 ## Receiving Pushes
 
@@ -383,5 +383,5 @@ Our web push console guides you through every step of setting up a Localized Pus
 
 Setting up Push Notifications is often a source of frustration for developers. The process is complicated and invites problems to happen along the way. If you run into issues, try some of these troubleshooting tips.
 
-* If you're receiving push from Unity iOS, refer to [iOS Push Troubleshooting Guide]({{ site.baseUrl }}/ios/guide/#troubleshooting).
-* If you're receiving push from Unity Android, refer to [Android Push Troubleshooting Guide]({{ site.baseUrl }}/android/guide/#troubleshooting).
+* If you're receiving push from Unity iOS, refer to [iOS Push Troubleshooting Guide](ios/push-notifications.md#troubleshooting).
+* If you're receiving push from Unity Android, refer to [Android Push Troubleshooting Guide](android/push-notifications.md#troubleshooting).

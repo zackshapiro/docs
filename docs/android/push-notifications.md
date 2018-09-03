@@ -4,11 +4,11 @@ title: Push Notifications
 
 Push notifications are a great way to keep your users engaged and informed about your app. You can reach your entire user base quickly and effectively. This guide will help you through the setup process and the general usage of Parse to send push notifications.
 
-If you haven't installed the SDK yet, [head over to the Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to get our SDK up and running.
+If you haven't installed the SDK yet, [head over to the Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to get our SDK up and running.
 
 ## Setting Up Push
 
-If you want to start using push, start by completing the [Android Push Notifications QuickStart Guide]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to learn how to configure your app and send your first push notification. Come back to this guide afterwards to learn more about the push features offered by Parse.
+If you want to start using push, start by completing the [Android Push Notifications QuickStart Guide](parse-server/push-notifications.md/#push-notifications-quick-start) to learn how to configure your app and send your first push notification. Come back to this guide afterwards to learn more about the push features offered by Parse.
 
 The Parse library provides push notifications using Firebase Cloud Messaging (FCM) if Google Play Services are available. Learn more about Google Play Services [here](https://firebase.google.com/docs/cloud-messaging/).
 
@@ -45,7 +45,7 @@ The Parse Android SDK will avoid making unnecessary requests. If a `ParseInstall
 
 There are two ways to send push notifications using Parse: [channels](#using-channels) and [advanced targeting](#using-advanced-targeting). Channels offer a simple and easy to use model for sending pushes, while advanced targeting offers a more powerful and flexible model. Both are fully compatible with each other and will be covered in this section.
 
-Sending notifications is often done from the Parse.com push console, the [REST API]({{ site.baseUrl }}/rest/guide/#sending-pushes) or from [Cloud Code]({{ site.baseUrl }}/js/guide/#sending-pushes). However, push notifications can also be triggered by the existing client SDKs. If you decide to send notifications from the client SDKs, you will need to set **Client Push Enabled** in the Push Notifications settings of your Parse app.
+Sending notifications is often done from the Parse.com push console, the [REST API](rest/push-notifications.md#sending-pushes) or from [Cloud Code](js/push-notitications.md#sending-pushes). However, push notifications can also be triggered by the existing client SDKs. If you decide to send notifications from the client SDKs, you will need to set **Client Push Enabled** in the Push Notifications settings of your Parse app.
 
 However, be sure you understand that enabling Client Push can  lead to a security vulnerability in your app, as outlined  [on our blog](http://blog.parse.com/2014/09/03/the-dangerous-world-of-client-push/).  We recommend that you enable Client Push for testing purposes only,  and move your push notification logic into Cloud Code  when your app is ready to go into production.
 
@@ -316,7 +316,7 @@ The scheduled time cannot be in the past, and can be up to two weeks in the futu
 
 ## Receiving Pushes
 
-Make sure you've gone through the [Android Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to set up your app to receive pushes.
+Make sure you've gone through the [Android Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to set up your app to receive pushes.
 
 When a push notification is received, the “title” is displayed in the status bar and the “alert” is displayed alongside the “title” when the user expands the notification drawer. If you choose to subclass `com.parse.ParsePushBroadcastReceiver`, be sure to replace that name with your class' name in the registration.
 
@@ -463,7 +463,7 @@ Basically, you will need to run the same push query you're using for your target
 
 #### Debugging using the REST API
 
-The REST API is quite easy to use for this sort of purpose as you can easily recreate the push query using the information provided in your push notification logs. If you look closely at the “Full Target” value in your push campaign log item, you may notice that it matches the query format for a REST API query. You can grab an example of what a [REST API query]({{ site.baseUrl }}/rest/guide/#query-constraints) over `ParseInstallation`s would look like from the REST API docs. Don't forget to use the `X-Parse-Master-Key` header to ensure that the Master Key is used to run this query.
+The REST API is quite easy to use for this sort of purpose as you can easily recreate the push query using the information provided in your push notification logs. If you look closely at the “Full Target” value in your push campaign log item, you may notice that it matches the query format for a REST API query. You can grab an example of what a [REST API query](rest/query.md#query-constraints) over `ParseInstallation`s would look like from the REST API docs. Don't forget to use the `X-Parse-Master-Key` header to ensure that the Master Key is used to run this query.
 
 ```bash
 # Query over installations

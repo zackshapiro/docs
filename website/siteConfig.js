@@ -10,7 +10,7 @@
 const markdownInclude = require('./markdownInclude');
 
 const siteConfig = {
-  title: 'Parse Plaftorm', // Title for your website.
+  title: 'Parse', // Title for your website.
   tagline: 'The Complete Application Stack',
   url: 'https://parseplatform.org', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -33,8 +33,8 @@ const siteConfig = {
   ],
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/logo.svg',
+  footerIcon: 'img/logo.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
@@ -62,7 +62,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'tomorrow',
+    theme: 'github',
   },
 
   // Add custom scripts here that would be placed in <script> tags.

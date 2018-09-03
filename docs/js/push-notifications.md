@@ -2,7 +2,7 @@
 title: Push Notifications
 ---
 
-If you haven't installed the SDK yet, please [head over to the Push QuickStart]({{ site.baseUrl }}/parse-server/guide/#push-notifications-quick-start) to get our SDK up and running.
+If you haven't installed the SDK yet, please [head over to the Push QuickStart](parse-server/push-notifications.md#push-notifications-quick-start) to get our SDK up and running.
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The JavaScript SDK does not currently support receiving pushes. It can only be u
 
 ## Setting Up Push
 
-There is no setup required to use the JavaScript SDK for sending push notifications. If you haven't configured your [iOS]({{ site.baseUrl }}/ios/guide/#setting-up-push) or [Android]({{ site.baseUrl }}/android/guide/#setting-up-push) clients to use Push, take a look at their respective setup instruction using the platform toggle at the top.
+There is no setup required to use the JavaScript SDK for sending push notifications. If you haven't configured your [iOS](ios/push-notifications.md#setting-up-push) or [Android](android/push-notifications.md#setting-up-push) clients to use Push, take a look at their respective setup instruction using the platform toggle at the top.
 
 ## Installations
 
@@ -57,7 +57,7 @@ The simplest way to start sending notifications is using channels. This allows y
 
 #### Subscribing to Channels
 
-The JavaScript SDK does not currently support subscribing iOS and Android devices for pushes. Take a look at the [iOS]({{ site.baseUrl }}/ios/guide/#using-channels), [Android]({{ site.baseUrl }}/android/guide/#using-channels) or [REST]({{ site.baseUrl }}/rest/guide/#using-channels) Push guide using the platform toggle at the top.
+The JavaScript SDK does not currently support subscribing iOS and Android devices for pushes. Take a look at the [iOS](ios/push-notifications.md#using-channels), [Android](android/push-notifications.md#using-channels) or [REST](rest/push-notifications.md#using-channels) Push guide using the platform toggle at the top.
 
 #### Sending Pushes to Channels
 
@@ -86,7 +86,7 @@ Since `Installation` objects are just like any other object stored in Parse, you
 
 #### Saving Installation Data
 
-The JavaScript SDK does not currently support modifying `Installation` objects. Take a look at the [iOS]({{ site.baseUrl }}/ios/guide/#installations), [Android]({{ site.baseUrl }}/android/guide/#installations) or [REST]({{ site.baseUrl }}/rest/guide/#installations) Push guide for more on this topic.
+The JavaScript SDK does not currently support modifying `Installation` objects. Take a look at the [iOS](ios/push-notifications.md#installations), [Android](android/push-notifications.md#installations) or [REST](rest/push-notifications.md#installations) Push guide for more on this topic.
 
 #### Sending Pushes to Queries
 
@@ -189,7 +189,7 @@ Parse.Push.send({
 });
 ```
 
-It is also possible to specify your own data in this dictionary. As explained in the Receiving Notifications section for [iOS]({{ site.baseUrl }}/ios/guide/#scheduling-pushes) and [Android]({{ site.baseUrl }}/android/guide/#scheduling-pushes), iOS will give you access to this data only when the user opens your app via the notification and Android will provide you this data in the `Intent` if one is specified.
+It is also possible to specify your own data in this dictionary. As explained in the Receiving Notifications section for [iOS](ios/push-notifications.md#scheduling-pushes) and [Android](android/push-notifications.md#scheduling-pushes), iOS will give you access to this data only when the user opens your app via the notification and Android will provide you this data in the `Intent` if one is specified.
 
 ```javascript
 var query = new Parse.Query(Parse.Installation);
@@ -337,8 +337,8 @@ The scheduled time cannot be in the past, and can be up to two weeks in the futu
 
 ## Receiving Pushes
 
-The JavaScript SDK does not currently support receiving pushes. To learn more about handling received notifications in [iOS]({{ site.baseUrl }}/ios/guide/#scheduling-pushes) or [Android]({{ site.baseUrl }}/android/guide/#scheduling-pushes), use the platform toggle at the top.
+The JavaScript SDK does not currently support receiving pushes. To learn more about handling received notifications in [iOS](ios/push-notifications.md#scheduling-pushes) or [Android](android/push-notifications.md#scheduling-pushes), use the platform toggle at the top.
 
 ## Troubleshooting
 
-For tips on troubleshooting push notifications, check the troubleshooting sections for [iOS]({{ site.baseUrl }}/ios/guide/#troubleshooting), [Android]({{ site.baseUrl }}/android/guide/#troubleshooting), and [.NET]({{ site.baseUrl }}/dotnet/guide/#troubleshooting) using the platform toggle at the top.
+For tips on troubleshooting push notifications, check the troubleshooting sections for [iOS](ios/push-notifications.md#troubleshooting), [Android](android/push-notifications.md#troubleshooting), and [.NET](dotnet/push-notifications.md#troubleshooting) using the platform toggle at the top.

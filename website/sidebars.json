@@ -1,7 +1,7 @@
 {
   "ios-guide": {
     "iOS Guide": [
-      "ios/getting-started",
+      "ios/index",
       "ios/objects",
       "ios/queries",
       "ios/users",
@@ -25,7 +25,7 @@
   },
   "android-guide": {
     "Android Guide": [
-			"android/getting-started",
+			"android/index",
 			"android/objects",
 			"android/queries",
 			"android/users",
@@ -48,7 +48,7 @@
   },
   "js-guide": {
     "Javascript Guide": [
-			"js/getting-started",
+			"js/index",
 			"js/objects",
 			"js/queries",
 			"js/live-queries",
@@ -73,7 +73,7 @@
   "rest-guide": {
     "REST API Guide": [
       "rest/server-customize",
-		  "rest/getting-started",
+		  "rest/index",
 			"rest/quick-reference",
 			"rest/objects",
 			"rest/queries",
@@ -95,7 +95,7 @@
   },
   "parse-server": {
     "Parse Server Guide": [
-      "parse-server/getting-started",
+      "parse-server/index",
 			"parse-server/database",
 			"parse-server/usage",
 			"parse-server/keys",
@@ -115,7 +115,7 @@
   },
   "unity-guide": {
     "Unity Guide": [
-			"unity/getting-started",
+			"unity/index",
 			"unity/objects",
 			"unity/queries",
 			"unity/users",
@@ -136,7 +136,7 @@
   },
   "arduino-guide": {
     "Arduino Guide": [
-      "arduino/getting-started",
+      "arduino/index",
 			"arduino/objects",
 			"arduino/queries",
 			"arduino/requests",
@@ -150,14 +150,13 @@
   },
   "cloud-code": {
     "Cloud Code Guide": [
-      "cloudcode/getting-started",
-      "cloudcode/cloud-code",
-      "cloudcode/cloud-code-advanced"
+      "cloudcode/index",
+      "cloudcode/advanced"
     ]
   },
   "dotnet-guide": {
     ".Net Guide": [
-      "dotnet/getting-started",
+      "dotnet/index",
       "dotnet/objects",
       "dotnet/queries",
       "dotnet/users",
@@ -178,7 +177,7 @@
   },
   "embedded-c-guide": {
     "C Guide": [
-      "embedded_c/getting-started",
+      "embedded_c/index",
 			"embedded_c/objects",
 			"embedded_c/requests",
 			"embedded_c/users",
@@ -191,7 +190,7 @@
   },
   "php-guide": {
     "PHP Guide": [
-    	"php/getting-started",
+    	"php/index",
 			"php/installation",
 			"php/setup",
 			"php/objects",

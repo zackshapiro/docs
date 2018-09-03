@@ -34,43 +34,43 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Parse Server Guides</h5>
-            <a href={this.docUrl('parse-server/getting-started')}>
+            <a href={this.docUrl('parse-server/index')}>
               Parse Server Guide
             </a>
-            <a href={this.docUrl('cloudcode/getting-started')}>
+            <a href={this.docUrl('cloudcode/index')}>
               Cloud Code Guide
             </a>
-            <a href={this.docUrl('rest/getting-started')}>
+            <a href={this.docUrl('rest/index')}>
               REST Guide
             </a>
-            <a href={this.docUrl('js/getting-started')}>
+            <a href={this.docUrl('js/index')}>
               JavaScript Guide
             </a>
           </div>
           <div>
             <h5>Client Guides</h5>
-            <a href={this.docUrl('ios/getting-started')}>
+            <a href={this.docUrl('ios/index')}>
               iOS / macOS / tvOS Guide
             </a>
-            <a href={this.docUrl('android/getting-started')}>
+            <a href={this.docUrl('android/index')}>
               Android Guide
             </a>
-            <a href={this.docUrl('dotnet/getting-started')}>
+            <a href={this.docUrl('dotnet/index')}>
               .Net + Xamarin Guide
             </a>
-            <a href={this.docUrl('unity/getting-started')}>
+            <a href={this.docUrl('unity/index')}>
               Unity Guide
             </a>
           </div>
           <div>
             <br/>
-            <a href={this.docUrl('php/getting-started')}>
+            <a href={this.docUrl('php/index')}>
               PHP Guide
             </a>
-            <a href={this.docUrl('arduino/getting-started')}>
+            <a href={this.docUrl('arduino/index')}>
               Arduino Guide
             </a>
-            <a href={this.docUrl('embedded_c/getting-started')}>
+            <a href={this.docUrl('embedded_c/index')}>
               Embedded C Guide
             </a>
           </div>
@@ -90,19 +90,6 @@ class Footer extends React.Component {
             </a>
           </div>
         </section>
-
-        <a
-          href="https://code.facebook.com/projects/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fbOpenSource">
-          <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

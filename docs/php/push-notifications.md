@@ -12,7 +12,7 @@ The PHP SDK does not currently support receiving pushes. It can only be used to 
 
 ## Setting Up Push
 
-There is no setup required to use the PHP SDK for sending push notifications. If you haven't configured your [iOS]({{ site.baseUrl }}/ios/guide/#setting-up-push) or [Android]({{ site.baseUrl }}/android/guide/#setting-up-push) clients to use Push, take a look at their respective setup instruction using the platform toggle at the top.
+There is no setup required to use the PHP SDK for sending push notifications. If you haven't configured your [iOS](ios/push-notifications.md#setting-up-push) or [Android](android/push-notifications.md#setting-up-push) clients to use Push, take a look at their respective setup instruction using the platform toggle at the top.
 
 ## Installations
 
@@ -31,7 +31,7 @@ This class has several special fields that help you manage and target devices.
 
 ## Sending Pushes
 
-There are two ways to send push notifications using Parse: [channels](#using-channels) and [advanced targeting]({{ site.baseUrl }}/php/guide/#using-advanced-targeting). Channels offer a simple and easy to use model for sending pushes, while advanced targeting offers a more powerful and flexible model. Both are fully compatible with each other and will be covered in this section.
+There are two ways to send push notifications using Parse: [channels](#using-channels) and [advanced targeting](php/push-notifications.md#using-advanced-targeting). Channels offer a simple and easy to use model for sending pushes, while advanced targeting offers a more powerful and flexible model. Both are fully compatible with each other and will be covered in this section.
 
 You can view your past push notifications on the Parse.com push console for up to 30 days after creating your push.  For pushes scheduled in the future, you can delete the push on the web console as long as no sends have happened yet. After you send the push, the web console shows push analytics graphs.
 
@@ -41,7 +41,7 @@ The simplest way to start sending notifications is using channels. This allows y
 
 #### Subscribing to Channels
 
-The PHP SDK does not currently support subscribing iOS and Android devices for pushes. Take a look at the [iOS]({{ site.baseUrl }}/ios/guide/#using-channels), [Android]({{ site.baseUrl }}/android/guide/#using-channels) or [REST]({{ site.baseUrl }}/rest/guide/#using-channels) Push guide using the platform toggle at the top.
+The PHP SDK does not currently support subscribing iOS and Android devices for pushes. Take a look at the [iOS](ios/push-notifications.md#using-channels), [Android](android/push-notifications.md#using-channels) or [REST](rest/push-notifications.md#using-channels) Push guide using the platform toggle at the top.
 
 #### Sending Pushes to Channels
 
@@ -58,19 +58,19 @@ ParsePush::send(array(
 
 ### Using Advanced Targeting
 
-While channels are great for many applications, sometimes you need more precision when targeting the recipients of your pushes. Parse allows you to write a query for any subset of your `Installation` objects using the [querying API]({{ site.baseUrl }}/php/guide/#queries) and to send them a push.
+While channels are great for many applications, sometimes you need more precision when targeting the recipients of your pushes. Parse allows you to write a query for any subset of your `Installation` objects using the [querying API](php/queries.md) and to send them a push.
 
 Since `Installation` objects are just like any other object stored in Parse, you can save any data you want and even create relationships between `Installation` objects and your other objects. This allows you to send pushes to a very customized and dynamic segment of your user base.
 
 #### Saving Installation Data
 
-The PHP SDK currently supports modifying `Installation` objects via the `ParseInstallation` class, but it is not the primary function of this sdk. If you do need to modify installation objects take a look at the [iOS]({{ site.baseUrl }}/ios/guide/#using-advanced-targeting), [Android]({{ site.baseUrl }}/android/guide/#using-advanced-targeting) or [REST]({{ site.baseUrl }}/rest/guide/#using-advanced-targeting) Push guide using the platform toggle at the top.
+The PHP SDK currently supports modifying `Installation` objects via the `ParseInstallation` class, but it is not the primary function of this sdk. If you do need to modify installation objects take a look at the [iOS](ios/push-notifications.md#using-advanced-targeting), [Android]((android/push-notifications.md#using-advanced-targeting) or [REST](rest/push-notifications.md#using-advanced-targeting) Push guide using the platform toggle at the top.
 
 Generally if you need to saving installation data it will be a modification to an existing installation. Considering this it is recommended you read the related SDK docs for that installation first before you start modifying them, as mentioned above.
 
 #### Sending Pushes to Queries
 
-Once you have your data stored on your `Installation` objects, you can use a query to target a subset of these devices. `Parse.Installation` queries work just like any other [Parse query]({{ site.baseUrl }}/php/guide/#queries).
+Once you have your data stored on your `Installation` objects, you can use a query to target a subset of these devices. `Parse.Installation` queries work just like any other [Parse query](php/queries.md).
 
 ```php
 $query = ParseInstallation::query();
@@ -185,7 +185,7 @@ ParsePush::send(array(
 ), true);
 ```
 
-It is also possible to specify your own data in this dictionary. As explained in the Receiving Notifications section for [iOS]({{ site.baseUrl }}/ios/guide/#receiving-pushes) and [Android]({{ site.baseUrl }}/android/guide/#receiving-pushes), iOS will give you access to this data only when the user opens your app via the notification and Android will provide you this data in the `Intent` if one is specified.
+It is also possible to specify your own data in this dictionary. As explained in the Receiving Notifications section for [iOS](ios/push-notifications.md#receiving-pushes) and [Android](android/push-notifications.md#receiving-pushes), iOS will give you access to this data only when the user opens your app via the notification and Android will provide you this data in the `Intent` if one is specified.
 
 ```php
 $query = ParseInstallation::query();
@@ -209,7 +209,7 @@ When a user's device is turned off or not connected to the internet, push notifi
 
 There are two parameters provided by Parse to allow setting an expiration date for your notification. The first is `expiration_time` which takes a `DateTime` specifying when Parse should stop trying to send the notification.
 
-Alternatively, you can use the `expiration_interval` parameter to specify a duration of time before your notification expires. This value is relative to the `push_time` parameter used to [schedule notifications]({{ site.baseUrl }}/js/guide/#scheduling-pushes). This means that a push notification scheduled to be sent out in 1 day and an expiration interval of 6 days can be received up to a week from now.
+Alternatively, you can use the `expiration_interval` parameter to specify a duration of time before your notification expires. This value is relative to the `push_time` parameter used to [schedule notifications](js/push-notifications.md#scheduling-pushes). This means that a push notification scheduled to be sent out in 1 day and an expiration interval of 6 days can be received up to a week from now.
 
 ### Targeting by Platform
 
@@ -316,8 +316,8 @@ if(ParsePush::hasStatus($response)) {
 
 ## Receiving Pushes
 
-The PHP SDK does not currently support receiving pushes. To learn more about handling received notifications in [iOS]({{ site.baseUrl }}/ios/guide/#receiving-pushes) or [Android]({{ site.baseUrl }}/android/guide/#receiving-pushes), use the platform toggle at the top.
+The PHP SDK does not currently support receiving pushes. To learn more about handling received notifications in [iOS](ios/push-notifications.md#receiving-pushes) or [Android](android/push-notifications.md#receiving-pushes), use the platform toggle at the top.
 
 ## Troubleshooting
 
-For tips on troubleshooting push notifications, check the troubleshooting sections for [iOS]({{ site.baseUrl }}/ios/guide/#troubleshooting), [Android]({{ site.baseUrl }}/android/guide/#troubleshooting), and [.NET]({{ site.baseUrl }}/dotnet/guide/#troubleshooting) using the platform toggle at the top.
+For tips on troubleshooting push notifications, check the troubleshooting sections for [iOS](ios/push-notifications.md#troubleshooting), [Android](android/push-notifications.md#troubleshooting), and [.NET](dotnet/push-notifications.md#troubleshooting) using the platform toggle at the top.
