@@ -23,6 +23,29 @@
       "ios/performance",
       "ios/errors"]
   },
+  "android-guide": {
+    "Android Guide": [
+			"android/getting-started",
+			"android/objects",
+			"android/queries",
+			"android/users",
+			"android/sessions",
+			"android/roles",
+			"android/files",
+			"android/geopoints",
+			"android/local-datastore",
+			"android/push-notifications",
+			"android/config",
+			"android/analytics",
+			"android/user-interface",
+			"android/data",
+			"android/relations",
+			"android/handling-errors",
+			"android/security",
+			"android/performance",
+			"android/errors"
+    ]
+  },
   "js-guide": {
     "Javascript Guide": [
 			"js/getting-started",

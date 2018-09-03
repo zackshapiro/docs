@@ -1,4 +1,6 @@
-# User Interface
+---
+title: User Interface
+---
 
 At the end of the day, users of your application will be interacting with Android UI components. We provide several UI widgets to make working with Parse data easier.
 

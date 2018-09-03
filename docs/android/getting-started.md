@@ -1,4 +1,6 @@
-# Getting Started
+---
+title: Getting Started
+---
 
 Note that we support Android 4.0 and higher. You can also check out our [API Reference]({{ site.apis.android }}) for more detailed information about our SDK.
 

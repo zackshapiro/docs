@@ -1,4 +1,6 @@
-# Local Datastore
+---
+title: Local Datastore
+---
 
 The Parse Android SDK provides a local datastore which can be used to store and retrieve `ParseObject`s, even when the network is unavailable. To enable this functionality, simply call `Parse.enableLocalDatastore()` before your call to `initialize`.
 

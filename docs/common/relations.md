@@ -32,6 +32,7 @@ let game = PFObject(className:"Game")
 game["createdBy"] = PFUser.currentUser()
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -92,6 +93,7 @@ if let user = PFUser.currentUser() {
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -158,6 +160,7 @@ let game = ...
 let createdBy = game["createdBy"]
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -266,6 +269,7 @@ let user = PFUser.currentUser()
 user["weaponsList"] = weapons
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -354,6 +358,7 @@ NSArray *weapons = [[PFUser currentUser] objectForKey:@"weaponsList"];
 let weapons = PFUser.currentUser()?.objectForKey("weaponsList")
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -446,6 +451,7 @@ userQuery?.findObjectsInBackgroundWithBlock {
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -545,6 +551,7 @@ userQuery?.whereKey("weaponsList", equalTo: scimitar);
 userQuery?.whereKey("weaponsList", containedIn: arrayOfWeapons)
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -668,6 +675,7 @@ relation.addObject(authorThree)
 book.saveInBackground()
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -794,6 +802,7 @@ let query = relation.query()
 // now execute the query
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -896,6 +905,7 @@ let query = PFQuery(className: "Book")
 query?.whereKey("authors", equalTo: author)
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -999,6 +1009,7 @@ follow.setObject(NSDate(), forKey: "date")
 follow.saveInBackground()
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1113,6 +1124,7 @@ query.findObjectsInBackgroundWithBlock{
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1215,6 +1227,7 @@ query.findObjectsInBackgroundWithBlock{
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1302,6 +1315,7 @@ let book = ...
 book.addObject(author, forKey: "authors")
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1408,6 +1422,7 @@ bookQuery.findObjectsInBackgroundWithBlock{
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1483,6 +1498,7 @@ NSArray *authorList = [book objectForKey@"authors"];
 let authorList = book.objectForKey("authors") as? NSArray
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}
@@ -1579,6 +1595,7 @@ bookQuery.findObjectsInBackgroundWithBlock{
 }
 ```
 </div>
+
 {% endif %}
 
 {% if language == "php" %}

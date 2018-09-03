@@ -1,4 +1,6 @@
-# Files
+---
+title: Files
+---
 
 ## The ParseFile
 

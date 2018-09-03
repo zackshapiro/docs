@@ -1,4 +1,6 @@
-# Users
+---
+title: Users
+---
 
 At the core of many apps, there is a notion of user accounts that lets users access their information in a secure manner. We provide a specialized user class called `ParseUser` that automatically handles much of the functionality required for user account management.
 

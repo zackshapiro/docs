@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 ```
+
 </div>
+
 There are a couple of side effects of enabling the local datastore that you should be aware of. When enabled, there will only be one instance of any given `PFObject`. For example, imagine you have an instance of the `"GameScore"` class with an `objectId` of `"xWMyZ4YEGZ"`, and then you issue a `PFQuery` for all instances of `"GameScore"` with that `objectId`. The result will be the same instance of the object you already have in memory.
 
 Another side effect is that the current user and current installation will be stored in the local datastore, so you can persist unsaved changes to these objects between runs of your app using the methods below.
@@ -55,7 +57,9 @@ gameScore["playerName"] = "Sean Plott"
 gameScore["cheatMode"] = false
 gameScore.pinInBackground()
 ```
+
 </div>
+
 If you have multiple objects, you can pin them all at once with the `pinAllInBackground` convenience method.
 
 <div class="language-toggle" markdown="1">
@@ -67,6 +71,7 @@ If you have multiple objects, you can pin them all at once with the `pinAllInBac
 ```swift
 PFObject.pinAllInBackground(listOfObjects)
 ```
+
 </div>
 
 ## Retrieving
@@ -103,6 +108,7 @@ query.getObjectInBackgroundWithId("xWMyZ4YE").continueWithBlock {
     return task;
 }
 ```
+
 </div>
 
 ## Querying the Local Datastore
@@ -141,6 +147,7 @@ query.findObjectsInBackground().continueWithBlock {
     return task
 }
 ```
+
 </div>
 
 ## Security in Local Datastore
@@ -162,6 +169,7 @@ let query = PFQuery(className: "Note")
     .fromLocalDatastore
     .ignoreACLs
 ```
+
 </div>
 
 
@@ -178,9 +186,13 @@ When you are done with an object and no longer need it to be in the local datast
 ```swift
 gameScore.unpinInBackground()
 ```
+
 </div>
 
+
 There's also a method to unpin several objects at once.
+
+<div class="language-toggle" markdown="1">
 
 ```objective_c
 [PFObject unpinAllInBackground:listOfObjects];
@@ -189,6 +201,7 @@ There's also a method to unpin several objects at once.
 ```swift
 PFObject.unpinAllInBackground(listOfObjects)
 ```
+
 </div>
 
 ## Pinning with Labels
@@ -212,6 +225,7 @@ PFObject.pinAllInBackground(objects:someGameScores withName:"MyScores")
 // Add another object with the same label.
 anotherGameScore.pinInBackgroundWithName("MyScores")
 ```
+
 </div>
 
 To unpin all of the objects with the same label at the same time, you can pass a label to the unpin methods. This saves you from having to manually track which objects are in each group you care about.
@@ -225,6 +239,7 @@ To unpin all of the objects with the same label at the same time, you can pass a
 ```swift
 PFObject.unpinAllObjectsInBackgroundWithName("MyScores")
 ```
+
 </div>
 
 Any object will stay in the datastore as long as it is pinned with any label. In other words, if you pin an object with two different labels, and then unpin it with one label, the object will stay in the datastore until you also unpin it with the other label.
@@ -266,6 +281,7 @@ query.findObjectsInBackground().continueWithSuccessBlock({
     })
 })
 ```
+
 </div>
 
 When you want to get the cached results for the query, you can then
@@ -305,6 +321,7 @@ query.findObjectsInBackground().continueWithBlock({
     return task
 })
 ```
+
 </div>
 
 ## Syncing Local Changes
@@ -320,9 +337,12 @@ Once you've saved some changes locally, there are a few different ways you can s
 ```swift
 gameScore.saveEventually()
 ```
+
 </div>
 
 If you'd like to have more control over the way objects are synced, you can keep them in the local datastore until you are ready to save them yourself using `saveInBackground`. To manage the set of objects that need to be saved, you can again use a label. The `fromPinWithName:` method on `PFQuery` makes it easy to fetch just the objects you care about.
+
+<div class="language-toggle" markdown="1">
 
 ```objective_c
 PFQuery *query = [PFQuery queryWithClassName:@"GameScore"];
@@ -353,4 +373,5 @@ query.findObjectsInBackground().continueWithBlock({
   return task
 })
 ```
+
 </div>
