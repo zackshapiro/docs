@@ -35,12 +35,12 @@ const siteConfig = {
   /* path to images for header/footer */
   headerIcon: 'img/logo.svg',
   footerIcon: 'img/logo.svg',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon/favicon.png',
 
   /* Colors for website */
   colors: {
     primaryColor: '#169CEE',
-    secondaryColor: '#169CEE',
+    secondaryColor: '#094d77',
   },
 
   /* Custom fonts for website */
@@ -87,6 +87,15 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/parse-community/parse-server',
+
+  apis: {
+    'parse-server': 'https://parseplatform.org/parse-server/api/',
+    ios: 'https://parseplatform.org/Parse-SDK-iOS-OSX/api/',
+    android: 'https://parseplatform.org/Parse-SDK-Android/api/',
+    js: 'https://parseplatform.org/Parse-SDK-JS/api/',
+    php: 'https://parseplatform.org/parse-php-sdk/namespaces/Parse.html',
+    dotnet: 'https://parseplatform.org/Parse-SDK-dotNET/api/'
+  }
 };
 
 module.exports = siteConfig;
