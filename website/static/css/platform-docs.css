@@ -30,6 +30,7 @@
 .docs-platform svg.icon-iot, .docs-platform svg.icon-embedded_c, .docs-platform svg.icon-arduino { fill: #169CEE; width: 31px; height: 21px; }
 .docs-platform svg.icon-rest { fill: #FF395E; width: 25px; height: 24px; }
 .docs-platform svg.icon-server { fill: #6D7A82; width: 25px; height: 25px; }
+.docs-platform svg.icon-atom { fill: #6D7A82; width: 25px; height: 25px; }
 html.no-touch .docs-platform__links a:hover { background-color: #FDFAFB; }
 html.no-touch .docs-platform__links a:hover:before { border-left-color: #7C8C9C; }
 html.no-touch .docs-platform .btn:hover { background-color: #169CEE; color: white; }

@@ -12,4 +12,4 @@ ParseResponse response = Parse.sendRequest("POST", "/parse/users", "{\"username\
 
 In this case, the response will contain the objectId of the created user, assuming it was created successfully.
 
-Head on over to the [REST API documentation]({{ '/rest' | prepend: site.baseurl }}) to discover what's possible. For each code sample, you can switch it to Arduino to see what the function call would look like.
+Head on over to the [REST API documentation](rest/index.md) to discover what's possible. For each code sample, you can switch it to Arduino to see what the function call would look like.

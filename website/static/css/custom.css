@@ -4,11 +4,11 @@
   text-transform: none !important;
 }
 
-.container {
+/* .container {
   position: relative;
   margin: 0 auto;
   min-width: 320px;
-}
+} */
 
 .copy-block {
   text-align: center;
@@ -23,7 +23,7 @@
   margin-right: auto;
 }
 
-@media (max-width: 736px) {
+/* @media (max-width: 736px) {
   .container {  
     position: relative;
     margin: 0 auto;
@@ -31,7 +31,7 @@
     max-width: 420px;
     padding: 0 30px;
   }
-}
+} */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
