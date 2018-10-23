@@ -32,6 +32,8 @@ var parseLiveQueryServer = ParseServer.createLiveQueryServer(httpServer);
 
 The `ws` protocol URL of the LiveQuery server is the hostname and port which the `httpServer` is listening to. For example, if the `httpSever` is listening to `localhost:8080`, the `ws` protocol of the LiveQuery server is `ws://localhost:8080/`. We will allow you to customize the path of `ws` protocol URL of the LiveQuery server later, currently it is fixed and you can not set path.
 
+Community Member [Zack Shapiro](https://github.com/zackshapiro) wrote a guide on how to set up Parse Live Query Server on a single server or as a separate server connected by Redis: [View the guide](https://github.com/SoBump/ParseLiveQueryHelp/blob/master/guide.md).
+
 ## Client Setup
 
 We provide JavaScript and iOS LiveQuery Clients for now. Lets use the JavaScript client as an example. In order to use LiveQuery, you need to initialize a `Parse.Query` object and subscribe to it.
